@@ -2,6 +2,7 @@
 
 *{
   font-size: 150px;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -31,7 +32,7 @@
   display: flex;
   justify-items: space-between;
   align-items: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(50px);
   background: rgba(red, green, blue, .2);
   height: 400px;
   position: relative;
