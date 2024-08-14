@@ -13,3 +13,7 @@ class RoomView(generics.ListAPIView):
 
     def post(self, request, *args, **kwargs):
         pass
+
+def download(request, room_code):
+    if request.method =='GET':
+        return 
