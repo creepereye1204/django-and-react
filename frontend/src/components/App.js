@@ -26,7 +26,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="background">
+      <div class="background">
         <video autoPlay loop muted id="background-video">
           <source src="https://my-wiki.p-e.kr:20004/media/NightCity.mp4" type="video/mp4" />
           Your browser does not support the video tag.
