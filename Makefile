@@ -14,7 +14,7 @@ migrations:
 
 .PHONY: collect
 collect:
-	poetry run python3 manage.py collectstatic
+	poetry run python3 manage.py collectstatic --noinput
 
 .PHONY: npm-run
 npm-run:
