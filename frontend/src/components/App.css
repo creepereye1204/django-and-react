@@ -44,7 +44,7 @@ a{
   color: white;
   text-decoration: none;
   margin-left: 70px;
-  cursor: zoom-in;
+  cursor: pointer;
 }
 
 .logo{
