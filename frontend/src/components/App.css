@@ -27,6 +27,8 @@
 }
 
 .header {
+  backdrop-filter: blur(10px);
+  background: rgba(red, green, blue, .2);
   height: auto;
   position: relative;
   z-index: 1; /* Navbar를 비디오 위에 표시 */
@@ -35,6 +37,6 @@
 .navbar a {
   color: white;
   text-decoration: none;
-  margin: 0 15px;
-  font-size: 1.2em;
+  margin-left: 35px;
+  font-size: 18px;
 }
