@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { Bar } from "react-chartjs-2";
-import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
+import { Doughnut } from "react-chartjs-2"; // Doughnut 차트 임포트
+import { Chart, ArcElement, Title, Tooltip, Legend } from "chart.js";
 import axios from "axios";
 import "./Dashboard.css";
 
-Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
+Chart.register(ArcElement, Title, Tooltip, Legend); // 필요한 요소 등록
 
 function Dashboard() {
   const [data, setData] = useState({
@@ -39,9 +39,11 @@ function Dashboard() {
     datasets: [
       {
         label: "Usage (%)",
-        backgroundColor: "rgba(75,192,192,1)",
-        borderColor: "rgba(0,0,0,1)",
-        borderWidth: 2,
+        backgroundColor: [
+          "rgba(75,192,192,1)",
+          "rgba(255,99,132,1)",
+          "rgba(54,162,235,1)",
+        ],
         data: [data.cpu, data.hdd, data.mem],
       },
     ],
@@ -54,8 +56,8 @@ function Dashboard() {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <Bar
-            data={chartData}
+          <Doughnut
+            data={chartData} // Doughnut 차트 사용
             options={{
               title: {
                 display: true,
