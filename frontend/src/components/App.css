@@ -32,9 +32,9 @@
   display: flex;
   justify-items: space-between;
   align-items: center;
-  backdrop-filter: blur(50px);
+  backdrop-filter: blur(25px);
   background: rgba(red, green, blue, .2);
-  height: 400px;
+  height: 170px;
   position: relative;
   z-index: 1; /* Navbar를 비디오 위에 표시 */
 }
