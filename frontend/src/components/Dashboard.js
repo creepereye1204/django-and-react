@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
+import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js"; // 필요한 요소 임포트
 import axios from "axios";
 import "./Dashboard.css";
-import { CategoryScale } from "chart.js"; // 카테고리 스케일 임포트
 
+// 스케일 및 요소 등록
+Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
-Chart.register(CategoryScale);
 function Dashboard() {
   const [data, setData] = useState({
-    cpu: [],
-    hdd: [],
-    mem: [],
+    cpu: 0,
+    hdd: 0,
+    mem: 0,
   });
 
   useEffect(() => {
@@ -38,7 +39,7 @@ function Dashboard() {
         label: "Usage (%)",
         backgroundColor: "rgba(75,192,192,1)",
         borderColor: "rgba(0,0,0,1)",
-        borderWidth: 20,
+        borderWidth: 2,
         data: [data.cpu, data.hdd, data.mem],
       },
     ],
@@ -54,7 +55,7 @@ function Dashboard() {
             title: {
               display: true,
               text: "시스템 자원",
-              fontSize: 200,
+              fontSize: 20, // 제목 크기 조정
             },
             legend: {
               display: true,
