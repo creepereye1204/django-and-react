@@ -1,22 +1,24 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
+import "./App.css";
 
 class Navbar extends Component {
   render() {
     return (
-      <nav style={{ backgroundColor: '#333', padding: '10px' }}>
-        <ul style={{ listStyleType: 'none', display: 'flex', margin: 0, padding: 0 }}>
-          <li style={{ margin: '0 15px' }}>
-            <a href="/" style={{ color: 'white', textDecoration: 'none' }}>Home</a>
+      <nav class="navbar">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="/" class="nav-link">Home</a>
           </li>
-          <li style={{ margin: '0 15px' }}>
-            <a href="/about" style={{ color: 'white', textDecoration: 'none' }}>About</a>
+          <li class="nav-item">
+            <a href="/about" class="nav-link">About</a>
           </li>
-          <li style={{ margin: '0 15px' }}>
-            <a href="/students" style={{ color: 'white', textDecoration: 'none' }}>Students</a>
+          <li class="nav-item">
+            <a href="/students" class="nav-link">Info</a>
           </li>
         </ul>
       </nav>
+
     );
   }
 }
