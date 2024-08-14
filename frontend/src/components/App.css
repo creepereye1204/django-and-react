@@ -32,8 +32,9 @@
   display: flex;
   justify-items: space-between;
   align-items: center;
-  backdrop-filter: blur(50px);
-  background: rgba(red, green, blue, .2);
+  backdrop-filter: blur(25px);
+  border-bottom: 20px solid rgb(red, green, blue,.2);
+  background: rgba(red, green, blue, .1);
   height: 200px;
   position: relative;
   z-index: 1; /* Navbar를 비디오 위에 표시 */
