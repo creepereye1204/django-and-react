@@ -28,16 +28,13 @@
 }
 
 .header {
-  top: 0;
-  left: 0;
   display: flex;
-  justify-items: space-between;
+  justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(25px);
   border-bottom: 2px solid rgb(255, 255, 255,.2);
   background: rgba(255, 255, 255, .1);
   height: 200px;
-  position: fixed;
   z-index: 1; /* Navbar를 비디오 위에 표시 */
 }
 
