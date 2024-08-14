@@ -1,0 +1,10 @@
+.dashboard {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .chart-container {
+    width: 80%;
+    margin: auto;
+  }
+  
