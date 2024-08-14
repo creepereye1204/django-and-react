@@ -5,19 +5,17 @@ import "./App.css";
 class Navbar extends Component {
   render() {
     return (
-      <nav class="navbar">
-        <ul class="nav-list">
-          <li class="nav-item">
-            <a href="/" class="nav-link">Home</a>
-          </li>
-          <li class="nav-item">
-            <a href="/about" class="nav-link">About</a>
-          </li>
-          <li class="nav-item">
-            <a href="/students" class="nav-link">Info</a>
-          </li>
-        </ul>
-      </nav>
+      <header>
+        <a href="#" class="header"></a>
+        <nav class="navbar">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Portfolio</a>
+          <a href="#">Service</a>
+          <a href="#">Contact</a>
+        </nav>
+      </header>
+      
 
     );
   }
