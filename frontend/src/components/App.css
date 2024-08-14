@@ -26,6 +26,7 @@ body, html {
 }
 
 header {
+  height: auto;
   position: relative;
   z-index: 1; /* Navbar를 비디오 위에 표시 */
 }
