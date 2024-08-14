@@ -39,7 +39,7 @@
   z-index: 1; /* Navbar를 비디오 위에 표시 */
 }
 
-a {
+.navbar a {
 
   color: white;
   text-decoration: none;
@@ -48,5 +48,8 @@ a {
 }
 
 .logo {
+  color: white;
+  text-decoration: none;
+  margin-left: 70px;
   font-weight: 900;
 }
