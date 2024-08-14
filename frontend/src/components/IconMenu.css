@@ -1,15 +1,9 @@
 * {
-    z-index: 1;
+    z-index: 2;
     padding: 0;
     margin: 0;
   }
-  body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background: #161616;
-  }
+
   .menu {
     position: relative;
     width: 260px;
