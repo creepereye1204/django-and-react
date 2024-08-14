@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
 import axios from "axios";
 import "./Dashboard.css";
+import { CategoryScale } from "chart.js"; // 카테고리 스케일 임포트
 
+
+Chart.register(CategoryScale);
 function Dashboard() {
   const [data, setData] = useState({
     cpu: [],
