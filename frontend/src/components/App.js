@@ -30,7 +30,7 @@ export default class App extends Component {
     return (
       <div id="background">
         <video autoPlay loop muted className="background-video">
-          <source src="./NightCity.mp4" type="video/mp4" />
+          <source src="https://my-wiki.p-e.kr:20004/media/NightCity.mp4" type="video/mp4" />
         </video>
         <Navbar />
       </div>
