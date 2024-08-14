@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import "./App.css";
-import IconMenu from "./IconMenu";
 
 class Navbar extends Component {
   render() {
@@ -33,7 +32,6 @@ export default class App extends Component {
           Your browser does not support the video tag.
         </video>
         <Navbar />
-        <IconMenu />
       </div>
     );
   }
