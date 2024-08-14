@@ -2,17 +2,19 @@
     z-index: 2;
     padding: 0;
     margin: 0;
-  }
+    user-select: none; /* 드래그 방지 */
+}
 
-  .menu {
+.menu {
     position: relative;
     width: 260px;
     height: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
-  }
-  .menu li {
+}
+
+.menu li {
     position: absolute;
     left: 0;
     list-style: none;
@@ -20,11 +22,13 @@
     transform-origin: 130px;
     transition: 0.5s;
     transition-delay: calc(0.1s * var(--i));
-  }
-  .menu.active li {
+}
+
+.menu.active li {
     transform: rotate(calc(360deg / 8 * var(--i)));
-  }
-  .menu a {
+}
+
+.menu a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -38,11 +42,13 @@
     color: transparent;
     transition-delay: 0.5s;
     filter: drop-shadow(0 0 2px var(--clr));
-  }
-  .menu.active a {
+}
+
+.menu.active a {
     color: var(--clr);
-  }
-  .menu a::before {
+}
+
+.menu a::before {
     content: "";
     position: absolute;
     width: 20px;
@@ -52,8 +58,9 @@
     transform: rotate(calc(90deg * var(--i))) translate(0, 25px);
     transition: width 0.5s, height 0.5s, transform 0.5s;
     transition-delay: 0.5s, 1s, 1.5s;
-  }
-  .menu.active a::before {
+}
+
+.menu.active a::before {
     width: 50px;
     height: 50px;
     background: #161616;
@@ -64,15 +71,17 @@
     border-radius: 10px;
     filter: drop-shadow(0 0 5px var(--clr));
     rotate: 135deg;
-  }
-  .menu.active li:hover a::before {
+}
+
+.menu.active li:hover a::before {
     background: var(--clr);
-  }
-  .menu.active li:hover a ion-icon {
+}
+
+.menu.active li:hover a ion-icon {
     color: #161616;
-  }
-  
-  .menuToggle {
+}
+
+.menuToggle {
     position: absolute;
     width: 60px;
     height: 60px;
@@ -85,7 +94,8 @@
     cursor: pointer;
     font-size: 32px;
     transition: 1.5s;
-  }
-  .menu.active .menuToggle {
+}
+
+.menu.active .menuToggle {
     transform: rotate(315deg);
-  }
+}
