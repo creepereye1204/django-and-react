@@ -6,7 +6,7 @@ class Navbar extends Component {
   render() {
     return (
       <header class="header">
-        <a href="#" class="logo">logo</a>
+        <a href="#" class="logo">My Wiki</a>
         <nav class="navbar">
           <a href="#">Home</a>
           <a href="#">About</a>
