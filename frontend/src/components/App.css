@@ -43,7 +43,7 @@
 
 
 
-.navbar a {
+/* .navbar a {
 
   color: white;
   text-decoration: none;
@@ -56,4 +56,15 @@
   text-decoration: none;
   margin-left: 70px;
   font-weight: 900;
+} */
+
+a{
+  color: white;
+  text-decoration: none;
+  margin-left: 70px;
+}
+
+.logo{
+  font-weight: 800;
+  cursor: default;
 }
