@@ -5,8 +5,8 @@ import "./App.css";
 class Navbar extends Component {
   render() {
     return (
-      <header>
-        <a href="#" className="header"></a>
+      <header class="header">
+        <a href="#" className="logo"></a>
         <nav className="navbar">
           <a href="#">Home</a>
           <a href="#">About</a>
