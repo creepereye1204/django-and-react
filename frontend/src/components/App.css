@@ -29,7 +29,7 @@
 
 .header {
   display: flex;
-  justify-items: center;
+  justify-items: space-between;
   align-items: center;
   backdrop-filter: blur(10px);
   background: rgba(red, green, blue, .2);
