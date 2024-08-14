@@ -28,6 +28,9 @@
 }
 
 .header {
+  display: flex;
+  justify-items: center;
+  align-items: center;
   backdrop-filter: blur(10px);
   background: rgba(red, green, blue, .2);
   height: 400px;
