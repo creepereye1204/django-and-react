@@ -19,6 +19,7 @@ function Dashboard() {
     const fetchData = async () => {
       try {
         const response = await axios.get("https://my-wiki.p-e.kr:20004/api/dashboard");
+        console.log(response.data); // API 응답 확인
         setData({
           cpu: response.data.cpu,
           hdd: response.data.hdd,
