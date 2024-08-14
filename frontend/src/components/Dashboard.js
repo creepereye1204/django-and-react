@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Bar } from "react-chartjs-2";
-import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js"; // 필요한 요소 임포트
+import { Chart, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from "chart.js";
 import axios from "axios";
 import "./Dashboard.css";
 
-// 스케일 및 요소 등록
 Chart.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
 function Dashboard() {
@@ -13,13 +12,12 @@ function Dashboard() {
     hdd: 0,
     mem: 0,
   });
+  const [loading, setLoading] = useState(true); // 로딩 상태 추가
 
   useEffect(() => {
-    // 여기에 실제 API URL을 입력하세요.
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://my-wiki.p-e.kr:20004/api/dashboard");
-        console.log(response.data); // API 응답 확인
+        const response = await axios.get("https://my-wiki.p-e.kr:20004/api/dashboard"); // 실제 API URL 사용
         setData({
           cpu: response.data.cpu,
           hdd: response.data.hdd,
@@ -27,6 +25,8 @@ function Dashboard() {
         });
       } catch (error) {
         console.error("Error fetching data", error);
+      } finally {
+        setLoading(false); // 데이터 로딩 완료
       }
     };
 
@@ -50,20 +50,24 @@ function Dashboard() {
     <div className="dashboard">
       <h1>System Dashboard</h1>
       <div className="chart-container">
-        <Bar
-          data={chartData}
-          options={{
-            title: {
-              display: true,
-              text: "시스템 자원",
-              fontSize: 20, // 제목 크기 조정
-            },
-            legend: {
-              display: true,
-              position: "right",
-            },
-          }}
-        />
+        {loading ? ( // 로딩 상태에 따라 조건부 렌더링
+          <p>Loading...</p> // 로딩 중 메시지
+        ) : (
+          <Bar
+            data={chartData}
+            options={{
+              title: {
+                display: true,
+                text: "시스템 자원",
+                fontSize: 20,
+              },
+              legend: {
+                display: true,
+                position: "right",
+              },
+            }}
+          />
+        )}
       </div>
     </div>
   );
