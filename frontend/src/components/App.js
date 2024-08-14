@@ -6,8 +6,8 @@ class Navbar extends Component {
   render() {
     return (
       <header>
-        <a href="#" class="header"></a>
-        <nav class="navbar">
+        <a href="#" className="header"></a>
+        <nav className="navbar">
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Portfolio</a>
@@ -15,8 +15,6 @@ class Navbar extends Component {
           <a href="#">Contact</a>
         </nav>
       </header>
-      
-
     );
   }
 }
@@ -28,9 +26,10 @@ export default class App extends Component {
 
   render() {
     return (
-      <div id="background">
-        <video autoPlay loop muted className="background-video">
+      <div className="background">
+        <video autoPlay loop muted id="background-video">
           <source src="https://my-wiki.p-e.kr:20004/media/NightCity.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
         </video>
         <Navbar />
       </div>

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Poppins', sans-serif; /* Poppins 폰트 적용 */
+}
+
+.background {
+  position: relative;
+  min-height: 100vh; /* 전체 화면 높이 */
+  overflow: hidden; /* 비디오가 화면을 넘어가는 것을 숨김 */
+}
+
+#background-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1; /* 비디오를 배경으로 설정 */
+  transform: translate(-50%, -50%);
+}
+
+header {
+  position: relative;
+  z-index: 1; /* Navbar를 비디오 위에 표시 */
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 1.2em;
+}
