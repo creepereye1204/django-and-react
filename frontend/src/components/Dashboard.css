@@ -7,8 +7,8 @@
   
   .chart-container {
     position: relative;
-    width: 100%;
-    height: 400px; /* 필요한 높이 설정 */
+    width: 1000px;
+    height: 1000px; /* 필요한 높이 설정 */
     margin: 20px 0; /* 여백 설정 */
   }
   
