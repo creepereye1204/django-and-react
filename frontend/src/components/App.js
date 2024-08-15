@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import "./App.css";
-import Dashboard from "./Dashboard";
+import Write from "./Write";
 import NightCity from '../assets/NightCity.mp4';
 class Navbar extends Component {
   render() {
@@ -30,6 +30,7 @@ export default class App extends Component {
       <div class="background">
         <video src={NightCity} autoPlay loop muted/>
         < Navbar />
+        <Write/>
       </div>
     );
   }
