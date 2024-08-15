@@ -14,7 +14,7 @@
   height: 100vh; /* 전체 화면 높이 */ /* 비디오가 화면을 넘어가는 것을 숨김 */
 }
 
-#background-video {
+video {
   pointer-events: none;
   object-fit: cover;
   width: 100%;
