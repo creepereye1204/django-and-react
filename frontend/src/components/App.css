@@ -23,20 +23,18 @@ video {
 
 .header {
   position: absolute; /* 비디오 위에 위치하도록 설정 */
-  width: calc(100% - 40px); /* 양쪽 벽에 20px씩 마진을 주기 위해 너비 조정 */
+  width: 100%;
   height: auto;
   top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center; /* 수직 중앙 정렬 */
-  padding: 10px 20px; /* 상하 패딩 조정 */
-  margin: 0 20px; /* 양쪽에 20px 마진 추가 */
+  padding: 10px; /* 패딩 조정 */
   backdrop-filter: blur(10px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
   z-index: 1; /* 비디오보다 위에 배치 */
 }
-
 
 a {
   color: white;
