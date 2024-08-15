@@ -1,21 +1,20 @@
 .editor {
     z-index: 1;
     width: 80%;
-    height: auto;
+
     top:0;
     left: 50%;
     position: absolute;
     transform: translate(-50%,50%);
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
-    min-height: 300px;
+
     overflow-y: auto; /* 세로 스크롤바 활성화 */
     padding: 10px; /* 내부 여백 추가 */
 }
 .ql-toolbar.ql-snow { border: none !important;}
-.ql-container.ql-snow {
-    height: auto;
-}
+
 .ql-editor {
+    height: 400px;
     overflow-y: scroll;
 }
