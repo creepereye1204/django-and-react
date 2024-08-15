@@ -28,9 +28,9 @@ export default class App extends Component {
 
   render() {
     return (
-      <div class="background">
+      <div>
         <video src={NightCity} autoPlay loop muted/>
-        <Navbar />
+  
       </div>
     );
   }
