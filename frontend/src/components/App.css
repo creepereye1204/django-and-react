@@ -29,7 +29,7 @@ video {
   display: flex;
   justify-content: space-between;
   align-items: center; /* 수직 중앙 정렬 */
-  padding: 10px 20px; /* 패딩 조정 */
+  padding: 10px; /* 패딩 조정 */
   backdrop-filter: blur(10px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
@@ -39,7 +39,7 @@ video {
 a {
   color: white;
   text-decoration: none;
-  margin-left: 20px; /* 링크 간격 조정 */
+  margin-left: 15px; /* 링크 간격 조정 */
   cursor: pointer;
 }
 
