@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-
-*{
+* {
   font-size: 150px;
   margin: 0;
   padding: 0;
   height: 100%;
   font-family: 'Poppins', sans-serif;
 }
-
 
 .background {
   position: relative;
@@ -30,20 +27,21 @@
   justify-content: space-between;
   align-items: center;
   backdrop-filter: blur(25px);
-  border-bottom: 2px solid rgb(255, 255, 255,.2);
-  background: rgba(255, 255, 255, .1);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
   height: 230px;
-  z-index: 1; 
+  z-index: 2; /* z-index를 높여서 비디오보다 앞으로 */
+  position: relative; /* position 속성 추가 */
 }
 
-a{
+.navbar a {
   color: white;
   text-decoration: none;
   margin-left: 70px;
   cursor: pointer;
 }
 
-.logo{
+.logo {
   font-weight: 800;
   cursor: default;
 }
