@@ -2,7 +2,24 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
+const toolbarOptions = [
+  ['bold', 'italic', 'underline', 'strike'],        
+  ['blockquote', 'code-block'],
+  [{ 'header': 1 }, { 'header': 2 }],               
+  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+  [{ 'script': 'sub'}, { 'script': 'super' }],      
+  [{ 'indent': '-1'}, { 'indent': '+1' }],          
+  [{ 'direction': 'rtl' }],                         
 
+  [{ 'size': ['small', false, 'large', 'huge'] }],  
+  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+  [{ 'color': [] }, { 'background': [] }],          
+  [{ 'font': [] }],
+  [{ 'align': [] }],
+  ['link', 'image', 'video'],
+  ['clean']                                         
+];
 const Write = () => {
   const [text, setText] = useState('');
 
@@ -21,17 +38,7 @@ const Write = () => {
         value={text}
         onChange={handleChange}
         modules={{
-          toolbar: [
-            [{ header: [1, 2, false] }],
-            ['bold', 'italic', 'underline', 'strike'],
-            [{ list: 'ordered' }, { list: 'bullet' }],
-            ['link', 'image', 'video'], // 비디오 추가
-            ['clean'], // 클리어 포맷 버튼
-            ['code-block'], // 코드 블록 추가
-            ['blockquote'], // 인용 추가
-            [{ color: [] }, { background: [] }], // 텍스트 색상 및 배경색 선택
-            [{ align: [] }], // 정렬 옵션
-          ],
+          toolbar: toolbarOptions,
         }}
       />
       <button onClick={handleSave}>저장하기</button>
