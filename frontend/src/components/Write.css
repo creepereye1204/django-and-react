@@ -5,7 +5,7 @@
     top:0;
     left: 50%;
     position: absolute;
-    transform: translate(-50%,50%);
+    transform: translate(-50%,30%);
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
 
@@ -17,4 +17,17 @@
 .ql-editor {
     height: 400px;
     overflow-y: scroll;
+}
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* 버튼 색상 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* 버튼 hover 효과 */
 }
