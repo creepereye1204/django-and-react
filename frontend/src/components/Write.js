@@ -24,8 +24,6 @@ const Write = () => {
           ],
         }}
       />
-      <h2>내용 미리보기</h2>
-      <div dangerouslySetInnerHTML={{ __html: text }} />
     </div>
   );
 };
