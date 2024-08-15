@@ -8,6 +8,9 @@
     transform: translate(-50%,50%);
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
-    
+    min-height: 300px;
 }
 .ql-toolbar.ql-snow { border: none !important;}
+.fixed{
+    position: fixed;
+}
