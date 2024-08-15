@@ -3,6 +3,7 @@ import { render } from "react-dom";
 import "./App.css";
 import Write from "./Write";
 import NightCity from '../assets/NightCity.mp4';
+import './Write.css';
 class Navbar extends Component {
   render() {
     return (

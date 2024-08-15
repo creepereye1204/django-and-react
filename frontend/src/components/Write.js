@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
-import './Write.css';
+
 const Write = () => {
   const [text, setText] = useState('');
 
