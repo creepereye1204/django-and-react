@@ -1,18 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-*{
+* {
   font-size: 18px;
   margin: 0;
   padding: 0;
-
   font-family: 'Poppins', sans-serif;
 }
 
-
 .background {
-  overflow:hidden;
+  overflow: hidden;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;
+  position: relative; /* 자식 요소에 대한 위치 지정 */
 }
 
 video {
@@ -21,38 +20,30 @@ video {
   width: 100%;
   height: 100%; /* 비디오를 배경으로 설정 */
 }
-.header{
-  position: absolute;
+
+.header {
+  position: absolute; /* 비디오 위에 위치하도록 설정 */
   width: 100%;
   height: auto;
-  top:0;
+  top: 0;
   display: flex;
-  border-bottom: 2px solid rgb(255, 255, 255,.2);
-  background: rgba(255, 255, 255, .1);
   justify-content: space-between;
-  padding: 2px 20px;
+  align-items: center; /* 수직 중앙 정렬 */
+  padding: 10px 20px; /* 패딩 조정 */
   backdrop-filter: blur(10px);
-}
-/* .header {
-  padding: 20px 200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  backdrop-filter: blur(25px);
-  border-bottom: 2px solid rgb(255, 255, 255,.2);
-  background: rgba(255, 255, 255, .1);
-  height: 230px;
-  z-index: 1; 
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 1; /* 비디오보다 위에 배치 */
 }
 
-a{
+a {
   color: white;
   text-decoration: none;
-  margin-left: 70px;
+  margin-left: 20px; /* 링크 간격 조정 */
   cursor: pointer;
 }
 
-.logo{
+.logo {
   font-weight: 800;
   cursor: default;
-} */
+}
