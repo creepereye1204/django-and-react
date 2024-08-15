@@ -1,9 +1,9 @@
 Write {
-    background-color: aqua;
+    height: 800px;
     z-index: 1;
     display: flex;
-    bottom:0;
+    top:0;
     justify-content: center;
     align-items: center;
-    position: relative;
+    position: absolute;
 }
