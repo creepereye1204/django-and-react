@@ -29,7 +29,7 @@ export default class App extends Component {
     return (
       <div class="background">
         <video src={NightCity} autoPlay loop muted/>
-        <h1 class="content">Home</h1>
+        < Navbar />
       </div>
     );
   }
