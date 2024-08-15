@@ -1,4 +1,5 @@
 Write {
+    height: 1000px;
     z-index: 1;
     display: flex;
     top:0;
