@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import "./App.css";
 import Dashboard from "./Dashboard";
-
 class Navbar extends Component {
   render() {
     return (
-      <header className="header"> {/* class를 className으로 수정 */}
-        <a href="#" className="logo">My Wiki</a>
-        <nav className="navbar">
+      <header class="header">
+        <a href="#" class="logo">My Wiki</a>
+        <nav class="navbar">
           <a href="#">Home</a>
           <a href="#">About</a>
           <a href="#">Portfolio</a>
@@ -21,15 +20,19 @@ class Navbar extends Component {
 }
 
 export default class App extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
-      <div className="background"> {/* class를 className으로 수정 */}
+      <div class="background">
         <video autoPlay loop muted id="background-video">
           <source src="https://my-wiki.p-e.kr:20004/media/NightCity.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <Navbar />
-        <Dashboard />
+        <Dashboard/>
       </div>
     );
   }
