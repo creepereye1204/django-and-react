@@ -1,10 +1,9 @@
 .editor {
     background-color: darkgrey;
-    height: 800px;
     z-index: 1;
-    display: flex;
     top:0;
     justify-content: center;
     align-items: center;
     position: absolute;
+    transform: translate(-50%,50%);
 }
