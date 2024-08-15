@@ -10,20 +10,17 @@
 
 
 .background {
-  position: relative;
   width: 100%;
-  height: 100vh; /* 전체 화면 높이 */
-  overflow: hidden; /* 비디오가 화면을 넘어가는 것을 숨김 */
+  height: 100vh; /* 전체 화면 높이 */ /* 비디오가 화면을 넘어가는 것을 숨김 */
 }
 
 #background-video {
   pointer-events: none;
   object-fit: cover;
   width: 100%;
-  height: 100%;
-  z-index: -1; /* 비디오를 배경으로 설정 */
+  height: 100%; /* 비디오를 배경으로 설정 */
 }
-
+/* 
 .header {
   padding: 20px 200px;
   display: flex;
@@ -46,4 +43,4 @@ a{
 .logo{
   font-weight: 800;
   cursor: default;
-}
+} */
