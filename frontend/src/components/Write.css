@@ -1,10 +1,11 @@
 .editor {
-    background-color: darkgrey;
     z-index: 1;
     top:50%;
     left: 50%;
     position: absolute;
     transform: translate(-50%,50%);
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 30%;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 10%;
+    
 }
+.ql-toolbar.ql-snow { border: none !important;}
