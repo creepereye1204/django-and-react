@@ -13,3 +13,10 @@
     padding: 10px; /* 내부 여백 추가 */
 }
 .ql-toolbar.ql-snow { border: none !important;}
+.ql-container.ql-snow {
+    height: auto;
+}
+.ql-editor {
+    height: 150px;
+    overflow-y: scroll;
+}

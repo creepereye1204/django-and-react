@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
-import './Write.css'; // CSS 파일 임포트
-
+import './Write.css';
 const Write = () => {
   const [text, setText] = useState('');
 
@@ -11,7 +10,7 @@ const Write = () => {
   };
 
   return (
-    <div className="editor">
+    <div class="editor">
       <ReactQuill
         value={text}
         onChange={handleChange}
