@@ -1,4 +1,5 @@
 .editor {
+    background-color: darkgrey;
     height: 800px;
     z-index: 1;
     display: flex;
