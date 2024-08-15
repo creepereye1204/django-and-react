@@ -1,8 +1,7 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
 import "./App.css";
-import { NightCity} from "../assets/NightCity.mp4"
-
+import Dashboard from "./Dashboard";
 
 class Navbar extends Component {
   render() {
@@ -28,9 +27,13 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
-        <video src={NightCity} autoPlay loop muted/>
-  
+      <div class="background">
+        <video autoPlay loop muted id="background-video">
+          <source src="https://my-wiki.p-e.kr:20004/media/NightCity.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        <Navbar />
+        <Dashboard/>
       </div>
     );
   }
