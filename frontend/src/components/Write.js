@@ -3,12 +3,7 @@ import ReactQuill ,{ Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
 import ImageResize from 'quill-image-resize';
-import VideoResize from 'quill-video-resize-module';
- 
-Quill.register('modules/VideoResize', VideoResize);
-
 Quill.register('modules/ImageResize', ImageResize);
-
 
 
 
@@ -50,6 +45,7 @@ const Write = () => {
   return (
     <div className="editor">
       <ReactQuill
+        scrollingContainer= "#scrolling-container"
         value={text}
         onChange={handleChange}
         modules={{
