@@ -32,6 +32,7 @@
     "file-loader": "^6.2.0",
     "quill-blot-formatter-mobile": "^1.1.2",
     "quill-image-resize": "^3.0.9",
+    "quill-image-resize-module": "^3.0.0",
     "quill-video-resize-module": "^1.0.2",
     "react-chartjs-2": "^5.2.0",
     "react-quill": "^2.0.0",

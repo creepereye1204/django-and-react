@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import ReactQuill ,{ Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
-import ImageResize from 'quill-image-resize';
-import BlotFormatter from "quill-blot-formatter-mobile";
+
+import ImageResize from 'quill-image-resize-module'
+
 Quill.register('modules/ImageResize', ImageResize);
-Quill.register("modules/blotFormatter", BlotFormatter);
+
 
 
 const toolbarOptions = [
@@ -29,7 +30,7 @@ const toolbarOptions = [
 
   ['clean']                                         
 ];
-const ImageResizeOptions = {parchment: Quill.import('parchment')};
+
 
 const Write = () => {
   const [text, setText] = useState('');
@@ -50,8 +51,6 @@ const Write = () => {
         onChange={handleChange}
         modules={{
           toolbar: toolbarOptions,
-          ImageResize: ImageResizeOptions,
-          blotFormatter: {}
         }}
       />
       <button onClick={handleSave}>저장하기</button>
