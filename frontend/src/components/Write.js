@@ -3,11 +3,8 @@ import ReactQuill ,{ Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
 
-import ImageResize from 'quill-image-resize'
-
-Quill.register('modules/ImageResize', ImageResize);
-
-
+import ImageResize from 'quill-image-resize-module'
+Quill.register('modules/imageResize', ImageResize);
 
 const toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        
