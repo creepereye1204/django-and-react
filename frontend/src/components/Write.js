@@ -45,7 +45,6 @@ const Write = () => {
   return (
     <div className="editor">
       <ReactQuill
-        scrollingContainer= "#scrolling-container"
         value={text}
         onChange={handleChange}
         modules={{
