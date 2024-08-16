@@ -39,7 +39,7 @@ const Write = () => {
   };
 
   const handleSave = () => {
-    // 저장 로직을 여기에 추가
+    awa
     console.log("저장된 내용:", text);
   };
 
