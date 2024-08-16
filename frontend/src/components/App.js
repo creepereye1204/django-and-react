@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { render } from "react-dom";
 import "./App.css";
 import Write from "./Write";
-import NightCity from '../assets/NightCity.mp4';
+import Jesus from '../assets/Jesus.mp4';
 
 class Navbar extends Component {
   render() {
@@ -29,7 +29,7 @@ export default class App extends Component {
   render() {
     return (
       <div class="background">
-        <video src={NightCity} autoPlay loop muted/>
+        <video src={Jesus} autoPlay loop muted/>
         < Navbar />
         <Write/>
       </div>

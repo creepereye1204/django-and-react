@@ -38,11 +38,11 @@ const Write = () => {
     setText(value);
   };
 
-  const handleSave = () => {
-    awa
-    console.log("저장된 내용:", text);
-  };
-
+ async function handleSave() {
+  const results=await fetch('https://my-wiki.p-e.kr/api/baord/write', {
+  
+  })
+ };
   return (
     <div className="editor">
       <ReactQuill
