@@ -31,6 +31,7 @@
     "chart.js": "^4.4.3",
     "file-loader": "^6.2.0",
     "quill-image-resize": "^3.0.9",
+    "quill-video-resize-module": "^1.0.2",
     "react-chartjs-2": "^5.2.0",
     "react-quill": "^2.0.0",
     "react-router-dom": "^6.26.0"
