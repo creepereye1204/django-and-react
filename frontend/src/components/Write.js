@@ -3,26 +3,13 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
 const toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'],        
-  ['blockquote', 'code-block'],
-  [{ 'header': 1 }, { 'header': 2 }],               
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],      
-  [{ 'indent': '-1'}, { 'indent': '+1' }],          
-  [{ 'direction': 'rtl' }],                         
-
-  [{ 'size': ['small', false, 'large', 'huge'] }],  
-  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-  [{ 'color': [] }, { 'background': [] }],          // 텍스트 색상 및 배경색 변경 기능
-  [{ 'font': [] }],
-  [{ 'align': [] }],
-  ['link', 'image', 'video'],
-  
-  // 이미지 사이즈 조정 기능 추가
-  [{ 'imageResize': ['small', 'medium', 'large', 'full'] }], // 이미지 크기 조정 옵션 추가
-
-  ['clean']                                         
+  //[{ 'font': [] }],
+  [{ header: [1, 2, false] }],
+  ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+  [{ list: 'ordered' }, { list: 'bullet' }, { indent: '-1' }, { indent: '+1' }],
+  ['link', 'image'],
+  [{ align: [] }, { color: [] }, { background: [] }], // dropdown with defaults from theme
+  ['clean']
 ];
 
 const Write = () => {
