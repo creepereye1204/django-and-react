@@ -50,7 +50,8 @@ const Write = () => {
         onChange={handleChange}
         modules={{
           toolbar: toolbarOptions,
-          ImageResize: ImageResizeOptions
+          ImageResize: ImageResizeOptions,
+          blotFormatter: {}
         }}
       />
       <button onClick={handleSave}>저장하기</button>
