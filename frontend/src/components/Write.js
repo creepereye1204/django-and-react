@@ -30,7 +30,7 @@ const toolbarOptions = [
 
   ['clean']                                         
 ];
-
+const ImageResizeOptions = {parchment: Quill.import('parchment')};
 
 const Write = () => {
   const [text, setText] = useState('');
@@ -51,6 +51,7 @@ const Write = () => {
         onChange={handleChange}
         modules={{
           toolbar: toolbarOptions,
+          ImageResize: ImageResizeOptions
         }}
       />
       <button onClick={handleSave}>저장하기</button>
