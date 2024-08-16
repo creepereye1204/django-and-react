@@ -1,11 +1,8 @@
 import React, { useState } from 'react';
 import ReactQuill ,{ Quill } from 'react-quill';
-
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
 import ImageResize from 'quill-image-resize';
-import VideoResize from 'quill-video-resize-module';
-Quill.register('modules/VideoResize', VideoResize);
 Quill.register('modules/ImageResize', ImageResize);
 const toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        
@@ -22,7 +19,8 @@ const toolbarOptions = [
   [{ 'font': [] }],
   [{ 'align': [] }],
   ['link', 'image', 'video'],
-  [ 'Resize', 'DisplaySize', 'Toolbar' ],
+  
+  // 이미지 사이즈 조정 기능 추가
   
 
   ['clean']                                         
