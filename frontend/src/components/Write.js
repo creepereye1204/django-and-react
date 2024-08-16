@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
+import ImageResize from 'quill-image-resize';
+Quill.register('modules/ImageResize', ImageResize);
 const toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        
-  ['blockquote', 'code-block'],
-  [{ 'header': 1 }, { 'header': 2 }],               
+  ['blockquote', 'code-block'],               
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
   [{ 'script': 'sub'}, { 'script': 'super' }],      
   [{ 'indent': '-1'}, { 'indent': '+1' }],          
@@ -24,6 +25,7 @@ const toolbarOptions = [
 
   ['clean']                                         
 ];
+const ImageResizeOptions = {parchment: Quill.import('parchment')};
 
 const Write = () => {
   const [text, setText] = useState('');
@@ -44,6 +46,7 @@ const Write = () => {
         onChange={handleChange}
         modules={{
           toolbar: toolbarOptions,
+          ImageResize: ImageResizeOptions
         }}
       />
       <button onClick={handleSave}>저장하기</button>
