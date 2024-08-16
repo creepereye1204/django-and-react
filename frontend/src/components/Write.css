@@ -48,9 +48,7 @@ button {
     display: block; /* 마우스 오버 시 드롭다운 표시 */
 }
 
-.ql-toolbar {
-    height: 60px; /* 높이 조정 */
-}
+
 
 button:hover {
     background-color: #45a049; /* 버튼 hover 효과 */
