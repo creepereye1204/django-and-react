@@ -2,9 +2,11 @@ import React, { useState } from 'react';
 import ReactQuill ,{ Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
+import ImageResize from 'quill-image-resize';
 
-import ImageResize from 'quill-image-resize-module'
-Quill.register('modules/imageResize', ImageResize);
+Quill.register('modules/ImageResize', ImageResize);
+
+
 
 const toolbarOptions = [
   ['bold', 'italic', 'underline', 'strike'],        
@@ -27,7 +29,7 @@ const toolbarOptions = [
 
   ['clean']                                         
 ];
-
+const ImageResizeOptions = {parchment: Quill.import('parchment')};
 
 const Write = () => {
   const [text, setText] = useState('');
@@ -47,8 +49,8 @@ const Write = () => {
         value={text}
         onChange={handleChange}
         modules={{
-          toolbar: toolbarOptions
-          
+          toolbar: toolbarOptions,
+          ImageResize: ImageResizeOptions
         }}
       />
       <button onClick={handleSave}>저장하기</button>

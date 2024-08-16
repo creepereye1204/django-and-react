@@ -104,10 +104,8 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'), // 환경 변수 설정
-    }),
-    new webpack.ProvidePlugin({
-      'window.Quill': 'quill'
-      }),
+    })
+    
   ],
   mode: 'production', // 프로덕션 모드 설정
 };
