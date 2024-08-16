@@ -1,7 +1,7 @@
 .editor {
     z-index: 1;
     width: 80%;
-    top: -20%;
+    top: -5%;
     left: 50%;
     position: absolute;
     transform: translate(-50%, 30%);
