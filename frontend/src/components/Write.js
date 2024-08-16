@@ -10,8 +10,7 @@ const toolbarOptions = [
   ['blockquote', 'code-block'],               
   [{ 'list': 'ordered'}, { 'list': 'bullet' }],
   [{ 'script': 'sub'}, { 'script': 'super' }],      
-  [{ 'indent': '-1'}, { 'indent': '+1' }],          
-  [{ 'direction': 'rtl' }],                         
+  [{ 'indent': '-1'}, { 'indent': '+1' }],                                   
 
   [{ 'size': ['small', false, 'large', 'huge'] }],  
   [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
@@ -20,8 +19,7 @@ const toolbarOptions = [
   [{ 'font': [] }],
   [{ 'align': [] }],
   ['link', 'image', 'video'],
-  
-  // 이미지 사이즈 조정 기능 추가
+
   
 
   ['clean']                                         
