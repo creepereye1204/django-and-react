@@ -48,6 +48,7 @@ button:hover {
 }
 
 .input{
+    display: flex;
     position: relative;
     margin-top: auto;
     
