@@ -46,7 +46,7 @@ const Write = () => {
 
   return (
     <div className="editor">
-      <input>d</input>
+  
       <ReactQuill
         value={text}
         onChange={handleChange}
