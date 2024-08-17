@@ -45,6 +45,7 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 95%;
 }
 
 .button-group:hover .dropdown-content {
@@ -57,10 +58,11 @@ button:hover {
     background-color: #45a049; /* 버튼 hover 효과 */
 }
 .title-input{
-    width: 85%;
-    border: radius 0.5em;
+    border-radius: 5px;
+    width: 95%;
+    margin-top: 10px;
     background: rgba(255, 255, 255, 0.8);
-    padding: 10px 20px;
+    padding: 10px 0px;
     font-weight: 600;
 
 }
