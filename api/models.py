@@ -33,4 +33,4 @@ class Board(models.Model):
     create_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     def __str__(self):
-        return f'[{self.pk}][{self.title}] - {self.create_at.strftime("%Y-%m-%d %H:%M:%S")}'
+        return f'[{self.pk}] - {self.title} - {self.create_at.strftime("%Y-%m-%d %H:%M:%S")}'
