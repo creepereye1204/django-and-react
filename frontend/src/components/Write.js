@@ -44,9 +44,9 @@ const Write = () => {
   })
  };
 
-  return (
+ return (
     <div className="editor">
-  
+      <h2>텍스트 편집기</h2> {/* 제목 추가 */}
       <ReactQuill
         value={text}
         onChange={handleChange}
@@ -58,6 +58,7 @@ const Write = () => {
       <button onClick={handleSave}>저장하기</button>
     </div>
   );
+
 };
 
 export default Write;
