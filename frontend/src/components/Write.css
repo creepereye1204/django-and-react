@@ -35,16 +35,7 @@
     background-color: rgba(0, 0, 0, 0.7); /* hover 시 색상 변경 */
 }
 
-button {
-    margin: 10px;
-    padding: 10px 20px;
-    background-color: #4CAF50; /* 버튼 색상 */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: auto
-}
+
 
 .button-group:hover .dropdown-content {
     display: block; /* 마우스 오버 시 드롭다운 표시 */
@@ -57,10 +48,20 @@ button:hover {
 }
 .title-input{
     border-radius: 5px;
-    width: 75%;
+    width: 70%;
     margin: 10px;
     background: rgba(255, 255, 255, 0.8);
     padding: 10px 0px;
     font-weight: 600;
 
+}
+button {
+    margin: 10px;
+    padding: 10px 0px;
+    background-color: #4CAF50; /* 버튼 색상 */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: auto;
 }
