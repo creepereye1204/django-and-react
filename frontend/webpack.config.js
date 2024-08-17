@@ -64,7 +64,11 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: "./src/index.js", // 엔트리 포인트 설정
+  entry: {
+    main: "./src/index.js", // 메인 엔트리 포인트
+     // 추가 엔트리 포인트
+  },
+   // 엔트리 포인트 설정
   output: {
     path: path.resolve(__dirname, "./static/frontend"), // 출력 경로
     filename: "[name].js", // 출력 파일 이름
