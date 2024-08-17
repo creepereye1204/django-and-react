@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import { render } from "react-dom";
 class App extends Component {
   render() {
     return (
@@ -44,4 +44,5 @@ const styles = {
   },
 };
 
-export default App;
+const appDiv = document.getElementById("app");
+render(<App />, appDiv);
