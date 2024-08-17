@@ -28,3 +28,4 @@ Traceback (most recent call last):
   File "/home/apps/my_wiki/./api/views.py", line 48, in read
     return Response({'error': e.message}, status=500)
 AttributeError: 'NameError' object has no attribute 'message'
+WARNING 2024-08-17 12:34:12,519 log 1263891 140530329446272 Method Not Allowed: /api/board/write
