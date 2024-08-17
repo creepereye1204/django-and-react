@@ -59,6 +59,7 @@ const Write = () => {
         value={title} // 제목 상태 값
         onChange={(e) => setTitle(e.target.value)} // 제목 상태 업데이트
       />
+      <button onClick={handleSave}>저장하기</button>
       <ReactQuill
         value={content}
         onChange={handleChange}
@@ -67,7 +68,7 @@ const Write = () => {
           ImageResize: ImageResizeOptions
         }}
       />
-      <button onClick={handleSave}>저장하기</button>
+      
     </div>
   );
 };
