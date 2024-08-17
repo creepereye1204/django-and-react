@@ -37,6 +37,7 @@ const Write = () => {
       method: 'POST', // POST 메서드 사용
       headers: {
         'Content-Type': 'application/json',
+        'X-CSRFToken': csrfToken
       },
       body: JSON.stringify({ 'title':title, 'content':content }), // 제목과 본문을 JSON 형태로 전송
     });
