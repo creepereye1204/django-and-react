@@ -46,6 +46,12 @@
 button:hover {
     background-color: #45a049; /* 버튼 hover 효과 */
 }
+
+.input{
+    position: relative;
+    margin-top: auto;
+    
+}
 .title-input{
     border-radius: 5px;
     width: 70%;

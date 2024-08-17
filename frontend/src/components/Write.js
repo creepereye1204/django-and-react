@@ -52,6 +52,7 @@ const Write = () => {
 
   return (
     <div className="editor">
+      <div className="input">
       <input 
         className="title-input"
         type="text" 
@@ -60,6 +61,7 @@ const Write = () => {
         onChange={(e) => setTitle(e.target.value)} // 제목 상태 업데이트
       />
       <button onClick={handleSave}>저장하기</button>
+      </div>
       <ReactQuill
         value={content}
         onChange={handleChange}
