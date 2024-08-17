@@ -40,11 +40,13 @@ const Write = () => {
 
  async function handleSave() {
   const results=await fetch('https://my-wiki.p-e.kr/api/baord/write', {
-  
+
   })
  };
+
   return (
     <div className="editor">
+      <input type='text'>제목:</input>
       <ReactQuill
         value={text}
         onChange={handleChange}
