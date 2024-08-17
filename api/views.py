@@ -27,3 +27,8 @@ def dashboard(request):
         'memory': memory,
         'hdd': hdd,
     })
+
+@api_view(['POST'])
+def write(request, *args, **kwargs):
+    title = request.data.get('title')
+    return Response({'title': title})

@@ -38,7 +38,7 @@ const Write = () => {
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({ title, text }), // 제목과 본문을 JSON 형태로 전송
+      body: JSON.stringify({ 'title':title, 'content':content }), // 제목과 본문을 JSON 형태로 전송
     });
 
     if (results.ok) {
