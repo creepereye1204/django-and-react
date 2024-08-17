@@ -34,7 +34,15 @@ def write(request, *args, **kwargs):
         title = request.data.get('title')
         content = request.data.get('content')
         Board.objects.create(title=title, content=content)
-        return Response({'ok': '�� 작성 성공'}, status=200)
+        return Response({'ok': '작성 성공'}, status=200)
     except Exception as e:
         return Response({'error': str(e)}, status=500)
-        
+
+@api_view(['GET'])
+def read(request, *args, **kwargs):
+    try:
+        boards=Board.objects.all()
+        serializer = BoardSerializer(boards, many=True)
+        return Response({'ok': serializer})
+    except Exception as e:
+        pass
