@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 
 from .models import Room, Board
-from .serializers import RoomSerializer
+from .serializers import RoomSerializer,BoardSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import psutil
