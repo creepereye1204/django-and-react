@@ -53,6 +53,7 @@ const Write = () => {
   return (
     <div className="editor">
       <input 
+        className="title-input"
         type="text" 
         placeholder="제목을 입력하세요" 
         value={title} // 제목 상태 값
