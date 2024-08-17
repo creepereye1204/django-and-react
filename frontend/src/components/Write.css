@@ -1,7 +1,7 @@
 .editor {
 
     z-index: 1;
-    width: 90%;
+    width: 95%;
     top: -5%;
     left: 50%;
     position: absolute;
@@ -16,7 +16,7 @@
 }
 
 .ql-editor {
-    height: 480px;
+    height: 415px;
     overflow-y: auto; /* 세로 스크롤바 활성화 */
     scrollbar-width: thin; /* Firefox에서 스크롤바 두께 조정 */
 }
