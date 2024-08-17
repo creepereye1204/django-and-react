@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
 
-from .models import Room
+from .models import Room, Board
 from .serializers import RoomSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
@@ -30,5 +30,10 @@ def dashboard(request):
 
 @api_view(['POST'])
 def write(request, *args, **kwargs):
-    title = request.data.get('title')
-    return Response({'title': title})
+    try:
+        title = request.data.get('title')
+        content = request.data.get('content')
+        Board.objects.create(title=title, content=content)
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
+        

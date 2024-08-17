@@ -45,7 +45,7 @@ const Write = () => {
       console.log('저장 성공');
       // 추가적인 성공 처리 로직
     } else {
-      console.error('저장 실패');
+      console.error(results.error,' 저장 실패');
       // 에러 처리 로직
     }
   }
