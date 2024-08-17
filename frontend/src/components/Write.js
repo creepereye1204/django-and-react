@@ -35,7 +35,7 @@ const Write = () => {
   const [text, setText] = useState('');
 
   const handleChange = (value) => {
-    setText(value);
+    //
   };
 
  async function handleSave() {
@@ -46,7 +46,13 @@ const Write = () => {
 
  return (
     <div className="editor">
-      <h2>텍스트 편집기</h2> {/* 제목 추가 */}
+      
+      <input 
+      type="text" 
+      placeholder="제목을 입력하세요" 
+      value={title} 
+      onChange={(e) => setTitle(e.target.value)} 
+      />
       <ReactQuill
         value={text}
         onChange={handleChange}
