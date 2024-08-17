@@ -5,7 +5,7 @@
     top: -5%;
     left: 50%;
     position: absolute;
-    transform: translate(-50%, 10%);
+    transform: translate(-50%, 30%);
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
     padding: 10px; /* 내부 여백 추가 */
@@ -16,7 +16,7 @@
 }
 
 .ql-editor {
-    height: 480px;
+    height: 400px;
     overflow-y: auto; /* 세로 스크롤바 활성화 */
     scrollbar-width: thin; /* Firefox에서 스크롤바 두께 조정 */
 }
@@ -55,7 +55,7 @@ button:hover {
 }
 .title-input{
     border-radius: 5px;
-    width: 95%;
+    width: 80%;
     margin: 10px;
     background: rgba(255, 255, 255, 0.8);
     padding: 10px 0px;
