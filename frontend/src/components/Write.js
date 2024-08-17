@@ -35,7 +35,7 @@ const Write = () => {
   const [text, setText] = useState('');
 
   const handleChange = (value) => {
-    //
+    setText(value);
   };
 
  async function handleSave() {
@@ -50,8 +50,8 @@ const Write = () => {
       <input 
       type="text" 
       placeholder="제목을 입력하세요" 
-      value={title} 
-      onChange={(e) => setTitle(e.target.value)} 
+      
+      
       />
       <ReactQuill
         value={text}
