@@ -43,6 +43,6 @@ def read(request, *args, **kwargs):
     try:
         boards=Board.objects.all()
         serializer = BoardSerializer(boards, many=True)
-        return Response(serializer)
+        return Response(serializer.data, status=200)
     except Exception as e:
         return Response({'error': e.message}, status=500)
