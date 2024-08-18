@@ -7,8 +7,21 @@ import ImageResize from 'quill-image-resize';
 Quill.register('modules/ImageResize', ImageResize);
 
 const toolbarOptions = [
-  // 기존 toolbarOptions...
+  ['bold', 'italic', 'underline', 'strike'],        
+  ['blockquote', 'code-block'],               
+  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+  [{ 'script': 'sub'}, { 'script': 'super' }],      
+  [{ 'indent': '-1'}, { 'indent': '+1' }],          
+  [{ 'direction': 'rtl' }],                         
+  [{ 'size': ['small', false, 'large', 'huge'] }],  
+  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+  [{ 'color': [] }, { 'background': [] }],
+  [{ 'font': [] }],
+  [{ 'align': [] }],
+  ['link', 'image', 'video'],
+  ['clean']                                         
 ];
+
 
 const ImageResizeOptions = { parchment: Quill.import('parchment') };
 
