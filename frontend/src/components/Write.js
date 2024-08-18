@@ -55,7 +55,6 @@ const Write = () => {
     const results = await fetch('https://my-wiki.p-e.kr/api/board/write', {
       method: 'POST', // POST 메서드 사용
       headers: {
-        'Content-Type': 'application/json',
         'X-CSRFToken': csrfToken
       },
       body: formData, // 제목과 본문을 JSON 형태로 전송
