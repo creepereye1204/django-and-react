@@ -51,10 +51,10 @@ class Navbar extends Component {
         <a href="#" className="logo">My Wiki</a>
         <nav className="navbar">
           <Link to="/">Home</Link>
-          <Link to="/about">About</Link> {/* Link 컴포넌트 사용 */}
-          <a href="#">Portfolio</a>
-          <a href="https://colab.research.google.com/drive/1dYnkNX4YNkyj20mgWJVb9uoAd_lKvD15?usp=sharing">Service</a>
-          <a href="#">Contact</a>
+          <Link to="/about">About</Link> 
+          <Link to="/ppt">Ppt</Link>
+          <Link to="/board">Blog</Link>
+          <Link to="/service">Service</Link>
         </nav>
       </header>
     );
