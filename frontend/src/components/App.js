@@ -54,7 +54,7 @@ class Navbar extends Component {
           <Link to="/about">About</Link> 
           <Link to="/ppt">Ppt</Link>
           <Link to="/board">Blog</Link>
-          <Link to="/service">Service</Link>
+          <Link to="/write">Write</Link>
         </nav>
       </header>
     );
