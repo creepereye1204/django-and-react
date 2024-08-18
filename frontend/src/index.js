@@ -11,6 +11,7 @@ function Main() {
   return (
       <div>
         <h1>Welcome to React!</h1> 
+        <App/>
       </div>
       
   );
