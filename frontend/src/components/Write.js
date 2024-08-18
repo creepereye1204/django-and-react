@@ -28,7 +28,7 @@ const ImageResizeOptions = { parchment: Quill.import('parchment') };
 const Write = () => {
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
-  const [thumbnail, setThumbnail] = useState('');
+  const [thumbnail, setThumbnail] = useState(null);
 
   const handleChange = (value) => {
     setContent(value);
@@ -48,13 +48,21 @@ const Write = () => {
   };
 
   async function handleSave() {
+    const formData = new FormData();
+    formData.append('title', title);
+    formData.append('content', content);
+    if (thumbnail) {
+        formData.append('thumbnail', thumbnail); // 파일 추가
+    }
+
+    
     const results = await fetch('https://my-wiki.p-e.kr/api/board/write', {
       method: 'POST', // POST 메서드 사용
       headers: {
         'Content-Type': 'application/json',
         'X-CSRFToken': csrfToken
       },
-      body: JSON.stringify({ 'title':title, 'content':content,'thumbnail':thumbnail }), // 제목과 본문을 JSON 형태로 전송
+      body: formData, // 제목과 본문을 JSON 형태로 전송
     });
 
     if (results.ok) {
