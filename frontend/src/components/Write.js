@@ -27,7 +27,7 @@ const ImageResizeOptions = { parchment: Quill.import('parchment') };
 const Write = () => {
   const [content, setContent] = useState('');
   const [title, setTitle] = useState(''); // 제목 상태 추가
-
+  const [thumbnail, setThumbnail] = useState('');
   const handleChange = (value) => {
     setContent(value);
   };
@@ -39,7 +39,7 @@ const Write = () => {
         'Content-Type': 'application/json',
         'X-CSRFToken': csrfToken
       },
-      body: JSON.stringify({ 'title':title, 'content':content }), // 제목과 본문을 JSON 형태로 전송
+      body: JSON.stringify({ 'title':title, 'content':content,'thumbnail':thumbnail }), // 제목과 본문을 JSON 형태로 전송
     });
 
     if (results.ok) {
@@ -71,7 +71,12 @@ const Write = () => {
           ImageResize: ImageResizeOptions
         }}
       />
-      
+      <input 
+          className='thumbnail-container'
+          type="file" 
+          accept="image/*" 
+          onChange={(e) => setThumbnail(e.target.files[0])} 
+          /> 
     </div>
   );
 };
