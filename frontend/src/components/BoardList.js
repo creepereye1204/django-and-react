@@ -2,6 +2,7 @@ import { Card } from "@material-ui/core";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./BoardList.css";
+import defaultThumbnail from '../assets/defaultThumbnail.png';
 
 class BoardList extends Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class BoardList extends Component {
     }
 
     // 기본 이미지 URL
-    const defaultThumbnail = "https://my-wiki.p-e.kr/media/thumbnail.png"; // 기본 이미지 URL로 변경
+
 
     return (
       <div className="board-container">
