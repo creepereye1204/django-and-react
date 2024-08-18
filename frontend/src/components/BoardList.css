@@ -4,9 +4,9 @@
 .board-container{
     display: flex;
     position: absolute;
-    width: 500px;
+    width: 800px;
     left:50%;
-    top: 30%;
+    top: 10px;
     transform: translate(-50%,20%);
 }
 .card{
