@@ -54,7 +54,7 @@ const Write = () => {
         'Content-Type': 'application/json',
         'X-CSRFToken': csrfToken
       },
-      body: JSON.stringify({ 'title':title, 'content':content,'thumbnail':thumbnail }), // 제목과 본문을 JSON 형태로 전송
+      body: JSON.stringify({ 'title':title, 'content':content }), // 제목과 본문을 JSON 형태로 전송
     });
 
     if (results.ok) {
