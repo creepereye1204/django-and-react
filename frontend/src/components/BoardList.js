@@ -2,7 +2,7 @@ import { Card } from "@material-ui/core";
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./BoardList.css";
-import defaultThumbnail from '../assets/defaultThumbnail.png';
+
 
 class BoardList extends Component {
   constructor(props) {
@@ -50,7 +50,7 @@ class BoardList extends Component {
         {boards.map(board => (
           <Card className="card" key={board.id}> {/* key 속성을 추가하여 경고 방지 */}
             <img 
-              src={board.thumbnail ? board.thumbnail : defaultThumbnail} 
+              src={board.thumbnail} 
               alt={board.title} 
             />
             <h1>{board.thumbnail}</h1>
