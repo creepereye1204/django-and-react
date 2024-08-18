@@ -86,6 +86,7 @@ const Write = () => {
           ImageResize: ImageResizeOptions
         }}
       />
+      <div className='thumbnail-container'>
       <input 
         id="file-input" 
         type="file" 
@@ -100,7 +101,7 @@ const Write = () => {
         썸네일 업로드
       </button>
       {thumbnail && (
-        <div className='thumbnail-container'>
+        <div>
           <p>선택된 파일: {thumbnail.name}</p>
           <button 
             className="remove-button" 
@@ -110,6 +111,7 @@ const Write = () => {
           </button>
         </div>
       )}
+      </div>
     </div>
   );
 };
