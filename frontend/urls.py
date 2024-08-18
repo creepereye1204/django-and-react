@@ -1,8 +1,7 @@
-from django.urls import path
+from django.urls import path, re_path
 
 from .views import index
 
 urlpatterns = [
-    path('', index),  # /api/
-    path('about', index),  # /api/home
+    re_path(r'^[^/]*$', index),  # 0개 이상의 문자로 이루어진 경로
 ]
