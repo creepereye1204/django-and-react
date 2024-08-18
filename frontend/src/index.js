@@ -9,7 +9,10 @@ function Main() {
   
 
   return (
-      <App />
+      <div>
+        <h1>Welcome to React!</h1> 
+      </div>
+      
   );
 }
 
