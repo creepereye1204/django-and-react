@@ -13,4 +13,4 @@ class RoomSerializer(serializers.ModelSerializer):
 class BoardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Board
-        fields = ('id', 'title', 'content', 'create_at')
+        fields = ('id', 'thumbnail','title', 'content', 'create_at')
