@@ -11,13 +11,13 @@
     transform: translate(-50%,20%);
 }
 .card{
-     width: 50px;
-     height: 80px;
+     width: 200px;
+     height: 200px;
      object-fit: cover;
 }
 .card img{
-    size: 40px;
-    object-position: center;
+    height: 150px;
+    width: 150px;
     margin: 5px;
     
 }
