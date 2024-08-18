@@ -48,6 +48,7 @@ class BoardList extends Component {
         <ul>
           {boards.map(board => (
             <Card className="card">
+                <image src={board.thumbnail} alt={board.title} />
                 <Link>{board.title}</Link>
             </Card>
              // 각 글의 제목을 리스트로 표시
