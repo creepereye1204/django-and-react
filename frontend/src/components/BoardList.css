@@ -1,5 +1,6 @@
 *{
     font-size: 12px;
+    z-index: 2;
 }
 .board-container{
     display: flex;
@@ -10,6 +11,13 @@
     transform: translate(-50%,20%);
 }
 .card{
-    z-index: 2;
+     width: 50px;
+     height: 80px;
+     object-fit: cover;
+}
+.card img{
+    size: 40px;
+    object-position: center;
+    margin: 5px;
     
 }
