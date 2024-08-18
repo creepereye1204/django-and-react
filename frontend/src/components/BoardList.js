@@ -3,7 +3,6 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./BoardList.css";
 
-
 class BoardList extends Component {
   constructor(props) {
     super(props);
@@ -42,19 +41,20 @@ class BoardList extends Component {
       return <div>Error: {error}</div>; // 에러가 발생한 경우
     }
 
+    // 기본 이미지 URL
+    const defaultThumbnail = "https://my-wiki.p-e.kr/media/thumbnail.png"; // 기본 이미지 URL로 변경
+
     return (
       <div className="board-container">
-
-          {boards.map(board => (
-            <Card className="card">
-                {board.thumbnail && (
-                    <img src={board.thumbnail} alt={board.title} />
-                )}
-                <Link>{board.title}</Link>
-            </Card>
-             // 각 글의 제목을 리스트로 표시
-          ))}
-
+        {boards.map(board => (
+          <Card className="card" key={board.id}> {/* key 속성을 추가하여 경고 방지 */}
+            <img 
+              src={board.thumbnail ? board.thumbnail : defaultThumbnail} 
+              alt={board.title} 
+            />
+            <Link to={`/board/${board.id}`}>{board.title}</Link> {/* 링크에 id 추가 */}
+          </Card>
+        ))}
       </div>
     );
   }
