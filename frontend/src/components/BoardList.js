@@ -43,9 +43,8 @@ class BoardList extends Component {
     }
 
     return (
-      <div>
-        <h1>글 목록</h1>
-        <ul>
+      <div className="board-container">
+
           {boards.map(board => (
             <Card className="card">
                 {board.thumbnail && (
@@ -55,7 +54,7 @@ class BoardList extends Component {
             </Card>
              // 각 글의 제목을 리스트로 표시
           ))}
-        </ul>
+
       </div>
     );
   }
