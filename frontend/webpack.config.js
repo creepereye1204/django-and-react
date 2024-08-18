@@ -66,7 +66,6 @@ const webpack = require("webpack");
 module.exports = {
   entry: {
     main: "./src/index.js", // 메인 엔트리 포인트
-    board: "./src/board.js"
   },
    // 엔트리 포인트 설정
   output: {
