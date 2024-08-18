@@ -33,11 +33,13 @@ def write(request, *args, **kwargs):
     try:
         title = request.data.get('title')
         content = request.data.get('content')
-        thumbnail = request.data.get('thumbnail',None)
+        thumbnail = request.FILES.get('thumbnail', None)  # 수정된 부분
+
         if thumbnail:
             Board.objects.create(title=title, content=content, thumbnail=thumbnail)
         else:
             Board.objects.create(title=title, content=content)
+
         return Response({'ok': '작성 성공'}, status=200)
     except Exception as e:
         return Response({'error': str(e)}, status=500)
