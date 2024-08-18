@@ -62,6 +62,8 @@ const Write = () => {
 
     if (results.ok) {
       console.log('저장 성공');
+      alert('저장 성공!');
+      history.push('/');
       // 추가적인 성공 처리 로직
     } else {
       console.error(results.error,' 저장 실패');
