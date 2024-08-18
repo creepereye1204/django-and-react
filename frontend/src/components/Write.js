@@ -29,7 +29,7 @@ const Write = () => {
   const navigate = useNavigate();
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
-  const [thumbnail, setThumbnail] = useState(null);
+  const [thumbnail, setThumbnail] = useState('');
 
   const handleChange = (value) => {
     setContent(value);
@@ -44,7 +44,7 @@ const Write = () => {
   };
 
   const handleRemoveFile = () => {
-    setThumbnail(null); // 선택한 파일 제거
+    setThumbnail(''); // 선택한 파일 제거
     document.getElementById('file-input').value = ''; // 파일 입력 초기화
   };
 
