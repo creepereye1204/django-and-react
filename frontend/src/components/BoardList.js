@@ -1,5 +1,7 @@
 import { Card } from "@material-ui/core";
 import React, { Component } from "react";
+import "./BoardList.css";
+
 
 class BoardList extends Component {
   constructor(props) {
@@ -44,7 +46,7 @@ class BoardList extends Component {
         <h1>글 목록</h1>
         <ul>
           {boards.map(board => (
-            <Card>
+            <Card className="card">
                 <Link>{board.title}</Link>
             </Card>
              // 각 글의 제목을 리스트로 표시
