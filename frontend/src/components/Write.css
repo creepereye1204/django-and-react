@@ -89,4 +89,5 @@ button {
   .thumbnail-container{
     display: flex;
     margin: 10px 0px;
+    align-items: center; /* 세로 정렬 */
   }
