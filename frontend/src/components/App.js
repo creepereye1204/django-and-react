@@ -51,7 +51,7 @@ class Navbar extends Component {
         <a href="#" className="logo">My Wiki</a>
         <nav className="navbar">
           <a href="#">Home</a>
-          <a href="#">About</a>
+          <a href="/about">About</a>
           <a href="#">Portfolio</a>
           <a href="https://colab.research.google.com/drive/1dYnkNX4YNkyj20mgWJVb9uoAd_lKvD15?usp=sharing">Service</a>
           <a href="#">Contact</a>

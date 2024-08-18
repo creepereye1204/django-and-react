@@ -7,8 +7,8 @@ function Main() {
   return (
     <Router>
       <Routes>
-        <Route path="/a" element={<App />} />
-
+        <Route path="/" element={<App />} />
+        <Route path="/about" element={<div>404 Not Found</div>} />
       </Routes>
     </Router>
   );
