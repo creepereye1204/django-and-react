@@ -1,0 +1,2 @@
+/*! For license information please see board.js.LICENSE.txt */
+(()=>{var __webpack_modules__={"./src/board.js":()=>{eval("\n\n//# sourceURL=webpack://frontend/./src/board.js?")}},__webpack_exports__={};__webpack_modules__["./src/board.js"]()})();
