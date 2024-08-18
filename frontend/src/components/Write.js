@@ -43,18 +43,22 @@ const Write = () => {
   };
 
   const handleRemoveFile = () => {
-    setThumbnail(''); // 선택한 파일 제거
+    setThumbnail(null); // 선택한 파일 제거
     document.getElementById('file-input').value = ''; // 파일 입력 초기화
   };
 
   async function handleSave() {
+    var formData = new FormData();
+    formData.append('thumbnail', thumbnail); // thumbnail file 추가
+    formData.append('content', content); // content file 추가
+    formData.append('title', title); // title file 추가
     const results = await fetch('https://my-wiki.p-e.kr/api/board/write', {
       method: 'POST', // POST 메서드 사용
       headers: {
         'Content-Type': 'application/json',
         'X-CSRFToken': csrfToken
       },
-      body: JSON.stringify({ 'title':title, 'content':content }), // 제목과 본문을 JSON 형태로 전송
+      body: formData, // 제목과 본문을 JSON 형태로 전송
     });
 
     if (results.ok) {
