@@ -46,3 +46,13 @@ def read(request, *args, **kwargs):
         return Response(serializer.data, status=200)
     except Exception as e:
         return Response({'error': e.message}, status=500)
+    
+
+@api_view(['GET'])
+def read_list(request, *args, **kwargs):
+    try:
+        boards=Board.objects.all()
+        serializer = BoardSerializer(boards, many=True)
+        return Response(serializer.data, status=200)
+    except Exception as e:
+        return Response({'error': e.message}, status=500)
