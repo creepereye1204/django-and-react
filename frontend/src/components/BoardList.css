@@ -5,7 +5,7 @@
 .board-container{
     display: flex;
     position: absolute;
-    width: 85%;
+    
     left:50%;
     top: 10px;
     transform: translate(-50%,20%);
@@ -14,11 +14,14 @@
      width: 150px;
      height: 200px;
      object-fit: cover;
-     
+     margin: 10px;
+     border-radius: 20px;
+     padding: 10px;
 }
 .card img{
+    
     height: 150px;
     width: 150px;
-    margin: 5px;
+    object-fit: cover;
     
 }
