@@ -33,7 +33,7 @@ def write(request, *args, **kwargs):
     try:
         title = request.data.get('title')
         content = request.data.get('content')
-        thumbnail = request.Files[0].get('thumbnail', None)  # 수정된 부분
+        thumbnail = request.data.get('thumbnail',None)
         if thumbnail:
             Board.objects.create(title=title, content=content, thumbnail=thumbnail)
         else:
