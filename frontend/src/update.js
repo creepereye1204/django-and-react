@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import App from "./components/App";
-
+import "./css/update.css";
 
 
 class Update extends Component {

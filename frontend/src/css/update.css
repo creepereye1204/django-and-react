@@ -1,0 +1,9 @@
+#update{
+    text-align: center;
+    width: 100%;
+    color: azure;
+    z-index: 2;
+    top: 30%;
+    position: absolute;
+    font-size: 100px;
+}
