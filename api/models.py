@@ -32,5 +32,6 @@ class Board(models.Model):
     content = models.TextField()
     create_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to='images/')  # 이미지 필드
     def __str__(self):
         return f'[{self.pk}] - {self.title} - {self.create_at.strftime("%Y-%m-%d %H:%M:%S")}'
