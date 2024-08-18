@@ -4,7 +4,7 @@
 .board-container{
     display: flex;
     position: absolute;
-    width: 80%;
+    width: 500px;
     
     top: 30%;
 }
