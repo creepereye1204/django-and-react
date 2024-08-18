@@ -3,7 +3,7 @@ import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
 import ImageResize from 'quill-image-resize';
-
+import { useNavigate } from "react-router-dom";
 Quill.register('modules/ImageResize', ImageResize);
 
 const toolbarOptions = [
@@ -24,7 +24,7 @@ const toolbarOptions = [
 
 
 const ImageResizeOptions = { parchment: Quill.import('parchment') };
-
+const navigate=useNavigate();
 const Write = () => {
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
@@ -63,7 +63,7 @@ const Write = () => {
     if (results.ok) {
       console.log('저장 성공');
       alert('저장 성공!');
-      history.push('/');
+      navigate('/'); // 이전 ��이지로 이���
       // 추가적인 성공 처리 로직
     } else {
       console.error(results.error,' 저장 실패');
