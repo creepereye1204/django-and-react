@@ -100,7 +100,7 @@ const Write = () => {
         썸네일 업로드
       </button>
       {thumbnail && (
-        <div>
+        <div className='thumbnail-container'>
           <p>선택된 파일: {thumbnail.name}</p>
           <button 
             className="remove-button" 

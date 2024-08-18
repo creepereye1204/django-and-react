@@ -86,4 +86,7 @@ button {
   .remove-button:hover {
     background-color: #d32f2f; /* hover 효과 */
   }
-  
+  .thumbnail-container{
+    display: flex;
+    margin: 10px 0px;
+  }
