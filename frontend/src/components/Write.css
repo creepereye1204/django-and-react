@@ -1,6 +1,9 @@
+*{
+    z-index: 2;
+}
 .editor {
 
-    z-index: 1;
+    
     width: 95%;
     top: 0%;
     left: 50%;
