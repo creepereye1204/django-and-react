@@ -1,9 +1,7 @@
-from django.urls import path, re_path
-from .views import index
-from django.views.generic import TemplateView
+from django.urls import path
 
+from .views import index
 
 urlpatterns = [
-    
-    re_path(r'^.*$', TemplateView.as_view(template_name='index.html'))
+    path('', index),  # /api/
 ]
