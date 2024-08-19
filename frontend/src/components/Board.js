@@ -14,7 +14,7 @@ const Read = () => {
   const { id } = useParams(); // URL에서 id 추출
   const [content,setContent] = useState('');
   const [title,setTitle] = useState('');
-  read(); // id로 API 요청
+   // id로 API 요청
 
 
   
