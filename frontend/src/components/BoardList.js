@@ -53,7 +53,11 @@ class BoardList extends Component {
               src={board.thumbnail} 
               alt={board.title} 
             />
-            <Link to={`/board/${board.id}`}>{board.title}</Link> {/* 링크에 id 추가 */}
+            <Link to={`/board/${board.id}`}>
+              <div className="title">
+                {board.title}
+              </div>
+            </Link> {/* 링크에 id 추가 */}
           </Card>
         ))}
       </div>

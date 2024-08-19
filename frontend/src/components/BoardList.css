@@ -3,11 +3,16 @@
     z-index: 2;
     
 }
-Link a{
+
+.title{
+    
     font-weight: 600;
     color: aqua;
     text-shadow: 0px 10px 2px ;
+    
 }
+
+
 .board-container{
     display: flex;
     position: absolute;
