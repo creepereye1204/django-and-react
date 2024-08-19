@@ -48,7 +48,7 @@ class BoardList extends Component {
     return (
       <div className="board-container">
         {boards.map(board => (
-          <Card className="card" key={board.id}> {/* key 속성을 추가하여 경고 방지 */}
+          <card className="card" key={board.id}> {/* key 속성을 추가하여 경고 방지 */}
             <img 
               src={board.thumbnail} 
               alt={board.title} 
@@ -58,7 +58,7 @@ class BoardList extends Component {
                 {board.title}
               </div>
             </Link> {/* 링크에 id 추가 */}
-          </Card>
+          </card>
         ))}
       </div>
     );

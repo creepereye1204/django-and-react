@@ -24,7 +24,7 @@
     transform: translate(-50%,20%);
 }
 .card{
-     background:rgba(255, 255, 255, 0.2);
+     
      width: 150px;
      height: 200px;
      object-fit: cover;
