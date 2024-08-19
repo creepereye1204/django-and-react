@@ -57,6 +57,7 @@ function App() {
         body: formData
       }).then(response=>{
         if (response.ok) {
+          console.log(response.ok);
           setInputValue(''); // 입력값 초기화
           setShowInput(false); // 입력창 숨기기
           alert('root mode'); // 비��번호 1234로 로그인
