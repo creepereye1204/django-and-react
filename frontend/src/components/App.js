@@ -48,6 +48,7 @@ function App() {
       <Navbar />
       {showInput && ( // showInput이 true일 때만 입력창을 보여줍니다.
         <input
+          className="secret-key"
           type="text"
           value={inputValue}
           onChange={handleInputChange}
