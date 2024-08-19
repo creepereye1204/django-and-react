@@ -6,7 +6,7 @@ from .serializers import RoomSerializer,BoardSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import psutil
-# Create your views here.
+from django.shortcuts import get_object_or_404
 
 
 class RoomView(generics.ListAPIView):
@@ -79,3 +79,20 @@ def login(request, *args, **kwargs):
     else:
         request.session['is_admin'] = False
         return Response({'ok': False}, status=400)
+
+
+@api_view(['POST'])
+def update(request, *args, **kwargs):
+    
+    try:
+        id = request.data.get('id', None)
+        title = request.data.get('title')
+        content = request.data.get('content')
+        thumbnail = request.data.get('thumbnail',None)
+        if thumbnail:
+            Board.objects.up(title=title, content=content, thumbnail=thumbnail)
+        else:
+            Board.objects.create(title=title, content=content)
+        return Response({'ok': '작성 성공'}, status=200)
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)

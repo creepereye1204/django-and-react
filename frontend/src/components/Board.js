@@ -10,6 +10,7 @@ class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      admin: false, // 로그인 여부
       id: this.props.id, // id 받아오기
       board: {}, // 글 목록을 저장할 상태
     };
@@ -32,7 +33,9 @@ class Board extends Component {
         return response.json();
       })
       .then(data => {
-        this.setState({ board: data }); // API에서 받아온 데이터를 상태에 저장
+        this.setState({ board: data ,
+          admin: data.admin
+        }); // API에서 받아온 데이터를 상태에 저장
       })
       .catch(error => {
         console.error(error); // 에러 처리 로직
@@ -41,21 +44,37 @@ class Board extends Component {
 
   render() {
     const { title, content } = this.state.board; // 상태에서 title과 content 추출
+    const { admin } = this.state.admin; // admin 여부
 
     return (
       <div className="editor">
-        <div className="title-input">
-          {title}
-        </div>
-        <ReactQuill
-          modules={{toolbar: false}}
-          value={content}
-          readOnly={true} // 읽기 전용 모드
-        />
+        {admin ? (
+          <div>
+            <h1>관리자 전용 화면</h1>
+            {/* 관리자 전용 내용 */}
+            <ReactQuill
+              modules={{ toolbar: true }}
+              value={content}
+              readOnly={false} // 읽기 전용 모드 해제
+            />
+          </div>
+        ) : (
+          <div>
+            <div className="title-input">
+              {title}
+            </div>
+            <ReactQuill
+              modules={{ toolbar: false }}
+              value={content}
+              readOnly={true} // 읽기 전용 모드
+            />
+          </div>
+        )}
       </div>
     );
   }
 }
+
 const BoardWrapper = (props) => {
     const { id } = useParams(); // URL에서 id 가져오기
     return <Board {...props} id={id} />;

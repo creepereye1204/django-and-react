@@ -1189,3 +1189,6 @@ TypeError: secret_key() missing 1 required positional argument: 'board_pk'
 WARNING 2024-08-19 08:42:44,011 log 1806019 140616012711808 Not Found: /api/secret_key
 WARNING 2024-08-19 08:42:52,815 log 1806019 140616012711808 Not Found: /api/secret_key
 WARNING 2024-08-19 08:42:57,152 log 1806019 140616012711808 Not Found: /api/secret_key
+WARNING 2024-08-19 08:49:32,116 log 1810999 140248877217664 Bad Request: /api/login
+WARNING 2024-08-19 08:49:43,726 log 1810999 140248877217664 Bad Request: /api/login
+WARNING 2024-08-19 08:51:41,821 log 1810997 140248877217664 Not Found: /api/board/read/
