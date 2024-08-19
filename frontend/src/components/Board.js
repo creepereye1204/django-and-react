@@ -47,7 +47,7 @@ class Board extends Component {
     const { admin } = this.state; // admin 여부
 
     return (
-      <div className="editor">
+      <div>
         {admin ? (
           <div>
             <Write />
@@ -55,6 +55,7 @@ class Board extends Component {
           </div>
         ) : (
           <div>
+            <div className="editor">
             <div className="title-input">
               {title}
             </div>
@@ -63,6 +64,7 @@ class Board extends Component {
               value={content}
               readOnly={true} // 읽기 전용 모드
             />
+          </div>
           </div>
         )}
       </div>
