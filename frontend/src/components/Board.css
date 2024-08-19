@@ -17,7 +17,7 @@
 }
 
 .ql-editor {
-    height: 445px;
+    height: 415px;
     overflow-y: auto; /* 세로 스크롤바 활성화 */
     scrollbar-width: thin; /* Firefox에서 스크롤바 두께 조정 */
 }
