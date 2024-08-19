@@ -1,11 +1,12 @@
 *{
-    font-size: 12px;
+
     z-index: 2;
     
 }
 
 .title{
-    
+    font-size: 16px;
+    text-align: center;
     font-weight: 600;
     color: aqua;
     text-shadow: 0px 10px 2px ;
