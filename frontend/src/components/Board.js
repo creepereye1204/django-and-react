@@ -30,8 +30,8 @@ const Read = () => {
 
     if (results.ok) {
       console.log('불러오기 성공!');
-      setContent(results.json().content); // content file 추가
-      setTitle(results.json().title); // title file 추가
+      setContent(results.content); // content file 추가
+      setTitle(results.title); // title file 추가
     } else {
       console.error(results.error,' 불러오기 실패!');
       // 에러 처리 로직
