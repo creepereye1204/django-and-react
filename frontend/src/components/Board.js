@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Board.css'; // CSS 파일 임포트
-import { withRouter } from 'react-router-dom'; // withRouter 임포트
+import { useParams } from 'react-router-dom'; // useParams 임포트// withRouter 임포트
 
 class Board extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: this.props.match.params.id, // id 받아오기
+      id: this.props.id, // id 받아오기
       board: {}, // 글 목록을 저장할 상태
     };
   }
@@ -54,5 +54,8 @@ class Board extends Component {
     );
   }
 }
-
-export default withRouter(Board); // withRouter로 감싸기
+const BoardWrapper = (props) => {
+    const { id } = useParams(); // URL에서 id 가져오기
+    return <Board {...props} id={id} />;
+  };
+export default BoardWrapper; // withRouter로 감싸기

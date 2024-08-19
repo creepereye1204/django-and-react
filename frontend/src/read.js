@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import App from "./components/App";
-import Board from "./components/Board";
+import BoardWrapper from "./components/Board";
 class Read extends Component {
   render() {
     return (
       <div>
         
         <App/>
-        <Board/>
+        <BoardWrapper/>
       </div>
     );
   }
