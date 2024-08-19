@@ -43,11 +43,12 @@ class Board extends Component {
     const { title, content } = this.state.board; // 상태에서 title과 content 추출
 
     return (
-      <div className="viewer">
+      <div className="view-container">
         <div className="title">
           {title}
         </div>
         <ReactQuill
+          modules={{toolbars: false}}
           value={content}
           readOnly={true} // 읽기 전용 모드
         />
