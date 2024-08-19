@@ -921,3 +921,4 @@ WARNING 2024-08-18 20:34:41,020 log 1539066 140472753190784 Not Found: /public/v
 WARNING 2024-08-18 20:34:41,575 log 1539066 140472753190784 Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
 WARNING 2024-08-18 20:34:42,093 log 1539066 140472753190784 Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
 WARNING 2024-08-18 20:34:43,926 log 1539066 140472753190784 Not Found: /public/index.php
+WARNING 2024-08-19 02:20:45,593 log 1617481 140446977472384 Not Found: /vpnsvc/connect.cgi
