@@ -5,6 +5,7 @@ import App from "./components/App"; // 페이지 컴포넌트
 import Update from "./update"; // 페이지 컴포넌트
 import Board from "./board";
 import WriteBoard from "./writeBoard"; 
+import Read from "./read";
 
 function Main() {
   return (
@@ -13,6 +14,11 @@ function Main() {
         <Route path="/" element={<App />} />
         <Route path="/board" element={<Board/>} />
         <Route path="/write" element={<WriteBoard/>} />
+
+        <Route path="/board/:id" element={<Read />} />
+        <Route path="/board/:id/" element={<Read />} />
+
+   
         <Route path="*" element={<Update/>} />
       </Routes>
     </Router>
