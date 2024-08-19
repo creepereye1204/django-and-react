@@ -1,18 +1,8 @@
-.update {
+.update{
     text-align: center;
     width: 100%;
     color: mediumaquamarine;
     top: 30%;
     position: absolute;
     font-size: 100px;
-    z-index: 2; /* 텍스트를 위에 표시 */
-}
-
-.update img {
-    position: absolute; /* 이미지 위치 설정 */
-    top: 0;
-    left: 0;
-    width: 100%; /* 이미지가 전체 너비를 차지하도록 설정 */
-    height: auto; /* 비율 유지 */
-    z-index: 1; /* 이미지를 아래로 배치 */
 }

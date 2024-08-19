@@ -6,11 +6,15 @@ import update from "./assets/update.jpg";
 class Update extends Component {
   render() {
     return (
+      <div>
       <div className="update">
         <img src={update}></img>
         <h1>Update Page</h1>
-        <App/>
         
+        
+      </div>
+      
+      <App/>
       </div>
     );
   }
