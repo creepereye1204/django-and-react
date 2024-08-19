@@ -75,7 +75,7 @@ def login(request, *args, **kwargs):
 
         request.session['is_admin'] = True
         
-        return Response({'ok': '작성 성공'}, status=200)
+        return Response({'ok': True}, status=200)
     else:
         request.session['is_admin'] = False
-        return Response({'error': 'ㄴㄴ 아님'}, status=200)  # 비��번호가 ����� 경우
+        return Response({'ok': False}, status=200)
