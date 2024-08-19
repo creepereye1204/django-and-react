@@ -2,13 +2,15 @@
     text-align: center;
     width: 100%;
     color: mediumaquamarine;
-    top: 30%;
+    top: 20%;
     position: absolute;
-    font-size: 400px;
 }
 .update img{
 
     width: 200px;
     height: 200px;
 
+}
+.update h1{
+    font-size: 300px;
 }
