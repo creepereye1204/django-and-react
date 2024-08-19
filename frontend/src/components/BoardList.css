@@ -1,6 +1,8 @@
 *{
     font-size: 12px;
     z-index: 2;
+    color: aqua;
+    text-shadow: 10px 10px 10px;
 }
 .board-container{
     display: flex;
