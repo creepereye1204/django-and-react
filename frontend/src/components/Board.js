@@ -18,8 +18,8 @@ const Read = () => {
 
 
   
-
-  commentDidMount = () => {
+     //
+     compoentDidMount= () => {
     fetch(`https://my-wiki.p-e.kr/api/board/read/${id}`, {
         method: 'GET', // POST 메서드 사용
         headers: {
