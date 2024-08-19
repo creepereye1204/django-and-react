@@ -65,3 +65,16 @@ def read_list(request, *args, **kwargs):
         return Response(serializer.data, status=200)
     except Exception as e:
         return Response({'error': e.message}, status=500)
+    
+    
+    
+@api_view(['POST'])
+def secret_key(request, board_pk, *args, **kwargs):
+    request_secret_key = request.data.get('secret-key')
+    if request_secret_key== 'smalllab':
+        request.session['is_admin'] = True  # admin ���한 부여
+        
+        return Response({'ok': '작성 성공'}, status=200)
+    else:
+        request.session['is_admin'] = False  # admin ���한 부여
+        return Response({'error': 'ㄴㄴ 아님'}, status=200)  # 비��번호가 ����� 경우

@@ -42,6 +42,33 @@ function App() {
     setInputValue(event.target.value); // 입력값을 상태로 관리
   };
 
+
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') { // 비밀번호 입력 후 'Enter' 키를 누르면
+      
+      fetch('https://my-wiki.p-e.kr/api/secret-key', { // API 호출
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ secret_key: inputValue }), // secret_key를 JSON 형태로 전��
+      }).then(response=>{
+        if (response.ok) {
+          setInputValue(''); // 입력값 초기화
+          setShowInput(false); // 입력창 숨기기
+          alert('root mode'); // 비��번호 1234로 로그인
+        }else{
+          setInputValue(''); // 입력값 초기화
+          setShowInput(false); // 입력창 숨기기
+          alert('user mode');
+        }
+      });
+      
+
+    }
+  };
+
+
   return (
     <div className="background">
       <video src={NightCity} autoPlay loop muted />
@@ -49,10 +76,11 @@ function App() {
       {showInput && ( // showInput이 true일 때만 입력창을 보여줍니다.
         <input
           className="secret-key"
-          type="text"
+          type="password"
           value={inputValue}
           onChange={handleInputChange}
           placeholder="여기에 입력하세요"
+          
         />
       )}
     </div>
