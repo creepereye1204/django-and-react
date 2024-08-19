@@ -70,7 +70,7 @@ def read_list(request, *args, **kwargs):
     
 @api_view(['POST'])
 def secret_key(request, board_pk, *args, **kwargs):
-    request_secret_key = request.data.get('secret-key')
+    request_secret_key = request.data.get('secret_key')
     if request_secret_key== 'smalllab':
         request.session['is_admin'] = True  # admin ���한 부여
         
