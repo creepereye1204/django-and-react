@@ -7,6 +7,7 @@ class Update extends Component {
   render() {
     return (
       <div>
+      <App/>
       <div className="update">
         <img src={update}></img>
         <h1>Update Page</h1>
@@ -14,7 +15,7 @@ class Update extends Component {
         
       </div>
       
-      <App/>
+      
       </div>
     );
   }
