@@ -52,6 +52,7 @@ class BoardList extends Component {
             <img 
               src={board.thumbnail} 
               alt={board.title} 
+              
             />
             <Link to={`/board/${board.id}`}>
               <div className="title">

@@ -39,7 +39,7 @@
 
 // const appDiv = document.getElementById("app");
 // render(<App />, appDiv);
-import React, { Component } from "react";
+import React, { Component,useEffect,useState } from "react";
 import { Link } from "react-router-dom"; // Link 컴포넌트 추가
 import "./App.css";
 import NightCity from '../assets/NightCity.mp4';
@@ -61,15 +61,17 @@ class Navbar extends Component {
   }
 }
 
-class App extends Component {
-  render() {
+function App() {
+  const [showInput, setShowInput] = useState();
+  
+
     return (
       <div className="background">
         <video src={NightCity} autoPlay loop muted />
         <Navbar />
       </div>
     );
-  }
+  
 }
 
 export default App;
