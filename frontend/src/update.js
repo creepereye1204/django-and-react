@@ -7,7 +7,7 @@ class Update extends Component {
   render() {
     return (
       <div>
-        <img src={update}></img>
+        
         <h1 id="update">Update Page</h1>
         <App/>
         
