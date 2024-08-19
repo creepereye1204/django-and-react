@@ -45,7 +45,7 @@ class Board extends Component {
   render() {
     const { title, content } = this.state.board; // 상태에서 title과 content 추출
     const { admin } = this.state; // admin 여부
-
+    console.log(admin); // admin 로그
     return (
       <div className="editor">
         {admin ? (
