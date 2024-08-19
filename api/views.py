@@ -49,8 +49,9 @@ def read(request, board_pk, *args, **kwargs):
         # 특정 번호(pk)의 게시물 가져오기
         board = Board.objects.get(pk=board_pk)
         serializer = BoardSerializer(board)  # 단일 객체에 대한 시리얼라이저 사용
-        
-        return Response(serializer.data, status=200)
+        response_data = serializer.data
+        response_data['admin'] = request.session.get('is_admin',False)  # 로그인 여부
+        return Response(response_data, status=200)
     except Board.DoesNotExist:
         return Response({'error': 'Board not found'}, status=404)  # 게시물이 없는 경우
     except Exception as e:
@@ -89,6 +90,7 @@ def update(request, *args, **kwargs):
         title = request.data.get('title')
         content = request.data.get('content')
         thumbnail = request.data.get('thumbnail',None)
+        
         if thumbnail:
             Board.objects.up(title=title, content=content, thumbnail=thumbnail)
         else:
