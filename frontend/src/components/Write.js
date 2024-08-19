@@ -85,7 +85,6 @@ const Write = () => {
         <button onClick={handleSave}>저장하기</button>
       </div>
       <ReactQuill
-        theme="bubble" 
         value={content}
         onChange={handleChange}
         modules={{

@@ -50,7 +50,6 @@ class Board extends Component {
         <ReactQuill
           value={content}
           readOnly={true} // 읽기 전용 모드
-          theme="bubble" // 테마 설정
         />
       </div>
     );
