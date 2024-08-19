@@ -7,7 +7,9 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import psutil
 # Create your views here.
+import logging
 
+logger = logging.getLogger(__name__)
 
 class RoomView(generics.ListAPIView):
     queryset = Room.objects.all()
@@ -71,7 +73,9 @@ def read_list(request, *args, **kwargs):
 @api_view(['POST'])
 def secret_key(request, board_pk, *args, **kwargs):
     request_secret_key = request.data.get('secret_key')
+    logger.info(f'Secret Key Received: {request_secret_key}')  # secret key
     if request_secret_key== 'smalllab':
+        
         request.session['is_admin'] = True  # admin ���한 부여
         
         return Response({'ok': '작성 성공'}, status=200)
