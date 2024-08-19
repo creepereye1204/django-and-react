@@ -44,6 +44,7 @@ function App() {
 
 
   const handleKeyDown = (event) => {
+    console.log('Key pressed:', event.key); // 어떤 키가 눌렸는지 콘솔에 출력
     if (event.key === 'Enter') { // 비밀번호 입력 후 'Enter' 키를 누르면
       
       fetch('https://my-wiki.p-e.kr/api/secret-key', { // API 호출
@@ -80,6 +81,7 @@ function App() {
           value={inputValue}
           onChange={handleInputChange}
           placeholder="여기에 입력하세요"
+          onKeyDown={handleKeyDown} // 'Enter' ���를 �������� handleKeyDown 함수 호출
           
         />
       )}
