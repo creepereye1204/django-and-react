@@ -19,23 +19,24 @@ const Read = () => {
 
   
 
-  async function read() {
-    // title file 추가
-    const results = await fetch(`https://my-wiki.p-e.kr/api/board/read/${id}`, {
-      method: 'GET', // POST 메서드 사용
-      headers: {
-        'X-CSRFToken': csrfToken
-      }
-    });
-
-    if (results.ok) {
-      console.log('불러오기 성공!');
-      setContent(results.content); // content file 추가
-      setTitle(results.title); // title file 추가
-    } else {
-      console.error(results.error,' 불러오기 실패!');
-      // 에러 처리 로직
-    }
+  commentDidMount = () => {
+    fetch(`https://my-wiki.p-e.kr/api/board/read/${id}`, {
+        method: 'GET', // POST 메서드 사용
+        headers: {
+          'X-CSRFToken': csrfToken
+        }
+      }).then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then(data => {
+        setTitle(data.title);
+        setContent(data.content); // API에서 받아�� content로 Quill editor ���기화
+      }).catch(error => {
+        console.error(error); // 에러 처리 로직
+      });
   }
 
   return (
