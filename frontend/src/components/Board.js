@@ -43,8 +43,8 @@ class Board extends Component {
     const { title, content } = this.state.board; // 상태에서 title과 content 추출
 
     return (
-      <div className="view-container">
-        <div className="title">
+      <div className="editor">
+        <div className="title-input">
           {title}
         </div>
         <ReactQuill
