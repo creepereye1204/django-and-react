@@ -52,11 +52,7 @@ class Board extends Component {
           <div>
             <h1>관리자 전용 화면</h1>
             {/* 관리자 전용 내용 */}
-            <ReactQuill
-              modules={{ toolbar: true }}
-              value={content}
-              readOnly={false} // 읽기 전용 모드 해제
-            />
+            
           </div>
         ) : (
           <div>
