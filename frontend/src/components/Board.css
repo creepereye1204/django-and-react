@@ -46,12 +46,12 @@
 
 
 
-.title-input{
+.title-input {
     border-radius: 5px;
-    width: 100%;
-    margin: 10px;
+    width: 80%; /* 너비 80%로 설정 */
+    margin: 10px auto; /* 수평 중앙 정렬을 위해 auto 설정 */
     background: rgba(255, 255, 255, 0.8);
     padding: 10px 0px;
     font-weight: 600;
-
+    text-align: center; /* 텍스트 중앙 정렬 */
 }
