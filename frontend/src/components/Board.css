@@ -1,22 +1,23 @@
-.editor {
-    height: 80%; /* 에디터 높이를 컨테이너의 80%로 설정 */
-    max-height: 80vh; /* 뷰포트 높이의 80%로 제한 */
+.editor{
+    height: 80%;
     width: 95%;
-    top: 10%; /* 상단 여백을 조정하여 중앙 정렬 */
+    top: 0%;
     left: 50%;
     position: absolute;
-    transform: translate(-50%, 0); /* 수직 중앙 정렬 제거 */
+    transform: translate(-50%, 10%);
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
     padding: 10px; /* 내부 여백 추가 */
 }
+
+
 
 .ql-toolbar.ql-snow {
     border: none !important;
 }
 
 .ql-editor {
-    height: 100%; /* 에디터의 높이를 부모 요소에 맞춤 */
+    height: 445px;
     overflow-y: auto; /* 세로 스크롤바 활성화 */
     scrollbar-width: thin; /* Firefox에서 스크롤바 두께 조정 */
 }
@@ -35,9 +36,16 @@
     background-color: rgba(0, 0, 0, 0.7); /* hover 시 색상 변경 */
 }
 
+
+
 .button-group:hover .dropdown-content {
     display: block; /* 마우스 오버 시 드롭다운 표시 */
 }
+
+
+
+
+
 
 .title-input {
     border-radius: 5px;
