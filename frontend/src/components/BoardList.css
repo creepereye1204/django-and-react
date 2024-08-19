@@ -5,6 +5,7 @@
 }
 
 .title{
+    margin: 5px;
     font-size: 16px;
     text-align: center;
     font-weight: 600;
@@ -23,6 +24,7 @@
     transform: translate(-50%,20%);
 }
 .card{
+     background:rgba(255, 255, 255, 0.2);
      width: 150px;
      height: 200px;
      object-fit: cover;
