@@ -48,7 +48,7 @@ class Board extends Component {
           {title}
         </div>
         <ReactQuill
-          modules={{toolbars: false}}
+          modules={{toolbar: false}}
           value={content}
           readOnly={true} // 읽기 전용 모드
         />
