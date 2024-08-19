@@ -1186,3 +1186,6 @@ Traceback (most recent call last):
   File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
     return func(*args, **kwargs)
 TypeError: secret_key() missing 1 required positional argument: 'board_pk'
+WARNING 2024-08-19 08:42:44,011 log 1806019 140616012711808 Not Found: /api/secret_key
+WARNING 2024-08-19 08:42:52,815 log 1806019 140616012711808 Not Found: /api/secret_key
+WARNING 2024-08-19 08:42:57,152 log 1806019 140616012711808 Not Found: /api/secret_key
