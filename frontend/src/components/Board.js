@@ -41,8 +41,8 @@ const Read = () => {
 
   return (
     <div className="viewer">
-      <div className="title" value={title}>
-        
+      <div className="title">
+        {title}
       </div>
       <ReactQuill
         value={content}
