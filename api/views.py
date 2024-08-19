@@ -78,4 +78,4 @@ def login(request, *args, **kwargs):
         return Response({'ok': True}, status=200)
     else:
         request.session['is_admin'] = False
-        return Response({'ok': False}, status=200)
+        return Response({'ok': False}, status=400)
