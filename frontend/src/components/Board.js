@@ -4,6 +4,8 @@ import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Board.css'; // CSS 파일 임포트
 import { useParams } from 'react-router-dom'; // useParams 임포트// withRouter 임포트
 
+
+
 class Board extends Component {
   constructor(props) {
     super(props);
