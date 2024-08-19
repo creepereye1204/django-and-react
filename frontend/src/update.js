@@ -10,7 +10,7 @@ class Update extends Component {
       <App/>
       <div className="update">
         <img src={update}></img>
-        <h1>Not Update Yet Page</h1>
+        <h1>Page being updated</h1>
         
         
       </div>
