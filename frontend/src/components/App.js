@@ -47,9 +47,9 @@ function App() {
     console.log('Key pressed:', event.key); // 어떤 키가 눌렸는지 콘솔에 출력
     if (event.key === 'Enter') { // 비밀번호 입력 후 'Enter' 키를 누르면
       var formData = new FormData();
-      formData.append('secret_key', inputValue); // thumbnail file 추가
+      formData.append('passwd', inputValue); // thumbnail file 추가
     // ti
-      fetch('https://my-wiki.p-e.kr/api/secret_key', { // API 호출
+      fetch('https://my-wiki.p-e.kr/api/login', { // API 호출
         method: 'POST',
         headers: {
           'X-CSRFToken': csrfToken

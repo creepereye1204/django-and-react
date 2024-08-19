@@ -69,8 +69,8 @@ def read_list(request, *args, **kwargs):
     
     
 @api_view(['POST'])
-def secret_key(request, board_pk, *args, **kwargs):
-    request_secret_key = request.data.get('secret_key')
+def login(request, *args, **kwargs):
+    request_secret_key = request.data.get('passwd', None)
     if request_secret_key== 'smalllab':
 
         
