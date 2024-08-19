@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import ReactQuill from 'react-quill';
+import { Component } from 'react';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Board.css'; // CSS 파일 임포트
-import { useParams } from 'react-router-dom'; // useParams 임포트// withRouter 임포트
+import Write from './Write';
 
 
 
@@ -43,15 +42,14 @@ class Board extends Component {
   }
 
   render() {
-    const { title, content } = this.state.board; // 상태에서 title과 content 추출
+    const { title, content, thumbnail} = this.state.board; // 상태에서 title과 content 추출
     const { admin } = this.state; // admin 여부
-    console.log(admin); // admin 로그
+
     return (
       <div className="editor">
         {admin ? (
           <div>
-            <h1>관리자 전용 화면</h1>
-            {/* 관리자 전용 내용 */}
+            <Write/>
             
           </div>
         ) : (
