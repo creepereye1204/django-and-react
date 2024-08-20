@@ -1,9 +1,8 @@
-*{
-    z-index: 2;
+* {
+    z-index: 2; /* 모든 요소의 기본 z-index 설정 */
 }
-.editor {
 
-    
+.editor {
     width: 95%;
     top: 0%;
     left: 50%;
@@ -16,12 +15,15 @@
 
 .ql-toolbar.ql-snow {
     border: none !important;
+    z-index: 3; /* toolbar의 z-index를 높임 */
+    position: relative; /* 위치 조정 */
 }
 
 .ql-editor {
     height: 415px;
     overflow-y: auto; /* 세로 스크롤바 활성화 */
     scrollbar-width: thin; /* Firefox에서 스크롤바 두께 조정 */
+    z-index: 2; /* editor의 z-index */
 }
 
 /* Chrome, Safari, Edge에서 스크롤바 스타일링 */
@@ -38,33 +40,29 @@
     background-color: rgba(0, 0, 0, 0.7); /* hover 시 색상 변경 */
 }
 
-
-
 .button-group:hover .dropdown-content {
     display: block; /* 마우스 오버 시 드롭다운 표시 */
 }
-
-
 
 button:hover {
     background-color: #45a049; /* 버튼 hover 효과 */
 }
 
-.input{
+.input {
     display: flex;
     position: relative;
-    margin-top: auto;
-    
+    margin-top: auto;    
 }
-.title-input{
+
+.title-input {
     border-radius: 5px;
     width: 80%;
     margin: 10px;
     background: rgba(255, 255, 255, 0.8);
     padding: 10px 0px;
     font-weight: 600;
-
 }
+
 button {
     margin: 10px;
     padding: 10px 0px;
@@ -75,6 +73,7 @@ button {
     cursor: pointer;
     width: 15%;
 }
+
 .remove-button {
     margin-left: 10px;
     padding: 5px 10px;
@@ -84,13 +83,14 @@ button {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s; /* 부드러운 전환 효과 */
-  }
-  
-  .remove-button:hover {
+}
+
+.remove-button:hover {
     background-color: #d32f2f; /* hover 효과 */
-  }
-  .thumbnail-container{
+}
+
+.thumbnail-container {
     display: flex;
     margin: 10px 0px;
     align-items: center; /* 세로 정렬 */
-  }
+}

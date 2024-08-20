@@ -4,6 +4,7 @@ import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
 import ImageResize from 'quill-image-resize';
 import { useNavigate } from "react-router-dom";
+
 Quill.register('modules/ImageResize', ImageResize);
 
 const toolbarOptions = [
@@ -21,7 +22,6 @@ const toolbarOptions = [
   ['link', 'image', 'video'],
   ['clean']                                         
 ];
-
 
 const ImageResizeOptions = { parchment: Quill.import('parchment') };
 
@@ -64,10 +64,9 @@ const Write = () => {
     if (results.ok) {
       console.log('저장 성공');
       alert('저장 성공!');
-      navigate(-1); // 이전 ��이지로 이���
-      // 추가적인 성공 처리 로직
+      navigate(-1); // 이전 페이지로 이동
     } else {
-      console.error(results.error,' 저장 실패');
+      console.error(results.error, ' 저장 실패');
       // 에러 처리 로직
     }
   }
@@ -93,30 +92,30 @@ const Write = () => {
         }}
       />
       <div className='thumbnail-container'>
-      <input 
-        id="file-input" 
-        type="file" 
-        accept="image/*" 
-        style={{ display: 'none' }} // 파일 입력 숨기기
-        onChange={handleFileSelect} 
-      />
-      <button 
-        className="thumbnail-button" 
-        onClick={handleButtonClick}
-      >
-        썸네일 업로드
-      </button>
-      {thumbnail && (
-        <div>
-          <p>선택된 파일: {thumbnail.name}</p>
-          <button 
-            className="remove-button" 
-            onClick={handleRemoveFile}
-          >
-            파일 제거
-          </button>
-        </div>
-      )}
+        <input 
+          id="file-input" 
+          type="file" 
+          accept="image/*" 
+          style={{ display: 'none' }} // 파일 입력 숨기기
+          onChange={handleFileSelect} 
+        />
+        <button 
+          className="thumbnail-button" 
+          onClick={handleButtonClick}
+        >
+          썸네일 업로드
+        </button>
+        {thumbnail && (
+          <div>
+            <p>선택된 파일: {thumbnail.name}</p>
+            <button 
+              className="remove-button" 
+              onClick={handleRemoveFile}
+            >
+              파일 제거
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
