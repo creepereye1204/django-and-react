@@ -6,7 +6,6 @@ from .serializers import RoomSerializer,BoardSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import psutil
-from django.shortcuts import get_object_or_404
 
 
 class RoomView(generics.ListAPIView):
@@ -86,15 +85,25 @@ def login(request, *args, **kwargs):
 def update(request, *args, **kwargs):
     
     try:
-        id = request.data.get('id', None)
+        id = request.data.get('id')
         title = request.data.get('title')
         content = request.data.get('content')
         thumbnail = request.data.get('thumbnail',None)
         
+        board = Board.objects.get(pk=id)
+        
+        board.title = title
+        board.content = content
+        
+        
+        
+        
         if thumbnail:
-            Board.objects.up(title=title, content=content, thumbnail=thumbnail)
+            board.thumbnail = thumbnail
         else:
-            Board.objects.create(title=title, content=content)
+            board.thumbnail='defaultThumbnail.png'
+        
+        board.save()
         return Response({'ok': '작성 성공'}, status=200)
     except Exception as e:
         return Response({'error': str(e)}, status=500)

@@ -50,7 +50,12 @@ class Board extends Component {
       <div>
         {admin ? (
           <div>
-            <Update />
+            <Update
+            title={title}
+            content={content}
+            thumbnail={thumbnail}
+            id={this.state.id}
+            />
             
           </div>
         ) : (

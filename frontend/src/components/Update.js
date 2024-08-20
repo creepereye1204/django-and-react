@@ -25,12 +25,13 @@ const toolbarOptions = [
 
 const ImageResizeOptions = { parchment: Quill.import('parchment') };
 
-const Update = () => {
-  const { id } = useParams();
+const Update = ({ title:initialTitle, content:initialContent, thumbnail:initialThumbnail, id:initialId }) => {
+  
   const navigate = useNavigate();
-  const [content, setContent] = useState('');
-  const [title, setTitle] = useState('');
-  const [thumbnail, setThumbnail] = useState('');
+  const [id]=useState(initialId);
+  const [content, setContent] = useState(initialContent);
+  const [title, setTitle] = useState(initialTitle);
+  const [thumbnail, setThumbnail] = useState(initialThumbnail);
 
   const handleChange = (value) => {
     setContent(value);
