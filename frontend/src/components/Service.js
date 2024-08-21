@@ -102,8 +102,7 @@ class Service extends Component {
   };
 
   sendQuestionToServer = async (question) => {
-    // CSRF 토큰은 함수로 가져온다고 가정
-    const csrfToken = this.getCSRFToken();
+  
 
     try {
       const response = await fetch(`https://my-wiki.p-e.kr/api/service`, {
@@ -141,10 +140,7 @@ class Service extends Component {
     }
   };
 
-  getCSRFToken = () => {
-    // CSRF 토큰을 가져오는 로직을 추가하세요
-    return document.querySelector('[name=csrfmiddlewaretoken]').value; // 예시
-  };
+ 
 
   render() {
     return (
