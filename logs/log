@@ -1542,3 +1542,4 @@ Traceback (most recent call last):
   File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
     raise VariableDoesNotExist(
 django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'number', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x7f1f60864520>}
+WARNING 2024-08-21 02:40:42,718 log 2421388 139754115463040 Method Not Allowed: /api/service

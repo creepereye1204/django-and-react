@@ -1,0 +1,23 @@
+.chat-container{
+    position: absolute;
+    top:0;
+    left:50%;
+    width: 75%;
+    padding: 10px;
+    margin: 0 auto;
+}
+.client{
+    background-color: greenyellow;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    left:0;
+}
+.server{
+    background-color: azure;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    position: absolute;
+    right:0;
+}
+

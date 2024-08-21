@@ -1,51 +1,4 @@
-// import React, { Component } from 'react';
-
-
-
-
-// class Service extends Component {
-  
-
-//   componentDidMount() { // 오타 수정
-    
-//     fetch(`https://my-wiki.p-e.kr/api/service`, {
-//       method: 'POST',
-//       headers: {
-//         'X-CSRFToken': csrfToken, // CSRF 토큰 추가
-//         'Content-Type': 'application/json', // 필요 시 추가
-//       },
-//       body: JSON.stringify({
-//         question: "배가너무아파요...",
-//       }),
-//     })
-//       .then(response => {
-//         if (!response.ok) {
-//           throw new Error("Network response was not ok");
-//         }
-//         return response.json();
-//       })
-//       .then(data => {
-//         console(data.result) // API에서 받아온 데이터를 상태에 저장
-//       })
-//       .catch(error => {
-//         console.error(error); // 에러 처리 로직
-//       });
-//   }
-
-//   render() {
-
-//     return (
-//       <div>
-        
-          
-          
-        
-//       </div>
-//     );
-//   }
-// }
-
-// export default Service; // withRouter로 감싸기
+import './Service.css'
 import React, { useState, useEffect } from 'react';
 
 const Service = () => {
@@ -72,10 +25,11 @@ const Service = () => {
 
     recognition.onerror = (event) => {
       console.error("음성 인식 오류: ", event.error);
+      recognition.start();
     };
 
     recognition.start(); // 컴포넌트가 마운트되면 음성 인식 시작
-
+    
     return () => {
       recognition.stop(); // 컴포넌트 언마운트 시 음성 인식 정지
     };
@@ -105,12 +59,16 @@ const Service = () => {
   };
 
   return (
-    <div>
-      <h1>심신풀이</h1>
+    <div className='chat-container'>
+      <h1 className='title'>심신풀이</h1>
       {chat.map((message, index) => (
-        <div key={index}>{message}</div>
+        index%2 === 0?(
+        <div className='clinet'>{message}</div>)
+        : (
+        <div className='server'>{message}</div>
+        )
       ))}
-      {isClientTurn ? <p>말하세요!</p> : <p>로딩중...</p>}
+      {isClientTurn ? <div className='able'>말하세요!</div> : <div className='load'>로딩중...</div>}
     </div>
   );
 };
