@@ -34,13 +34,27 @@
 }
 
 .able{
-    font-size: 12px;
-    text-align: center;
-}
-.load{
     font-size: 100px;
     text-align: center;
-    top:0;
+    top: 0;
     left: 50%;
-    transform: translate(-50%,80%);
+    transform: translate(-50%, 80%);
+}
+
+.load {
+    font-size: 100px;
+    text-align: center;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 80%);
+    animation: move 1s infinite alternate; /* 애니메이션 추가 */
+}
+
+@keyframes move {
+    0% {
+        transform: translate(-50%, 80%);
+    }
+    100% {
+        transform: translate(-50%, 60%);
+    }
 }

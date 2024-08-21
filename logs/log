@@ -1915,3 +1915,4 @@ Traceback (most recent call last):
     paragraph=db.get(question=question,k=1)['metadatas'][0][0]
 KeyError: '응답'
 WARNING 2024-08-21 05:32:43,108 log 2524760 140182047213440 Not Found: /.git/config
+WARNING 2024-08-21 06:15:19,068 log 2571641 140654648350592 Method Not Allowed: /api/service
