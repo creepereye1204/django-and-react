@@ -30,9 +30,7 @@ const Service = () => {
 
     recognition.start(); // 컴포넌트가 마운트되면 음성 인식 시작
     
-    return () => {
-      recognition.stop(); // 컴포넌트 언마운트 시 음성 인식 정지
-    };
+    
   }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 실행
 
   const addMessage = (message) => {
