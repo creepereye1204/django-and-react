@@ -152,7 +152,7 @@ def service(request, *args, **kwargs):
     text = ollama.chat(model='priest_v3',messages=[
     {
         'role': 'user',
-        'content': f"상황:'{question}',성경구절:'{paragraph}'",
+        'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
     },
     ])
     result=text['message']['content']

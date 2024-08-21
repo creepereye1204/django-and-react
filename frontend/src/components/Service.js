@@ -1,4 +1,4 @@
-import './Service.css'
+import './Service.css';
 import React, { useState, useEffect } from 'react';
 
 const Service = () => {
@@ -24,21 +24,25 @@ const Service = () => {
     };
 
     recognition.onerror = (event) => {
-      console.error("음성 인식 오류");
-      
+      console.error("음성 인식 오류: ", event.error);
+      recognition.start(); // 오류 발생 시 음성 인식을 다시 시작
     };
-    recognition.onend = function() {
+
+    recognition.onend = () => {
       console.log("음성 인식이 종료되었습니다. 다시 시작합니다...");
       recognition.start(); // 인식이 종료되면 다시 시작
-   };
+    };
 
     recognition.start(); // 컴포넌트가 마운트되면 음성 인식 시작
-    
-    
+
+    return () => {
+      recognition.stop(); // 컴포넌트 언마운트 시 음성 인식 정지
+    };
   }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 실행
 
   const addMessage = (message) => {
     setChat((prevChat) => [...prevChat, message]);
+    setIsClientTurn(prev => !prev); // 턴을 전환
   };
 
   const sendQuestionToServer = async (question) => {
@@ -52,10 +56,8 @@ const Service = () => {
         body: JSON.stringify({ question }),
       });
       const data = await response.json();
-      recognition.start(); // API 응답을 받으면 음성 인식 재시작
       return data.result;
     } catch (error) {
-      recognition.start();
       return `일시적인 오류: ${error.message}가 발생하였습니다`;
     }
   };
@@ -64,10 +66,10 @@ const Service = () => {
     <div className='chat-container'>
       <h1 className='title'>심신풀이</h1>
       {chat.map((message, index) => (
-        index%2 === 0?(
-        <div className='clinet'>{message}</div>)
-        : (
-        <div className='server'>{message}</div>
+        index % 2 === 0 ? (
+          <div className='client' key={index}>{message}</div> // 짝수 인덱스
+        ) : (
+          <div className='server' key={index}>{message}</div> // 홀수 인덱스
         )
       ))}
       {isClientTurn ? <div className='able'>말하세요!</div> : <div className='load'>로딩중...</div>}
@@ -76,4 +78,3 @@ const Service = () => {
 };
 
 export default Service;
-
