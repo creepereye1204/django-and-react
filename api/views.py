@@ -149,10 +149,10 @@ def update(request, *args, **kwargs):
 def service(request, *args, **kwargs):
     question = request.data.get('question', None)
     paragraph=db.get(question=question,k=1)
-    text = ollama.chat(model='priest',messages=[
+    text = ollama.chat(model='priest_v3',messages=[
     {
         'role': 'user',
-        'content': f"상황:'{question}',성경구절:'{paragraph}' 한글로 자연스럽게 대답해줘",
+        'content': f"상황:'{question}',성경구절:'{paragraph}'",
     },
     ])
     result=text['message']['content']

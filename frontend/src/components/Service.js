@@ -24,12 +24,13 @@ const Service = () => {
     };
 
     recognition.onerror = (event) => {
-      console.error("음성 인식 오류: ", event.error);
-      recognition.stop(); // ��성 인식 실�� 시 재시작
-      setTimeout(() => {
-        recognition.start(); // 1초 후 음성 인식 재시작
-      }, 1000);
+      console.error("음성 인식 오류");
+      
     };
+    recognition.onend = function() {
+      console.log("음성 인식이 종료되었습니다. 다시 시작합니다...");
+      recognition.start(); // 인식이 종료되면 다시 시작
+   };
 
     recognition.start(); // 컴포넌트가 마운트되면 음성 인식 시작
     
