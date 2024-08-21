@@ -46,117 +46,94 @@
 // }
 
 // export default Service; // withRouter로 감싸기
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-class Service extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      chatBubbles: [], // 채팅 말풍선 저장
-      isRecognizing: false, // 음성 인식 상태
-    };
-    this.recognition = null; // 음성 인식 객체
-  }
+const Service = () => {
+  const [chat, setChat] = useState([]);
+  const addMessage = (message) => {
+    setChat((prevChat) => [...prevChat, message]);
+  
+  const [isClientTurn, setIsClientTurn] = useState(true); // 현재 턴을 관리하는 상태
+  const recognition = new window.webkitSpeechRecognition();
+  recognition.continuous = true;
+  recognition.interimResults = false;
+  recognition.lang = 'ko-KR';
+  recognition.start();
+  
 
-  componentDidMount() {
-    // 음성 인식 초기화
-    this.initSpeechRecognition();
-  }
-
-  initSpeechRecognition = () => {
-    this.recognition = new window.webkitSpeechRecognition();
-    this.recognition.continuous = true;
-    this.recognition.interimResults = false;
-    this.recognition.lang = 'ko-KR';
-
-    this.recognition.onstart = () => {
-      console.log("음성 인식 시작...");
-      this.setState({ isRecognizing: true }); // 음성 인식 상태 업데이트
-    };
-
-    this.recognition.onresult = async (event) => {
-      for (let i = event.resultIndex; i < event.results.length; ++i) {
+    
+    
+   recognition.onresult = async (event) => {
+        recognition.stop();
+        for (let i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
-          const recognizedText = event.results[i][0].transcript;
-          console.log("Google 음성 인식이 이렇게 들었습니다: " + recognizedText);
-          
-          // 사용자 질문 추가
-          this.addChatBubble(recognizedText, 'user-bubble');
-
-          // 서버에 질문 전송하고 음성 인식 중지
-          this.recognition.stop();
-          await this.sendQuestionToServer(recognizedText);
+            addMessage(event.results[i][0].transcript);
+            addMessage(await this.sendQuestionToServer(recognizedText));
         }
-      }
+        }
     };
 
     this.recognition.onerror = (event) => {
       console.error("음성 인식 오류: ", event.error);
     };
 
-    this.recognition.onend = () => {
-      console.log("음성 인식 종료");
-      this.setState({ isRecognizing: false }); // 음성 인식 상태 업데이트
+    this.recognition.stop = () => {
+      console.log("서버턴");
+      setIsClientTurn(false); // 음성 인식 상태 업데이트
     };
 
-    this.recognition.start(); // 음성 인식 시작
+    this.recognition.start=()=>{
+      console.log("사용자턴");
+      setIsClientTurn(true);
+    }; 
   };
 
   sendQuestionToServer = async (question) => {
   
 
     try {
-      const response = await fetch(`https://my-wiki.p-e.kr/api/service`, {
+      await fetch(`https://my-wiki.p-e.kr/api/service`, {
         method: 'POST',
         headers: {
           'X-CSRFToken': csrfToken,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ question }),
-      });
-
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      const data = await response.json();
-      this.addChatBubble(data.result, 'response-bubble'); // 서버 응답 추가
-
-      // 서버로부터 응답을 받은 후 음성 인식 재시작
-      this.startRecognition();
+      }).then(response=>{
+        return response.json();
+      }).then(data=>{
+        
+        recognition.start(); // API ���� 받��을 시에 ��성 인식 재시작
+        return data.result;
+      })
     } catch (error) {
-      console.error("서버 오류: ", error);
-      this.startRecognition(); // 에러 발생 시에도 음성 인식 재시작
-    }
-  };
 
-  addChatBubble = (content, bubbleType) => {
-    this.setState((prevState) => ({
-      chatBubbles: [...prevState.chatBubbles, { content, bubbleType }],
-    }));
-  };
+      recognition.start();
+      return `일시적인오류:${error.message} 가발생하였습니다`;
+      
+    };
+    
 
-  startRecognition = () => {
-    if (!this.state.isRecognizing) {
-      this.recognition.start(); // 음성 인식 다시 시작
-    }
-  };
 
+  
+
+  
  
 
-  render() {
+
     return (
       <div>
-        <div>
-          {this.state.chatBubbles.map((bubble, index) => (
-            <div key={index} className={bubble.bubbleType}>
-              {bubble.content}
-            </div>
-          ))}
-        </div>
+        <h1>심신풀이</h1>
+        {chat.map((message, index) => (
+          (index % 2 === 0)?  
+          <div>{message}</div>:
+          <div>{message}</div>
+        ))}
+        {isClientTurn?(<p>말하세요!</p>):(<p>로딩중...</p>)}
       </div>
     );
-  }
 }
+};
+
 
 export default Service;
