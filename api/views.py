@@ -6,6 +6,42 @@ from .serializers import RoomSerializer,BoardSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import psutil
+import ollama
+
+class Bible():
+    def __init__(self,path:str="biblebot/",table:str='blible_counseling'):
+        import chromadb
+        import os
+        from chromadb.db.base import UniqueConstraintError
+        from chromadb.utils import embedding_functions
+        
+        if not os.path.exists(path):
+            os.makedirs(path, exist_ok=True)
+            print(f"Directory '{path}' created successfully.")
+
+         
+        
+        client = chromadb.PersistentClient(path=path)
+        em = embedding_functions.SentenceTransformerEmbeddingFunction(model_name="Huffon/sentence-klue-roberta-base")
+        try:
+            self.collection = client.create_collection(name=table, embedding_function=em)
+        except UniqueConstraintError: 
+            self.collection = client.get_collection(name=table, embedding_function=em)
+            
+    def get(self,question:str,k:int)->list[str]:
+        
+        results=self.collection.query(query_texts=[question],n_results=k)
+        return results
+
+
+    def add(self,key:str=None,question:str=None,answer=None):
+
+        self.collection.add(
+        documents=[question],
+        metadatas=[answer],
+        ids=[key],
+        )
+db=Bible()
 
 
 class RoomView(generics.ListAPIView):
@@ -107,3 +143,18 @@ def update(request, *args, **kwargs):
         return Response({'ok': '작성 성공'}, status=200)
     except Exception as e:
         return Response({'error': str(e)}, status=500)
+    
+
+@api_view(['POST'])
+def service(request, *args, **kwargs):
+    question = request.data.get('question', None)
+    paragraph=db.get(question=question,k=1)
+    text = ollama.chat(model='priest_v2',messages=[
+    {
+        'role': 'user',
+        'content': f"상황:'{question}',성경구절:'{paragraph}'",
+    },
+    ])
+    result=text['message']['content']
+    return Response({'result': result}, status=200)
+    

@@ -11,7 +11,7 @@ class Navbar extends Component {
         <nav className="navbar">
           <Link to="/">Home</Link>
           <Link to="/about">About</Link> 
-          <Link to="/ppt">Ppt</Link>
+          <Link to="/service">Project</Link>
           <Link to="/board">Blog</Link>
           <Link to="/write">Write</Link>
         </nav>
