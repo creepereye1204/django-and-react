@@ -55,6 +55,7 @@ const Service = () => {
   
   const [isClientTurn, setIsClientTurn] = useState(true); // 현재 턴을 관리하는 상태
   const recognition = new window.webkitSpeechRecognition();
+  useEffect(() => {
   recognition.continuous = true;
   recognition.interimResults = false;
   recognition.lang = 'ko-KR';
@@ -73,21 +74,21 @@ const Service = () => {
         }
     };
 
-    this.recognition.onerror = (event) => {
+    recognition.onerror = (event) => {
       console.error("음성 인식 오류: ", event.error);
     };
 
-    this.recognition.stop = () => {
+    recognition.stop = () => {
       console.log("서버턴");
       setIsClientTurn(false); // 음성 인식 상태 업데이트
     };
 
-    this.recognition.start=()=>{
+    recognition.start=()=>{
       console.log("사용자턴");
       setIsClientTurn(true);
     }; 
-  };
-
+  }
+  )};
   const sendQuestionToServer = async (question) => {
   
 
