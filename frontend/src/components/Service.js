@@ -83,7 +83,8 @@ class Service extends Component {
           // 사용자 질문 추가
           this.addChatBubble(recognizedText, 'user-bubble');
 
-          // 서버에 질문 전송
+          // 서버에 질문 전송하고 음성 인식 중지
+          this.recognition.stop();
           await this.sendQuestionToServer(recognizedText);
         }
       }
@@ -121,10 +122,11 @@ class Service extends Component {
       const data = await response.json();
       this.addChatBubble(data.result, 'response-bubble'); // 서버 응답 추가
 
-      // 서버로부터 응답을 받으면 음성 인식을 다시 시작
+      // 서버로부터 응답을 받은 후 음성 인식 재시작
       this.startRecognition();
     } catch (error) {
       console.error("서버 오류: ", error);
+      this.startRecognition(); // 에러 발생 시에도 음성 인식 재시작
     }
   };
 
