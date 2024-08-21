@@ -1914,3 +1914,4 @@ Traceback (most recent call last):
   File "/home/apps/my_wiki/./api/views.py", line 151, in service
     paragraph=db.get(question=question,k=1)['metadatas'][0][0]
 KeyError: '응답'
+WARNING 2024-08-21 05:32:43,108 log 2524760 140182047213440 Not Found: /.git/config
