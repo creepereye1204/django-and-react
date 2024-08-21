@@ -46,95 +46,74 @@
 // }
 
 // export default Service; // withRouter로 감싸기
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const Service = () => {
   const [chat, setChat] = useState([]);
-  const addMessage = (message) => {
-    setChat((prevChat) => [...prevChat, message]);
-  
   const [isClientTurn, setIsClientTurn] = useState(true); // 현재 턴을 관리하는 상태
   const recognition = new window.webkitSpeechRecognition();
-  useEffect(() => {
-  recognition.continuous = true;
-  recognition.interimResults = false;
-  recognition.lang = 'ko-KR';
-  recognition.start();
-  
 
-    
-    
-   recognition.onresult = async (event) => {
-        recognition.stop();
-        for (let i = event.resultIndex; i < event.results.length; ++i) {
+  useEffect(() => {
+    recognition.continuous = true;
+    recognition.interimResults = false;
+    recognition.lang = 'ko-KR';
+
+    recognition.onresult = async (event) => {
+      recognition.stop();
+      for (let i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
-            addMessage(event.results[i][0].transcript);
-            addMessage(await sendQuestionToServer(recognizedText));
+          const recognizedText = event.results[i][0].transcript;
+          addMessage(recognizedText);
+          const serverResponse = await sendQuestionToServer(recognizedText);
+          addMessage(serverResponse);
         }
-        }
+      }
     };
 
     recognition.onerror = (event) => {
       console.error("음성 인식 오류: ", event.error);
     };
 
-    recognition.stop = () => {
-      console.log("서버턴");
-      setIsClientTurn(false); // 음성 인식 상태 업데이트
+    recognition.start(); // 컴포넌트가 마운트되면 음성 인식 시작
+
+    return () => {
+      recognition.stop(); // 컴포넌트 언마운트 시 음성 인식 정지
     };
+  }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 실행
 
-    recognition.start=()=>{
-      console.log("사용자턴");
-      setIsClientTurn(true);
-    }; 
-  }
-  )};
+  const addMessage = (message) => {
+    setChat((prevChat) => [...prevChat, message]);
+  };
+
   const sendQuestionToServer = async (question) => {
-  
-
     try {
-      await fetch(`https://my-wiki.p-e.kr/api/service`, {
+      const response = await fetch(`https://my-wiki.p-e.kr/api/service`, {
         method: 'POST',
         headers: {
           'X-CSRFToken': csrfToken,
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ question }),
-      }).then(response=>{
-        return response.json();
-      }).then(data=>{
-        
-        recognition.start(); // API ���� 받��을 시에 ��성 인식 재시작
-        return data.result;
-      })
+      });
+      const data = await response.json();
+      recognition.start(); // API 응답을 받으면 음성 인식 재시작
+      return data.result;
     } catch (error) {
-
       recognition.start();
-      return `일시적인오류:${error.message} 가발생하였습니다`;
-      
-    };
-    
+      return `일시적인 오류: ${error.message}가 발생하였습니다`;
+    }
+  };
 
-
-  
-
-  
- 
-
-
-    return (
-      <div>
-        <h1>심신풀이</h1>
-        {chat.map((message, index) => (
-          (index % 2 === 0)?  
-          <div>{message}</div>:
-          <div>{message}</div>
-        ))}
-        {isClientTurn?(<p>말하세요!</p>):(<p>로딩중...</p>)}
-      </div>
-    );
-}
+  return (
+    <div>
+      <h1>심신풀이</h1>
+      {chat.map((message, index) => (
+        <div key={index}>{message}</div>
+      ))}
+      {isClientTurn ? <p>말하세요!</p> : <p>로딩중...</p>}
+    </div>
+  );
 };
 
-
 export default Service;
+
