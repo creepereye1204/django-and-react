@@ -68,7 +68,7 @@ const Service = () => {
         for (let i = event.resultIndex; i < event.results.length; ++i) {
         if (event.results[i].isFinal) {
             addMessage(event.results[i][0].transcript);
-            addMessage(await this.sendQuestionToServer(recognizedText));
+            addMessage(await sendQuestionToServer(recognizedText));
         }
         }
     };
@@ -88,7 +88,7 @@ const Service = () => {
     }; 
   };
 
-  sendQuestionToServer = async (question) => {
+  const sendQuestionToServer = async (question) => {
   
 
     try {
