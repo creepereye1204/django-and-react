@@ -1590,3 +1590,49 @@ Traceback (most recent call last):
   File "/home/apps/my_wiki/./api/views.py", line 151, in service
     paragraph=db.get(question=question,k=1)['metadatas']['content'][0]
 TypeError: list indices must be integers or slices, not str
+ERROR 2024-08-21 04:05:17,198 log 2508028 139986520164224 Internal Server Error: /api/service
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/apps/my_wiki/./api/views.py", line 151, in service
+    paragraph=db.get(question=question,k=1)['metadatas'][0][0]['응답']
+IndexError: list index out of range
+ERROR 2024-08-21 04:05:25,398 log 2508028 139986520164224 Internal Server Error: /api/service
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/apps/my_wiki/./api/views.py", line 151, in service
+    paragraph=db.get(question=question,k=1)['metadatas'][0][0]['응답']
+IndexError: list index out of range
