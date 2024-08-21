@@ -1,23 +1,31 @@
-.chat-container{
+.chat-container {
     transform: translate(-50%, 50%);
     position: absolute;
     top: 0;
     left: 50%;
     width: 75%;
     padding: 10px;
+    max-height: 80vh; /* 최대 높이를 설정하여 스크롤을 가능하게 함 */
+    overflow-y: auto; /* 세로 방향 스크롤 활성화 */
+    border: 1px solid #ccc; /* 선택 사항: 경계선 추가 */
+    border-radius: 10px; /* 선택 사항: 모서리 둥글게 */
 }
-.client{
+
+.client {
     width: 40%;
     background-color: greenyellow;
     border-radius: 10px;
     margin-bottom: 10px;
-    left:0%;
+    left: 0%;
+    position: relative; /* 상대 위치 설정 */
 }
-.server{
+
+.server {
     width: 40%;
     background-color: azure;
     border-radius: 10px;
     margin-bottom: 10px;
-    right:0%;
+    right: 0%;
+    position: relative; /* 상대 위치 설정 */
+    margin-left: auto; /* 왼쪽 여백 자동으로 설정하여 오른쪽 정렬 */
 }
-
