@@ -1544,3 +1544,49 @@ Traceback (most recent call last):
 django.template.base.VariableDoesNotExist: Failed lookup for key [autofocus] in {'base_template': 'input.html', 'input_type': 'number', 'template_pack': 'rest_framework/horizontal', 'renderer': <rest_framework.renderers.HTMLFormRenderer object at 0x7f1f60864520>}
 WARNING 2024-08-21 02:40:42,718 log 2421388 139754115463040 Method Not Allowed: /api/service
 WARNING 2024-08-21 03:37:59,613 log 2490106 140499190011776 Method Not Allowed: /api/service
+ERROR 2024-08-21 04:03:27,463 log 2503938 139999256176512 Internal Server Error: /api/service
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/apps/my_wiki/./api/views.py", line 151, in service
+    paragraph=db.get(question=question,k=1)['metadatas']['content'][0]
+TypeError: list indices must be integers or slices, not str
+ERROR 2024-08-21 04:03:27,562 log 2503938 139999256176512 Internal Server Error: /api/service
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/apps/my_wiki/./api/views.py", line 151, in service
+    paragraph=db.get(question=question,k=1)['metadatas']['content'][0]
+TypeError: list indices must be integers or slices, not str

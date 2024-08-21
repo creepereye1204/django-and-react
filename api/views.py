@@ -148,7 +148,7 @@ def update(request, *args, **kwargs):
 @api_view(['POST'])
 def service(request, *args, **kwargs):
     question = request.data.get('question', None)
-    paragraph=db.get(question=question,k=1)
+    paragraph=db.get(question=question,k=1)['metadatas'][0][0]['응답']
     text = ollama.chat(model='priest_v3',messages=[
     {
         'role': 'user',
