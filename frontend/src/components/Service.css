@@ -1,23 +1,23 @@
 .chat-container{
+    transform: translate(-50%, 50%);
     position: absolute;
-    top:0;
-    left:50%;
+    top: 0;
+    left: 50%;
     width: 75%;
     padding: 10px;
-    margin: 0 auto;
 }
 .client{
+    width: 40%;
     background-color: greenyellow;
     border-radius: 10px;
     margin-bottom: 10px;
-    position: absolute;
-    left:0;
+    left:0%;
 }
 .server{
+    width: 40%;
     background-color: azure;
     border-radius: 10px;
     margin-bottom: 10px;
-    position: absolute;
-    right:0;
+    right:0%;
 }
 
