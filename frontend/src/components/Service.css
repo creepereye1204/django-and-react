@@ -34,17 +34,21 @@
 }
 
 .able{
+    color: aqua;
+    position: absolute;
     font-size: 100px;
     text-align: center;
-    top: 0;
+    /* top: 0; */
     left: 50%;
     transform: translate(-50%, 80%);
 }
 
 .load {
+    color: aqua;
+    position: absolute;
     font-size: 100px;
     text-align: center;
-    top: 0;
+    /* top: 0; */
     left: 50%;
     transform: translate(-50%, 80%);
     animation: move 1s infinite alternate; /* 애니메이션 추가 */
