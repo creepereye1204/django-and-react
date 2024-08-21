@@ -53,6 +53,7 @@ class Service extends Component {
     super(props);
     this.state = {
       chatBubbles: [], // 채팅 말풍선 저장
+      isRecognizing: false, // 음성 인식 상태
     };
     this.recognition = null; // 음성 인식 객체
   }
@@ -70,6 +71,7 @@ class Service extends Component {
 
     this.recognition.onstart = () => {
       console.log("음성 인식 시작...");
+      this.setState({ isRecognizing: true }); // 음성 인식 상태 업데이트
     };
 
     this.recognition.onresult = async (event) => {
@@ -91,10 +93,17 @@ class Service extends Component {
       console.error("음성 인식 오류: ", event.error);
     };
 
+    this.recognition.onend = () => {
+      console.log("음성 인식 종료");
+      this.setState({ isRecognizing: false }); // 음성 인식 상태 업데이트
+    };
+
     this.recognition.start(); // 음성 인식 시작
   };
 
   sendQuestionToServer = async (question) => {
+    // CSRF 토큰은 함수로 가져온다고 가정
+    const csrfToken = this.getCSRFToken();
 
     try {
       const response = await fetch(`https://my-wiki.p-e.kr/api/service`, {
@@ -103,9 +112,7 @@ class Service extends Component {
           'X-CSRFToken': csrfToken,
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          question: question,
-        }),
+        body: JSON.stringify({ question }),
       });
 
       if (!response.ok) {
@@ -114,6 +121,9 @@ class Service extends Component {
 
       const data = await response.json();
       this.addChatBubble(data.result, 'response-bubble'); // 서버 응답 추가
+
+      // 서버로부터 응답을 받으면 음성 인식을 다시 시작
+      this.startRecognition();
     } catch (error) {
       console.error("서버 오류: ", error);
     }
@@ -125,7 +135,16 @@ class Service extends Component {
     }));
   };
 
-  
+  startRecognition = () => {
+    if (!this.state.isRecognizing) {
+      this.recognition.start(); // 음성 인식 다시 시작
+    }
+  };
+
+  getCSRFToken = () => {
+    // CSRF 토큰을 가져오는 로직을 추가하세요
+    return document.querySelector('[name=csrfmiddlewaretoken]').value; // 예시
+  };
 
   render() {
     return (
