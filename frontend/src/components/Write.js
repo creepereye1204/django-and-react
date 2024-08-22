@@ -61,6 +61,7 @@ const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) 
     formData.append('thumbnail', thumbnail); 
     formData.append('title', title); 
     formData.append('content', content); 
+    formData.append('id', id); // id 값이 있으면 update, 없으면 write
     const url=id?'https://my-wiki.p-e.kr/api/board/update':'https://my-wiki.p-e.kr/api/board/write'
     const results = await fetch(url, {
       method: 'POST', // POST 메서드 사용
