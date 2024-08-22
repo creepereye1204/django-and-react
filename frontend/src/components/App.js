@@ -75,7 +75,7 @@ function App({writeMode= false}) {
 
 
   return (
-    <div className={isWriteMode?'.editBackground':'.normalBackground'}>
+    <div className={isWriteMode?'editBackground':'normalBackground'}>
       <video src={NightCity} autoPlay loop muted />
       <Navbar />
       {showInput && ( // showInput이 true일 때만 입력창을 보여줍니다.
