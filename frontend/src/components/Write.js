@@ -80,7 +80,7 @@ const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) 
       if(!id)navigate(-1);
 // 이전 페이지로 이동
     } else {
-      console.error(results.error, ' 저장 실패');
+      alert(results.error, ' 저장 실패');
       
     }
   }
