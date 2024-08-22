@@ -6,8 +6,8 @@
     width: 95%;
     top: 0%;
     left: 50%;
-    position: fixed;
-    transform: translate(-50%, 5%);
+    position: absolute;
+    transform: translate(-50%, 10%);
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
     padding: 10px; /* 내부 여백 추가 */
