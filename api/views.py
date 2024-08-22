@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework import generics
 
 from .models import Room, Board
-from .serializers import RoomSerializer,BoardSerializer
+from .serializers import RoomSerializer,BoardSerializer,BoardListSerializer
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import psutil
@@ -158,7 +158,7 @@ def read(request, board_pk, *args, **kwargs):
 def read_list(request, *args, **kwargs):
     try:
         boards=Board.objects.all()
-        serializer = BoardSerializer(boards, many=True)
+        serializer = BoardListSerializer(boards, many=True)
         return Response(serializer.data, status=200)
     except Exception as e:
         return Response({'error': e.message}, status=500)
