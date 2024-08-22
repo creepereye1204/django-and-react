@@ -58,7 +58,10 @@ const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) 
 
   async function write(){
     const formData = new FormData();
-    formData.append('thumbnail', thumbnail); 
+    
+    if (thumbnail instanceof File && thumbnail.type.startsWith('image/')) formData.append('thumbnail', thumbnail);
+    
+    
     formData.append('title', title); 
     formData.append('content', content); 
     formData.append('id', id); // id 값이 있으면 update, 없으면 write
