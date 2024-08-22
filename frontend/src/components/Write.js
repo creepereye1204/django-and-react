@@ -58,7 +58,7 @@ const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) 
 
   async function write(){
     const formData = new FormData();
-    formData.append('thumbnail', e.target.files[0]); 
+    formData.append('thumbnail', thumbnail); 
     formData.append('title', title); 
     formData.append('content', content); 
     const url=id?'https://my-wiki.p-e.kr/api/board/update':'https://my-wiki.p-e.kr/api/board/write'
