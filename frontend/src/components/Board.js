@@ -3,7 +3,7 @@ import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Board.css'; // CSS 파일 임포트
 import { useParams } from 'react-router-dom'; // useParams 임포트// withRouter 임포트
-import Update from './Update'; // Write 컴포��트 ��포트
+import Write from './Write'; // Write 컴포��트 ��포트
 
 
 class Board extends Component {
@@ -17,8 +17,7 @@ class Board extends Component {
   }
 
   componentDidMount() { // 오타 수정
-    const id = this.state.id;
-    const csrfToken = ''; // CSRF 토큰을 적절히 설정해야 합니다.
+    const id = this.state.id;// CSRF 토큰을 적절히 설정해야 합니다.
     fetch(`https://my-wiki.p-e.kr/api/board/read/${id}`, {
       method: 'GET',
       headers: {
@@ -50,10 +49,10 @@ class Board extends Component {
       <div>
         {admin ? (
           <div>
-            <Update
-            title={title}
-            content={content}
-            thumbnail={thumbnail}
+            <Write
+            initialTitle={title}
+            initialContent={content}
+            initialThumbnail={thumbnail}
             id={this.state.id}
             />
             

@@ -3,7 +3,7 @@ import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
 import ImageResize from 'quill-image-resize';
-import { useNavigate,useParams } from "react-router-dom";
+
 Quill.register('modules/ImageResize', ImageResize);
 
 const toolbarOptions = [
@@ -27,7 +27,6 @@ const ImageResizeOptions = { parchment: Quill.import('parchment') };
 
 const Update = ({ title:initialTitle, content:initialContent, thumbnail:initialThumbnail, id:initialId }) => {
   
-  const navigate = useNavigate();
   const [id]=useState(initialId);
   const [content, setContent] = useState(initialContent);
   const [title, setTitle] = useState(initialTitle);

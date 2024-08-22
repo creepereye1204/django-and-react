@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
 import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Write.css'; // CSS 파일 임포트
@@ -25,18 +25,25 @@ const toolbarOptions = [
 
 const ImageResizeOptions = { parchment: Quill.import('parchment') };
 
-const Write = () => {
+const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) => {
+ 
+
+  
   const navigate = useNavigate();
-  const [content, setContent] = useState('');
-  const [title, setTitle] = useState('');
-  const [thumbnail, setThumbnail] = useState('');
+  const formData = new FormData();
+  const [content, setContent] = useState(initialContent);
+  const [title, setTitle] = useState(initialTitle);
+  const [thumbnail, setThumbnail] = useState(initialThumbnail);
+
 
   const handleChange = (value) => {
     setContent(value);
+    formData.append('content', value); // content file 추가
   };
 
   const handleFileSelect = (e) => {
     setThumbnail(e.target.files[0]);
+    formData.append('thumbnail', e.target.files[0]); // thumbnail file 추가
   };
 
   const handleButtonClick = () => {
@@ -46,14 +53,12 @@ const Write = () => {
   const handleRemoveFile = () => {
     setThumbnail(''); // 선택한 파일 제거
     document.getElementById('file-input').value = ''; // 파일 입력 초기화
+    formData.delete('thumbnail'); // thumbnail file 제거
   };
 
-  async function handleSave() {
-    var formData = new FormData();
-    formData.append('thumbnail', thumbnail); // thumbnail file 추가
-    formData.append('content', content); // content file 추가
-    formData.append('title', title); // title file 추가
-    const results = await fetch('https://my-wiki.p-e.kr/api/board/write', {
+  async function write(){
+    const url=id?'https://my-wiki.p-e.kr/api/board/update':'https://my-wiki.p-e.kr/api/board/write'
+    const results = await fetch(url, {
       method: 'POST', // POST 메서드 사용
       headers: {
         'X-CSRFToken': csrfToken
@@ -64,13 +69,22 @@ const Write = () => {
     if (results.ok) {
       console.log('저장 성공');
       alert('저장 성공!');
-      navigate(-1); // 이전 페이지로 이동
+      if(!id)navigate(-1);
+// 이전 페이지로 이동
     } else {
       console.error(results.error, ' 저장 실패');
-      // 에러 처리 로직
+      
     }
   }
-
+  async function handleSave() {
+    if (title && content) await write();
+  else{
+    const empty=[];
+    if(!title) empty.push('제목');
+    if(!content) empty.push('본문');
+    alert(`${empty.join(', ')}을(를) 입력하세요.`);
+  }
+  };
   return (
     <div className="editor">
       <div className="input">
