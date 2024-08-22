@@ -13,6 +13,7 @@ from django.utils.decorators import method_decorator
 from django.views import View
 from django.core.files.storage import FileSystemStorage
 from functools import wraps
+from PIL import Image
 
 class IntegrityError(Exception):
     pass
@@ -27,18 +28,27 @@ def check_integrity(thumbnails):
         raise IntegrityError("파일이 없거나 하나의 파일만 선택하세요.")
 
     if len(thumbnails) == 1:
-        thumbnail = thumbnails[0].read()
-        width, height = get_image_dimensions(thumbnail)  # 이미지의 너비와 높이를 가져오는 함수
+        thumbnail = thumbnails[0]
 
+        # 파일 크기 검사
         if thumbnail.size > max_size:
             raise IntegrityError("파일 크기가 5MB를 초과할 수 없습니다.")
         
+        # MIME 타입 검사
         if thumbnail.content_type not in allowed_mime_types:
             raise IntegrityError("허용되지 않는 이미지 형식입니다.")
             
+        # 파일 확장자 검사
         if not any(thumbnail.name.lower().endswith(ext) for ext in allowed_extensions):
             raise IntegrityError("허용되지 않는 파일 확장자입니다.")
+        
+        # 이미지의 너비와 높이를 가져오는 함수 (예: Pillow 라이브러리 사용)
+       
+        
+        image = Image.open(thumbnail)
+        width, height = image.size
 
+        # 이미지 유효성 검사
         if width is None or height is None or width < 1 or height < 1:
             raise IntegrityError("유효하지 않은 이미지입니다.")
 
