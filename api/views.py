@@ -9,7 +9,7 @@ import psutil
 import ollama
 from functools import wraps
 from django.http import JsonResponse
-
+from django.core.files.images import get_image_dimensions
 
 from functools import wraps
 from django.http import JsonResponse
