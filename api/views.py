@@ -7,6 +7,54 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import psutil
 import ollama
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+from django.views import View
+from django.core.files.storage import FileSystemStorage
+from functools import wraps
+
+class IntegrityError(Exception):
+    pass
+
+def check_integrity(thumbnails):
+    allowed_mime_types = ['image/jpeg', 'image/png', 'image/gif']  # 허용할 MIME 타입
+    allowed_extensions = ['.jpg', '.jpeg', '.png', '.gif']  # 허용할 파일 확장자
+    max_size = 5 * 1024 * 1024  # 5MB
+
+    # 파일이 없거나 하나만 존재하는 경우만 허용
+    if len(thumbnails) not in [0, 1]:  
+        raise IntegrityError("파일이 없거나 하나의 파일만 선택하세요.")
+
+    if len(thumbnails) == 1:
+        thumbnail = thumbnails[0]
+        width, height = get_image_dimensions(thumbnail)  # 이미지의 너비와 높이를 가져오는 함수
+
+        if thumbnail.size > max_size:
+            raise IntegrityError("파일 크기가 5MB를 초과할 수 없습니다.")
+        
+        if thumbnail.content_type not in allowed_mime_types:
+            raise IntegrityError("허용되지 않는 이미지 형식입니다.")
+            
+        if not any(thumbnail.name.lower().endswith(ext) for ext in allowed_extensions):
+            raise IntegrityError("허용되지 않는 파일 확장자입니다.")
+
+        if width is None or height is None or width < 1 or height < 1:
+            raise IntegrityError("유효하지 않은 이미지입니다.")
+
+def check_data(func):
+    @wraps(func)
+    def _wrapped_func(request, *args, **kwargs):
+        thumbnails = request.FILES.getlist('thumbnail', None)
+        
+        try:
+            check_integrity(thumbnails)
+        except IntegrityError as e:  # IntegrityError를 처리
+            return JsonResponse({"error": f"데이터 무결성 오류: {str(e)}"}, status=400)
+
+        return func(request, *args, **kwargs)
+    
+    return _wrapped_func
 
 class Bible():
     def __init__(self,path:str="biblebot/",table:str='blible_counseling'):
@@ -66,6 +114,7 @@ def dashboard(request):
     })
 
 @api_view(['POST'])
+@check_data
 def write(request, *args, **kwargs):
     try:
         title = request.data.get('title')
