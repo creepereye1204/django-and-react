@@ -20,7 +20,7 @@
 }
 
 .ql-editor {
-    height: 415px;
+ 
     overflow-y: auto; /* 세로 스크롤바 활성화 */
     scrollbar-width: thin; /* Firefox에서 스크롤바 두께 조정 */
     z-index: 2; /* editor의 z-index */
