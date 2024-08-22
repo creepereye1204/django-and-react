@@ -106,15 +106,13 @@ const Write = () => {
           썸네일 업로드
         </button>
         {thumbnail && (
-          <div>
-            <p>선택된 파일: {thumbnail.name}</p>
-            <button 
-              className="remove-button" 
-              onClick={handleRemoveFile}
-            >
-              파일 제거
-            </button>
-          </div>
+            
+          <button 
+            className="remove-button" 
+            onClick={handleRemoveFile}
+          >
+            {thumbnail.name}:파일 제거
+          </button>
         )}
       </div>
     </div>
