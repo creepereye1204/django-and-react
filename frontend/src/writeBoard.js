@@ -6,7 +6,7 @@ class WriteBoard extends Component {
     return (
       <div>
         
-        <App/>
+        <App writeMode={true}/>
         <Write/>
       </div>
     );

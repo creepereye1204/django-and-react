@@ -20,7 +20,8 @@ class Navbar extends Component {
   }
 }
 
-function App() {
+function App({writeMode= false}) {
+  const [isWriteMode] = useState(writeMode);
   const [inputValue, setInputValue] = useState('');
   const [showInput, setShowInput] = useState(false);
 
@@ -74,7 +75,7 @@ function App() {
 
 
   return (
-    <div className="background">
+    <div className={isWriteMode?'.editBackground':'.normalBackground'}>
       <video src={NightCity} autoPlay loop muted />
       <Navbar />
       {showInput && ( // showInput이 true일 때만 입력창을 보여줍니다.
