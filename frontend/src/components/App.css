@@ -17,11 +17,14 @@
   position: fixed; /* 자식 요소에 대한 위치 지정 */
 }
 
-video {
+.normalVideo {
   pointer-events: none;
   object-fit: cover;
   width: 100%;
   height: 100%; /* 비디오를 배경으로 설정 */
+}
+.editVideo{
+  font-size: large;
 }
 
 .header {
