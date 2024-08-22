@@ -10,8 +10,9 @@ import ollama
 from functools import wraps
 from django.http import JsonResponse
 from django.core.files.images import get_image_dimensions
-
-from functools import wraps
+from pydantic import BaseModel, constr, validator, ValidationError
+from typing import List, Optional
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.http import JsonResponse
 
 class IntegrityError(Exception):
@@ -120,19 +121,18 @@ def dashboard(request):
 @api_view(['POST'])
 @check_data
 def write(request, *args, **kwargs):
-    try:
-        title = request.data.get('title')
-        content = request.data.get('content')
-        thumbnail = request.FILES.get('thumbnail', None)
+    
+    title = request.data.get('title')
+    content = request.data.get('content')
+    thumbnail = request.FILES.get('thumbnail', None)
 
-        if thumbnail:
-            Board.objects.create(title=title, content=content, thumbnail=thumbnail)
-        else:
-            Board.objects.create(title=title, content=content)
+    if thumbnail:
+        Board.objects.create(title=title, content=content, thumbnail=thumbnail)
+    else:
+        Board.objects.create(title=title, content=content)
 
-        return Response({'ok': '작성 성공'}, status=200)
-    except Exception as e:
-        return Response({'error': str(e)}, status=500)
+    return Response({'ok': '작성 성공'}, status=200)
+    
 
 @api_view(['GET'])
 def read(request, board_pk, *args, **kwargs):
