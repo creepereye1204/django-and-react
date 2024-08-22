@@ -2239,3 +2239,29 @@ WARNING 2024-08-22 09:56:01,298 log 2987625 140001866045312 Not Found: /.git/con
 WARNING 2024-08-22 10:27:54,487 log 2992004 140122296596352 Bad Request: /api/board/write
 WARNING 2024-08-22 10:35:26,455 log 2993231 140453034055552 Bad Request: /api/board/write
 WARNING 2024-08-22 10:38:16,748 log 2994129 140199730259840 Bad Request: /api/board/write
+ERROR 2024-08-22 10:56:06,356 log 2997397 140549191538560 Internal Server Error: /api/board/write
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/apps/my_wiki/./api/views.py", line 61, in _wrapped_func
+    check_integrity(thumbnails)
+  File "/home/apps/my_wiki/./api/views.py", line 25, in check_integrity
+    raise IntegrityError(thumbnails[0].name,thumbnails[0].content_type,thumbnails[0].size)
+IndexError: list index out of range
+WARNING 2024-08-22 10:57:12,686 log 2997397 140549191538560 Bad Request: /api/board/write
