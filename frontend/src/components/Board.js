@@ -48,7 +48,7 @@ class Board extends Component {
     return (
       <div>
         {admin ? (
-          <div>
+
             <Write
             initialTitle={title}
             initialContent={content}
@@ -56,9 +56,9 @@ class Board extends Component {
             id={this.state.id}
             />
             
-          </div>
+
         ) : (
-          <div>
+
             <div className="editor">
             <div className="title-input">
               {title}
@@ -69,7 +69,7 @@ class Board extends Component {
               readOnly={true} // 읽기 전용 모드
             />
           </div>
-          </div>
+
         )}
       </div>
     );

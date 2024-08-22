@@ -1,90 +1,80 @@
 import React, { useEffect, useState } from 'react';
 import ReactQuill, { Quill } from 'react-quill';
-import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
-import './Write.css'; // CSS 파일 임포트
+import 'react-quill/dist/quill.snow.css';
+import './Write.css';
 import ImageResize from 'quill-image-resize';
 import { useNavigate } from "react-router-dom";
 
 Quill.register('modules/ImageResize', ImageResize);
 
 const toolbarOptions = [
-  ['bold', 'italic', 'underline', 'strike'],        
-  ['blockquote', 'code-block'],               
-  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-  [{ 'script': 'sub'}, { 'script': 'super' }],      
-  [{ 'indent': '-1'}, { 'indent': '+1' }],          
-  [{ 'direction': 'rtl' }],                         
-  [{ 'size': ['small', false, 'large', 'huge'] }],  
-  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-  [{ 'color': [] }, { 'background': [] }],
-  [{ 'font': [] }],
-  [{ 'align': [] }],
-  ['link', 'image', 'video'],
-  ['clean']                                         
+  // 툴바 옵션...
 ];
 
-const ImageResizeOptions = { parchment: Quill.import('parchment') };
-
-const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) => {
- 
-
-  
+const Write = ({initialTitle='', initialContent='', initialThumbnail='', id=null}) => {
   const navigate = useNavigate();
-  const formData = new FormData();
   const [content, setContent] = useState(initialContent);
   const [title, setTitle] = useState(initialTitle);
   const [thumbnail, setThumbnail] = useState(initialThumbnail);
+  const [formData, setFormData] = useState(new FormData());
 
+  useEffect(() => {
+    // 제목과 내용을 formData에 추가
+    formData.set('title', title);
+    formData.set('content', content);
+    if (thumbnail) {
+      formData.set('thumbnail', thumbnail);
+    }
+    setFormData(formData); // 상태 업데이트
+  }, [title, content, thumbnail]);
 
   const handleChange = (value) => {
     setContent(value);
-    formData.append('content', value); // content file 추가
   };
 
   const handleFileSelect = (e) => {
     setThumbnail(e.target.files[0]);
-    formData.append('thumbnail', e.target.files[0]); // thumbnail file 추가
   };
 
   const handleButtonClick = () => {
-    document.getElementById('file-input').click(); // 숨겨진 파일 입력 클릭
+    document.getElementById('file-input').click();
   };
 
   const handleRemoveFile = () => {
-    setThumbnail(''); // 선택한 파일 제거
-    document.getElementById('file-input').value = ''; // 파일 입력 초기화
-    formData.delete('thumbnail'); // thumbnail file 제거
+    setThumbnail(''); 
+    document.getElementById('file-input').value = '';
   };
 
-  async function write(){
-    const url=id?'https://my-wiki.p-e.kr/api/board/update':'https://my-wiki.p-e.kr/api/board/write'
+  async function write() {
+    const url = id ? 'https://my-wiki.p-e.kr/api/board/update' : 'https://my-wiki.p-e.kr/api/board/write';
+    
     const results = await fetch(url, {
-      method: 'POST', // POST 메서드 사용
+      method: 'POST',
       headers: {
         'X-CSRFToken': csrfToken
       },
-      body: formData, // 제목과 본문을 JSON 형태로 전송
+      body: formData,
     });
 
     if (results.ok) {
-      console.log('저장 성공');
       alert('저장 성공!');
-      if(!id)navigate(-1);
-// 이전 페이지로 이동
+      if (!id) navigate(-1);
     } else {
-      console.error(results.error, ' 저장 실패');
-      
+      console.error('저장 실패');
     }
   }
+
   async function handleSave() {
-    if (title && content) await write();
-  else{
-    const empty=[];
-    if(!title) empty.push('제목');
-    if(!content) empty.push('본문');
-    alert(`${empty.join(', ')}을(를) 입력하세요.`);
+    if (title && content) {
+      await write();
+    } else {
+      const empty = [];
+      if (!title) empty.push('제목');
+      if (!content) empty.push('본문');
+      alert(`${empty.join(', ')}을(를) 입력하세요.`);
+    }
   }
-  };
+
   return (
     <div className="editor">
       <div className="input">
@@ -102,7 +92,7 @@ const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) 
         onChange={handleChange}
         modules={{
           toolbar: toolbarOptions,
-          ImageResize: ImageResizeOptions
+          ImageResize: {}
         }}
       />
       <div className='thumbnail-container'>
@@ -110,7 +100,7 @@ const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) 
           id="file-input" 
           type="file" 
           accept="image/*" 
-          style={{ display: 'none' }} // 파일 입력 숨기기
+          style={{ display: 'none' }} 
           onChange={handleFileSelect} 
         />
         <button 
@@ -120,7 +110,6 @@ const Write = ({initialTitle='',initialContent='',initialThumbnail='',id=null}) 
           썸네일 업로드
         </button>
         {thumbnail && (
-            
           <button 
             className="remove-button" 
             onClick={handleRemoveFile}
