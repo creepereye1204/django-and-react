@@ -17,7 +17,7 @@
   position: fixed; /* 자식 요소에 대한 위치 지정 */
 }
 
-.video {
+video {
   pointer-events: none;
   object-fit: cover;
   width: 100%;
