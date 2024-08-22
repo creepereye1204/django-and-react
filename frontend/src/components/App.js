@@ -3,21 +3,19 @@ import { Link } from "react-router-dom"; // Link 컴포넌트 추가
 import "./App.css";
 import NightCity from '../assets/NightCity.mp4';
 
-class Navbar extends Component {
-  render() {
-    return (
-      <header className="header">
-        <a href="#" className="logo">My Wiki</a>
-        <nav className="navbar">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link> 
-          <Link to="/service">Project</Link>
-          <Link to="/board">Blog</Link>
-          <Link to="/write">Write</Link>
-        </nav>
-      </header>
-    );
-  }
+function Navbar({writeMode}) {
+  return (
+    <header className={writeMode?"editHeader":"normalHeader"}>
+      <a href="#" className="logo">My Wiki</a>
+      <nav className="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/about">About</Link> 
+        <Link to="/service">Project</Link>
+        <Link to="/board">Blog</Link>
+        <Link to="/write">Write</Link>
+      </nav>
+    </header>
+  );
 }
 
 function App({writeMode= false}) {
@@ -77,7 +75,7 @@ function App({writeMode= false}) {
   return (
     <div className={isWriteMode?'editBackground':'normalBackground'}>
       <video className={isWriteMode?'editVideo':'normalVideo'} src={NightCity} autoPlay loop muted />
-      <Navbar />
+      <Navbar writeMode={isWriteMode}/>
       {showInput && ( // showInput이 true일 때만 입력창을 보여줍니다.
         <input
           className="secret-key"
