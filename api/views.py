@@ -14,7 +14,7 @@ from django.views import View
 from django.core.files.storage import FileSystemStorage
 from functools import wraps
 
-
+#s
 class IntegrityError(Exception):
     pass
 
