@@ -6,8 +6,8 @@
     width: 95%;
     top: 0%;
     left: 50%;
-    position: absolute;
-    transform: translate(-50%, 10%);
+    position: fixed;
+    transform: translate(-50%, 5%);
     background: rgba(255, 255, 255, 0.8);
     border-radius: 1rem;
     padding: 10px; /* 내부 여백 추가 */
@@ -20,7 +20,6 @@
 }
 
 .ql-editor {
-    height: 415px;
     overflow-y: auto; /* 세로 스크롤바 활성화 */
     scrollbar-width: thin; /* Firefox에서 스크롤바 두께 조정 */
     z-index: 2; /* editor의 z-index */

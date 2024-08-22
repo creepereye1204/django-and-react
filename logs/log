@@ -1916,3 +1916,58 @@ Traceback (most recent call last):
 KeyError: '응답'
 WARNING 2024-08-21 05:32:43,108 log 2524760 140182047213440 Not Found: /.git/config
 WARNING 2024-08-21 06:15:19,068 log 2571641 140654648350592 Method Not Allowed: /api/service
+WARNING 2024-08-21 08:08:09,526 log 2581769 140268070446976 Not Found: /web/css/button_style.css
+WARNING 2024-08-21 08:53:45,193 log 2581770 140268070446976 Not Found: /.git/config
+WARNING 2024-08-21 09:29:10,881 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /hello.world
+WARNING 2024-08-21 09:29:11,325 log 2581775 140268070446976 Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:11,701 log 2581775 140268070446976 Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:12,057 log 2581775 140268070446976 Not Found: /vendor/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:12,488 log 2581775 140268070446976 Not Found: /vendor/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:12,850 log 2581775 140268070446976 Not Found: /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+WARNING 2024-08-21 09:29:13,254 log 2581775 140268070446976 Not Found: /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:13,614 log 2581775 140268070446976 Not Found: /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:13,989 log 2581775 140268070446976 Not Found: /phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:14,415 log 2581775 140268070446976 Not Found: /phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:14,902 log 2581775 140268070446976 Not Found: /phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:15,262 log 2581773 140268070446976 Not Found: /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:15,633 log 2581775 140268070446976 Not Found: /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:15,974 log 2581775 140268070446976 Not Found: /lib/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:16,261 log 2581773 140268070446976 Not Found: /lib/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:16,624 log 2581775 140268070446976 Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:16,992 log 2581775 140268070446976 Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:17,389 log 2581773 140268070446976 Not Found: /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:17,672 log 2581775 140268070446976 Not Found: /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:17,976 log 2581774 140268070446976 Not Found: /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:18,734 log 2581775 140268070446976 Not Found: /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:19,275 log 2581773 140268070446976 Not Found: /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:19,715 log 2581775 140268070446976 Not Found: /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:20,074 log 2581775 140268070446976 Not Found: /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:20,479 log 2581774 140268070446976 Not Found: /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:20,838 log 2581775 140268070446976 Not Found: /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:21,190 log 2581775 140268070446976 Not Found: /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:21,531 log 2581775 140268070446976 Not Found: /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:21,977 log 2581775 140268070446976 Not Found: /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:22,325 log 2581775 140268070446976 Not Found: /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:23,109 log 2581775 140268070446976 Not Found: /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:23,463 log 2581774 140268070446976 Not Found: /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:23,826 log 2581775 140268070446976 Not Found: /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:24,165 log 2581775 140268070446976 Not Found: /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:24,506 log 2581775 140268070446976 Not Found: /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:24,859 log 2581775 140268070446976 Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:25,261 log 2581775 140268070446976 Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-21 09:29:26,006 log 2581774 140268070446976 Not Found: /public/index.php
+WARNING 2024-08-21 14:07:55,531 log 2581775 140268070446976 Not Found: /web/css/button_style.css
+WARNING 2024-08-21 17:16:36,799 log 2581775 140268070446976 Not Found: /files/bp.dat
+WARNING 2024-08-21 18:04:53,560 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2024-08-21 18:58:32,063 log 2581775 140268070446976 Not Found: /files/bp.dat
+WARNING 2024-08-21 20:39:04,019 log 2581775 140268070446976 Not Found: /_profiler/phpinfo
+WARNING 2024-08-21 21:30:36,666 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /dns-query
+WARNING 2024-08-21 21:30:37,420 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /dns-query
+WARNING 2024-08-21 21:30:38,179 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /query
+WARNING 2024-08-21 21:30:38,950 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /query
+WARNING 2024-08-21 21:30:39,698 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /resolve
+WARNING 2024-08-21 21:30:40,446 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /resolve
+WARNING 2024-08-21 21:30:41,191 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2024-08-21 21:30:41,939 log 2581775 140268070446976 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2024-08-22 00:42:32,963 log 2581770 140268070446976 Not Found: /files/bp.dat
+WARNING 2024-08-22 02:03:37,759 log 2581775 140268070446976 Not Found: /web/css/button_style.css
