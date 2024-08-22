@@ -21,7 +21,7 @@ def check_integrity(thumbnails):
     allowed_mime_types = ['image/jpeg', 'image/png', 'image/gif']  # 허용할 MIME 타입
     allowed_extensions = ['.jpg', '.jpeg', '.png', '.gif']  # 허용할 파일 확장자
     max_size = 5 * 1024 * 1024  # 5MB
-
+    raise IntegrityError(thumbnails[0])
     # 파일이 없거나 하나만 존재하는 경우만 허용
     if len(thumbnails) not in [0, 1]:  
         raise IntegrityError("파일이 없거나 하나의 파일만 선택하세요.")
