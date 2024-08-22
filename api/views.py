@@ -47,7 +47,7 @@ def check_data(func):
     @wraps(func)
     def _wrapped_func(request, *args, **kwargs):
         thumbnails = request.FILES.getlist('thumbnail', None)
-        
+        return JsonResponse({"error": f"데이터 무결성 오류: "}, status=400)
         try:
             check_integrity(thumbnails)
         except IntegrityError as e:  # IntegrityError를 처리
@@ -121,18 +121,19 @@ def dashboard(request):
 @api_view(['POST'])
 @check_data
 def write(request, *args, **kwargs):
-    
-    title = request.data.get('title')
-    content = request.data.get('content')
-    thumbnail = request.FILES.get('thumbnail', None)
+    try:
+        title = request.data.get('title')
+        content = request.data.get('content')
+        thumbnail = request.FILES.get('thumbnail', None)
 
-    if thumbnail:
-        Board.objects.create(title=title, content=content, thumbnail=thumbnail)
-    else:
-        Board.objects.create(title=title, content=content)
+        if thumbnail:
+            Board.objects.create(title=title, content=content, thumbnail=thumbnail)
+        else:
+            Board.objects.create(title=title, content=content)
 
-    return Response({'ok': '작성 성공'}, status=200)
-    
+        return Response({'ok': '작성 성공'}, status=200)
+    except In as e:
+        return Response({'error': str(e)}, status=500)
 
 @api_view(['GET'])
 def read(request, board_pk, *args, **kwargs):
