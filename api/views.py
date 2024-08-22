@@ -22,7 +22,7 @@ def check_integrity(thumbnails):
     allowed_mime_types = ['image/jpeg', 'image/png', 'image/gif']  # 허용할 MIME 타입
     allowed_extensions = ['.jpg', '.jpeg', '.png', '.gif']  # 허용할 파일 확장자
     max_size = 5 * 1024 * 1024  # 5MB
-
+    raise IntegrityError("파일 크기가 5MB를 초과할 수 없습니다.")
     # 파일이 없거나 하나만 존재하는 경우만 허용
     if len(thumbnails) not in [0, 1]:  
         raise IntegrityError("파일이 없거나 하나의 파일만 선택하세요.")
@@ -47,7 +47,7 @@ def check_data(func):
     @wraps(func)
     def _wrapped_func(request, *args, **kwargs):
         thumbnails = request.FILES.getlist('thumbnail', None)
-        return JsonResponse({"error": f"데이터 무결성 오류: "}, status=400)
+        
         try:
             check_integrity(thumbnails)
         except IntegrityError as e:  # IntegrityError를 처리
@@ -132,7 +132,7 @@ def write(request, *args, **kwargs):
             Board.objects.create(title=title, content=content)
 
         return Response({'ok': '작성 성공'}, status=200)
-    except In as e:
+    except Exception as e:
         return Response({'error': str(e)}, status=500)
 
 @api_view(['GET'])
