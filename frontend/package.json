@@ -30,6 +30,8 @@
     "chart": "^0.1.2",
     "chart.js": "^4.4.3",
     "file-loader": "^6.2.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^2.5.1",
     "quill-blot-formatter-mobile": "^1.1.2",
     "quill-image-resize": "^3.0.9",
     "quill-image-resize-module": "^3.0.0",

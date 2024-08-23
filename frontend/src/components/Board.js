@@ -4,6 +4,8 @@ import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Board.css'; // CSS 파일 임포트
 import { useParams } from 'react-router-dom'; // useParams 임포트
 import Write from './Write'; // Write 컴포넌트 임포트
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 class Board extends Component {
   constructor(props) {
@@ -24,29 +26,30 @@ class Board extends Component {
     button.style.pointerEvents = 'none'; // 클릭 방지
 
     try {
-      const id = this.state.id; // CSRF 토큰을 적절히 설정해야 합니다.
-      const response = await fetch(`https://my-wiki.p-e.kr/api/board/download_pdf/${id}`, {
-        method: 'GET',
-        headers: {
-          'X-CSRFToken': csrfToken, // CSRF 토큰 추가
-          'Content-Type': 'application/json', // 필요 시 추가
-        },
-      });
+      const doc = new jsPDF();
+      const content = document.querySelector('.editor'); // PDF로 변환할 요소 선택
 
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+      const canvas = await html2canvas(content);
+      const imgData = canvas.toDataURL('image/png');
+      const imgWidth = 190; // 이미지 너비 (mm)
+      const pageHeight = 295; // 페이지 높이 (mm)
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+
+      let position = 0;
+
+      doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        doc.addPage();
+        doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
       }
 
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url;
-      a.download = `${this.state.board.title}.pdf`; // 다운로드할 파일 이름
-      document.body.appendChild(a);
-      a.click();
-      a.remove();
-      window.URL.revokeObjectURL(url);
-      
+      doc.save(`${this.state.board.title}.pdf`); // 다운로드할 파일 이름
+
       // 버튼 텍스트를 원래대로 복원
       button.textContent = 'PDF 변환';
       button.style.pointerEvents = 'auto';
