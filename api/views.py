@@ -245,8 +245,8 @@ def download_pdf(request, board_pk, *args, **kwargs):
             </style>
         </head>
         <body>
-            <h1>{board.title}</h1>
-            <div>{board.content}</div>
+            {board.title}
+            {board.content}
         </body>
         </html>
         """
