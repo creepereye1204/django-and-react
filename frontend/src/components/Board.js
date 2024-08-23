@@ -34,14 +34,14 @@ class Board extends Component {
         floatPrecision: 16 // 숫자 정밀도
       });
   
-      const content = document.querySelector('.quill'); // React-Quill의 에디터 클래스 선택
+      const content = document.querySelector('.ql-editor'); // Quill 에디터 요소 선택
   
-      // HTML2Canvas를 사용하여 전체 내용을 캡처
+      // html2canvas를 사용하여 전체 내용을 캡처
       const canvas = await html2canvas(content, {
         scrollX: 0,
         scrollY: content.scrollHeight // 스크롤 높이를 포함
       });
-      
+  
       const imgData = canvas.toDataURL('image/png');
       const imgWidth = 210; // A4 너비 (mm)
       const pageHeight = 297; // A4 높이 (mm)
@@ -75,6 +75,7 @@ class Board extends Component {
       button.style.pointerEvents = 'auto'; // 클릭 가능하게 복원
     }
   }
+  
   
   
   
