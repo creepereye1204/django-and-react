@@ -3023,3 +3023,4 @@ WARNING 2024-08-23 07:31:15,166 log 48283 140468045629312 Not Found: /api/board/
 WARNING 2024-08-23 07:31:27,480 log 48283 140468045629312 Not Found: /api/board/download_pdf/55
 WARNING 2024-08-23 07:33:42,302 log 48283 140468045629312 Not Found: /api/board/read/
 WARNING 2024-08-23 08:28:54,716 log 71957 140227852199808 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2024-08-23 09:36:20,888 log 111033 140458107946880 Not Found: /web_socket/
