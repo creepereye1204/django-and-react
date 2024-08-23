@@ -20,6 +20,6 @@ from django.urls import include, path
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-    path('wss/', include('web_socket.urls')),  # websocket URL
+    path('ws/', include('web_socket.urls')),  # websocket URL
     path('', include('frontend.urls'))
 ]
