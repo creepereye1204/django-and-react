@@ -16,12 +16,14 @@
 
 
 .board-container{
-    display: flex;
+
+    grid-template-rows: repeat(2, 250px);
+    grid-template-columns: repeat(5, 180px);
+    display: grid;
     position: absolute;
-    
-    left:50%;
+    left: 50%;
     top: 10px;
-    transform: translate(-50%,20%);
+    transform: translate(-50%, 20%);
 }
 .card{
      background:rgba(255, 255, 255, 0.2);
