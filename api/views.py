@@ -237,7 +237,7 @@ def download_pdf(request, board_pk, *args, **kwargs):
         <html>
         <head>
             <meta charset="utf-8">  <!-- 문자 인코딩 설정 -->
-            <title>게시물 PDF</title>
+            <h1>{board.title}</h1>
             <style>
                 body {{
                     font-family: 'Malgun Gothic', 'Arial', sans-serif;  /* 한글 폰트 설정 */
@@ -245,8 +245,8 @@ def download_pdf(request, board_pk, *args, **kwargs):
             </style>
         </head>
         <body>
-            <h1>{board.title}</h1>
-            <div>{board.content}</div>
+            
+            {board.content}
         </body>
         </html>
         """
