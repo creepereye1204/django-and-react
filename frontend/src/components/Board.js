@@ -15,64 +15,64 @@ class Board extends Component {
       id: this.props.id, // id 받아오기
       board: {}, // 글 목록을 저장할 상태
     };
-    this.download = this.download.bind(this);
+    // this.download = this.download.bind(this);
   }
 
-  async download() {
-    const button = document.querySelector('.pdf-button');
-    button.textContent = '다운로드 중...';
-    button.style.pointerEvents = 'none';
+//   async download() {
+//     const button = document.querySelector('.pdf-button');
+//     button.textContent = '다운로드 중...';
+//     button.style.pointerEvents = 'none';
 
-    try {
-        const doc = new jsPDF({
-            orientation: 'portrait',
-            unit: 'mm',
-            format: 'a4',
-            putOnlyUsedFonts: true,
-            floatPrecision: 16
-        });
+//     try {
+//         const doc = new jsPDF({
+//             orientation: 'portrait',
+//             unit: 'mm',
+//             format: 'a4',
+//             putOnlyUsedFonts: true,
+//             floatPrecision: 16
+//         });
 
-        const content = document.querySelector('.ql-editor');
-        const contentHeight = content.scrollHeight;
+//         const content = document.querySelector('.ql-editor');
+//         const contentHeight = content.scrollHeight;
 
-        const canvas = await html2canvas(content, {
-            height: contentHeight,
-            scrollX: 0,
-            scrollY: 0,
-            useCORS: true,
-            allowTaint: true,
-            backgroundColor: null
-        });
+//         const canvas = await html2canvas(content, {
+//             height: contentHeight,
+//             scrollX: 0,
+//             scrollY: 0,
+//             useCORS: true,
+//             allowTaint: true,
+//             backgroundColor: null
+//         });
 
-        const imgData = canvas.toDataURL('image/png');
-        const imgWidth = 210;
-        const pageHeight = 297;
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
+//         const imgData = canvas.toDataURL('image/png');
+//         const imgWidth = 210;
+//         const pageHeight = 297;
+//         const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-        let heightLeft = imgHeight;
-        let position = 0;
+//         let heightLeft = imgHeight;
+//         let position = 0;
 
-        while (heightLeft >= 0) {
-            doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-            heightLeft -= pageHeight;
-            position -= pageHeight;
-            if (heightLeft >= 0) {
-                doc.addPage();
-            }
-        }
+//         while (heightLeft >= 0) {
+//             doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+//             heightLeft -= pageHeight;
+//             position -= pageHeight;
+//             if (heightLeft >= 0) {
+//                 doc.addPage();
+//             }
+//         }
 
-        doc.save(`${this.state.board.title}.pdf`);
+//         doc.save(`${this.state.board.title}.pdf`);
 
-        button.textContent = 'PDF 변환';
-        button.style.pointerEvents = 'auto';
+//         button.textContent = 'PDF 변환';
+//         button.style.pointerEvents = 'auto';
         
-    } catch (error) {
-        console.error(error);
-        alert('다운로드 중 오류가 발생했습니다.');
-        button.textContent = 'PDF 변환';
-        button.style.pointerEvents = 'auto';
-    }
-}
+//     } catch (error) {
+//         console.error(error);
+//         alert('다운로드 중 오류가 발생했습니다.');
+//         button.textContent = 'PDF 변환';
+//         button.style.pointerEvents = 'auto';
+//     }
+// }
 
 
   
@@ -124,7 +124,7 @@ class Board extends Component {
             <div className="title-input">
               {title}
             </div>
-            <a className="pdf-button" onClick={this.download}>PDF 변환</a>
+            
             <ReactQuill
               modules={{ toolbar: false }}
               value={content}
