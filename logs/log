@@ -2632,3 +2632,5 @@ WARNING 2024-08-23 04:03:57,641 log 3102610 140551875307392 Bad Request: /api/lo
 WARNING 2024-08-23 04:15:01,025 log 3108922 140385440192384 Not Found: /api/board/download_pdf/
 WARNING 2024-08-23 04:20:40,401 log 3113583 140039892277120 Not Found: /api/board/read/
 WARNING 2024-08-23 04:20:40,447 log 3113583 140039892277120 Not Found: /api/board/download_pdf/
+ERROR 2024-08-23 04:24:46,456 log 3116055 139834956720000 Internal Server Error: /api/board/download_pdf/28
+ERROR 2024-08-23 04:24:48,625 log 3116055 139834956720000 Internal Server Error: /api/board/download_pdf/28

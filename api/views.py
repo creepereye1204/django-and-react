@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from rest_framework import generics
-
+from django.http import HttpResponse
 from .models import Room, Board
 from .serializers import RoomSerializer,BoardSerializer,BoardListSerializer
 from rest_framework.response import Response
