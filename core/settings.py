@@ -32,9 +32,18 @@ INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles',
-    'api.apps.ApiConfig', 'frontend.apps.FrontendConfig', 'rest_framework'
+    'api.apps.ApiConfig', 'frontend.apps.FrontendConfig', 'rest_framework',
+    'channels','web_socket'
 ]
-
+# 채널 레이어 설정
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {
+            "hosts": [('127.0.0.1', 6379)],
+        },
+    },
+}
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
