@@ -247,8 +247,7 @@ def download_pdf(request, board_pk, *args, **kwargs):
         <body>
         <div contenteditable="true">
             {board.title}
-            {board.content}
-        </div>
+            <p class="ql-align-center">성경기반 챗봇</p>
         </body>
         </html>
         """
