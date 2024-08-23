@@ -49,7 +49,7 @@ class Board extends Component {
     const button = document.querySelector('.pdf-button');
     
     // 버튼 텍스트 변경
-    button.textContent = '다운로드 중...';
+    button.value = '다운로드 중...';
     button.style.pointerEvents = 'none'; // 클릭 방지
     try{
       const id = this.state.id;// CSRF 토큰을 적절히 설정해야 합니다.
