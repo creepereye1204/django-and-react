@@ -227,7 +227,7 @@ def download_pdf(request, board_pk,*args, **kwargs):
         board = Board.objects.get(pk=board_pk)
         
         
-        html_string = """
+        html_content = """
 
             <head>
                 <title>PDF 변환 예제</title>
