@@ -20,65 +20,60 @@ class Board extends Component {
 
   async download() {
     const button = document.querySelector('.pdf-button');
-
-    // 버튼 텍스트 변경
     button.textContent = '다운로드 중...';
-    button.style.pointerEvents = 'none'; // 클릭 방지
+    button.style.pointerEvents = 'none';
 
     try {
         const doc = new jsPDF({
-            orientation: 'portrait', // 세로 방향
+            orientation: 'portrait',
             unit: 'mm',
-            format: 'a4', // A4 크기
+            format: 'a4',
             putOnlyUsedFonts: true,
-            floatPrecision: 16 // 숫자 정밀도
+            floatPrecision: 16
         });
 
-        const content = document.querySelector('.ql-editor'); // Quill 에디터 요소 선택
-
-        // 전체 에디터의 높이를 가져옵니다.
+        const content = document.querySelector('.ql-editor');
         const contentHeight = content.scrollHeight;
 
-        // html2canvas를 사용하여 전체 내용을 캡처
         const canvas = await html2canvas(content, {
-            height: contentHeight, // 전체 높이로 설정
+            height: contentHeight,
             scrollX: 0,
-            scrollY: 0
+            scrollY: 0,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: null
         });
 
         const imgData = canvas.toDataURL('image/png');
-        const imgWidth = 210; // A4 너비 (mm)
-        const pageHeight = 297; // A4 높이 (mm)
+        const imgWidth = 210;
+        const pageHeight = 297;
         const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
         let heightLeft = imgHeight;
         let position = 0;
 
-        // 이미지가 페이지를 넘어갈 경우 처리
         while (heightLeft >= 0) {
             doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
             heightLeft -= pageHeight;
-            position -= pageHeight; // 다음 페이지로 이동
+            position -= pageHeight;
             if (heightLeft >= 0) {
-                doc.addPage(); // 페이지 추가
+                doc.addPage();
             }
         }
 
-        doc.save(`${this.state.board.title}.pdf`); // 다운로드할 파일 이름
+        doc.save(`${this.state.board.title}.pdf`);
 
-        // 버튼 텍스트를 원래대로 복원
         button.textContent = 'PDF 변환';
         button.style.pointerEvents = 'auto';
         
     } catch (error) {
         console.error(error);
         alert('다운로드 중 오류가 발생했습니다.');
-
-        // 버튼 텍스트 복원
         button.textContent = 'PDF 변환';
-        button.style.pointerEvents = 'auto'; // 클릭 가능하게 복원
+        button.style.pointerEvents = 'auto';
     }
 }
+
 
   
   
