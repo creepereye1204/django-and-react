@@ -24,35 +24,47 @@ class Board extends Component {
     // 버튼 텍스트 변경
     button.textContent = '다운로드 중...';
     button.style.pointerEvents = 'none'; // 클릭 방지
-
+  
     try {
       const doc = new jsPDF();
       const content = document.querySelector('.editor'); // PDF로 변환할 요소 선택
-
-      const canvas = await html2canvas(content);
+  
+      // 전체 높이를 계산하여 CSS 스타일을 변경
+      const originalHeight = content.clientHeight;
+      content.style.height = 'auto'; // 높이 조정
+      const fullHeight = content.scrollHeight; // 전체 콘텐츠 높이
+  
+      // HTML2Canvas를 사용하여 전체 내용을 캡처
+      const canvas = await html2canvas(content, {
+        height: fullHeight // 전체 높이로 캡처
+      });
+      
       const imgData = canvas.toDataURL('image/png');
       const imgWidth = 190; // 이미지 너비 (mm)
       const pageHeight = 295; // 페이지 높이 (mm)
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
       let heightLeft = imgHeight;
-
+  
       let position = 0;
-
+  
       doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
       heightLeft -= pageHeight;
-
+  
       while (heightLeft >= 0) {
         position = heightLeft - imgHeight;
         doc.addPage();
         doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
         heightLeft -= pageHeight;
       }
-
+  
       doc.save(`${this.state.board.title}.pdf`); // 다운로드할 파일 이름
-
+  
       // 버튼 텍스트를 원래대로 복원
       button.textContent = 'PDF 변환';
       button.style.pointerEvents = 'auto';
+      
+      // 원래 높이로 복원
+      content.style.height = `${originalHeight}px`; // 원래 높이 복원
     } catch (error) {
       console.error(error);
       alert('다운로드 중 오류가 발생했습니다.');
@@ -62,6 +74,7 @@ class Board extends Component {
       button.style.pointerEvents = 'auto'; // 클릭 가능하게 복원
     }
   }
+  
 
   componentDidMount() {
     const id = this.state.id; // CSRF 토큰을 적절히 설정해야 합니다.
