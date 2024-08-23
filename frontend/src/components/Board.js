@@ -26,12 +26,16 @@ class Board extends Component {
     button.style.pointerEvents = 'none'; // 클릭 방지
   
     try {
-      const doc = new jsPDF();
-      const content = document.querySelector('.editor'); // PDF로 변환할 요소 선택
+      const doc = new jsPDF({
+        orientation: 'portrait', // 세로 방향
+        unit: 'mm',
+        format: 'a4', // A4 크기
+        putOnlyUsedFonts: true,
+        floatPrecision: 16 // 숫자 정밀도
+      });
   
-      // 전체 높이를 계산하여 CSS 스타일을 변경
-      const originalHeight = content.clientHeight;
-      content.style.height = 'auto'; // 높이 조정
+      const content = document.querySelector('.editor'); // PDF로 변환할 요소 선택
+      const originalHeight = content.clientHeight; // 원래 높이 저장
       const fullHeight = content.scrollHeight; // 전체 콘텐츠 높이
   
       // HTML2Canvas를 사용하여 전체 내용을 캡처
@@ -40,23 +44,26 @@ class Board extends Component {
       });
       
       const imgData = canvas.toDataURL('image/png');
-      const imgWidth = 190; // 이미지 너비 (mm)
-      const pageHeight = 295; // 페이지 높이 (mm)
+      const imgWidth = 210; // A4 너비 (mm)
+      const pageHeight = 297; // A4 높이 (mm)
       const imgHeight = (canvas.height * imgWidth) / canvas.width;
-      let heightLeft = imgHeight;
   
+      // 페이지 수 계산
+      let heightLeft = imgHeight;
       let position = 0;
   
-      doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
-      heightLeft -= pageHeight;
-  
+      // 페이지 추가 및 콘텐츠 추가
       while (heightLeft >= 0) {
-        position = heightLeft - imgHeight;
-        doc.addPage();
         doc.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
         heightLeft -= pageHeight;
+        position -= pageHeight; // 다음 페이지 위치 설정
+  
+        if (heightLeft >= 0) {
+          doc.addPage(); // 다음 페이지 추가
+        }
       }
   
+      // PDF 저장
       doc.save(`${this.state.board.title}.pdf`); // 다운로드할 파일 이름
   
       // 버튼 텍스트를 원래대로 복원
@@ -74,6 +81,7 @@ class Board extends Component {
       button.style.pointerEvents = 'auto'; // 클릭 가능하게 복원
     }
   }
+  
   
 
   componentDidMount() {
