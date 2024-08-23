@@ -44,7 +44,45 @@ class Board extends Component {
   render() {
     const { title, content, thumbnail} = this.state.board; // 상태에서 title과 content 추출
     const { admin } = this.state; // admin 여부
-
+    async function download(){
+      // 버튼 요소 선택
+    const button = document.querySelector('.pdf-button');
+    
+    // 버튼 텍스트 변경
+    button.textContent = '다운로드 중...';
+    button.style.pointerEvents = 'none'; // 클릭 방지
+    try{
+      const response =await fetch(`https://my-wiki.p-e.kr/api/board/download_pdf/${id}`, {
+        method: 'GET',
+        headers: {
+          'X-CSRFToken': csrfToken, // CSRF ����� 추가
+          'Content-Type': 'application/json', // 필요 시 추가
+        },
+      });
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = title +'.pdf'; // 다운로드할 파일 이름
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      // URL 해제
+      window.URL.revokeObjectURL(url);
+        
+      // 버튼 텍스트를 원래대로 복원
+      button.textContent = 'PDF 변환';
+      button.style.pointerEvents = 'auto';
+    }
+      catch(error){
+        console.error(error);
+        alert('다운로드 중 오류가 발생했습니다.');
+        
+        // 버튼 텍스트 복원
+        button.textContent = 'PDF 변환';
+        button.style.pointerEvents = 'auto'; // 클릭 가능하게 복원
+    };
+  };
     return (
       <div>
         {admin ? (
@@ -63,6 +101,7 @@ class Board extends Component {
             <div className="title-input">
               {title}
             </div>
+            <a class="pdf-button" onClick={download()}>PDF 변환</a>
             <ReactQuill
               modules={{ toolbar: false }}
               value={content}

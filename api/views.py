@@ -14,7 +14,7 @@ from django.views import View
 from django.core.files.storage import FileSystemStorage
 from functools import wraps
 from PIL import Image
-
+import pdfkit
 class IntegrityError(Exception):
     pass
 
@@ -218,4 +218,36 @@ def service(request, *args, **kwargs):
     ])
     result=text['message']['content']
     return Response({'result': result}, status=200)
+
+
+@api_view(['GET'])
+def download_pdf(request, board_pk,*args, **kwargs):
+    try:
+        # 특정 번호(pk)의 게시물 가져오기
+        board = Board.objects.get(pk=board_pk)
+        
+        
+        html_content = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>게시물 PDF</title>
+        </head>
+        <body>
+            <h1>{board.title}</h1>
+            <div>{board.content}</div>
+        </body>
+        </htm>
+        """
+        pdf = pdfkit.from_string(html_content, False)  # False는 PDF 파일을 메모리에서 반환하도록 지정
+
+        # PDF 응답 생성
+        response = HttpResponse(pdf, content_type='application/pdf')
+        response['Content-Disposition'] = f'attachment; filename="board_{board_pk}.pdf"'
+        return response
+    
+    except Board.DoesNotExist:
+        return Response({'error': 'Board not found'}, status=404)  # 게시물이 없는 경우
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)  # 기타 오류 처리
     
