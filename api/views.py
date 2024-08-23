@@ -238,6 +238,11 @@ def download_pdf(request, board_pk, *args, **kwargs):
         <head>
             <meta charset="utf-8">  <!-- 문자 인코딩 설정 -->
             <title>게시물 PDF</title>
+            <style>
+                body {{
+                    font-family: 'Malgun Gothic', 'Arial', sans-serif;  /* 한글 폰트 설정 */
+                }}
+            </style>
         </head>
         <body>
         <div contenteditable="true">
