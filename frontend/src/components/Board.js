@@ -62,13 +62,21 @@ class Board extends Component {
 
   componentDidMount() {
     const id = this.state.id; // CSRF 토큰을 적절히 설정해야 합니다.
-    fetch(`https://my-wiki.p-e.kr/api/board/download_pdf/${id}`, {
+    fetch(`https://my-wiki.p-e.kr/api/board/read/${id}`, {
       method: 'GET',
       headers: {
         'X-CSRFToken': csrfToken, // CSRF 토큰 추가
         'Content-Type': 'application/json', // 필요 시 추가
       },
-    }).catch(error => {
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      
+      .catch(error => {
         console.error(error); // 에러 처리 로직
       });
   }
