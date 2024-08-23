@@ -68,20 +68,7 @@ class Board extends Component {
         'X-CSRFToken': csrfToken, // CSRF 토큰 추가
         'Content-Type': 'application/json', // 필요 시 추가
       },
-    })
-      .then(response => {
-        if (!response.ok) {
-          throw new Error("Network response was not ok");
-        }
-        return response.json();
-      })
-      .then(data => {
-        this.setState({ 
-          board: data,
-          admin: data.admin
-        }); // API에서 받아온 데이터를 상태에 저장
-      })
-      .catch(error => {
+    }).catch(error => {
         console.error(error); // 에러 처리 로직
       });
   }
