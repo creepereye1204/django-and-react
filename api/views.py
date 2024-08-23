@@ -99,7 +99,7 @@ class Bible():
         metadatas=[answer],
         ids=[key],
         )
-db=Bible()
+# db=Bible()
 
 
 class RoomView(generics.ListAPIView):
@@ -227,18 +227,17 @@ def download_pdf(request, board_pk,*args, **kwargs):
         board = Board.objects.get(pk=board_pk)
         
         
-        html_content = f"""
-        <!DOCTYPE html>
-        <html>
-        <head>
-            <title>게시물 PDF</title>
-        </head>
-        <body>
-            <h1>{board.title}</h1>
-            <div>{board.content}</div>
-        </body>
-        </htm>
-        """
+        html_string = """
+
+            <head>
+                <title>PDF 변환 예제</title>
+            </head>
+            <body>
+                <h1>Hello, World!</h1>
+                <p>This is a PDF conversion example using Python.</p>
+            </body>
+
+            """
         pdf = pdfkit.from_string(html_content, False)  # False는 PDF 파일을 메모리에서 반환하도록 지정
 
         # PDF 응답 생성
