@@ -52,6 +52,7 @@ class Board extends Component {
     button.textContent = '다운로드 중...';
     button.style.pointerEvents = 'none'; // 클릭 방지
     try{
+      const id = this.state.id;// CSRF 토큰을 적절히 설정해야 합니다.
       const response =await fetch(`https://my-wiki.p-e.kr/api/board/download_pdf/${id}`, {
         method: 'GET',
         headers: {
