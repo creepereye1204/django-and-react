@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-b0(ztd$lt9phiwg^q3*2t6)ncjekt1uz16+4ph1#s5(m-0*cv@
 DEBUG = False
 
 ALLOWED_HOSTS: list[str] = ['*']
-
+DATA_UPLOAD_MAX_MEMORY_SIZE = 1024*1024*10 # 10MB
 # Application definition
 
 INSTALLED_APPS = [

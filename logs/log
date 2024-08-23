@@ -2452,3 +2452,69 @@ Traceback (most recent call last):
   File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
     raise VariableDoesNotExist(
 django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: '8X5eUmRrFLAXSW7FmXCn45g2WiSeYjXY3gq1F2glbw0ta4Ex47WDn12Vr28hajuW'>, 'request': <WSGIRequest: GET '/admin/api/board/54/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/board/54/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, 2024-08-22 07:39:14.301338+00:00, 2024-08-22 07:39:08.288427+00:00, 2024-08-22 07:38:54.591714+00:00, 2024-08-22 07:38:32.906348+00:00, 2024-08-20 10:34:38.632552+00:00, 2024-08-20 02:24:26.705079+00:00, 2024-08-20 02:24:26.704979+00:00, 2024-08-20 02:24:26.704877+00:00, 2024-08-20 02:24:26.704776+00:00, 2024-08-20 02:24:26.704671+00:00, 2024-08-20 02:24:26.704566+00:00, 2024-08-20 02:24:26.704385+00:00, 2024-08-19 02:27:38.031282+00:00, 2024-08-19 02:27:38.031181+00:00, 2024-08-19 02:27:38.031080+00:00, 2024-08-19 02:27:38.030977+00:00, 2024-08-19 02:27:38.030873+00:00, '...(remaining elements truncated)...']>, 'title': 'Change board', 'subtitle': '[54] - sad - 2024-08-22 11:12:23', 'adminform': <AdminForm: form=BoardForm fieldsets=[(None, {'fields': ['title', 'content', 'thumbnail']})]>, 'object_id': '54', 'original': <Board: [54] - sad - 2024-08-22 11:12:23>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Board>, 'content_type_id': 9, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fe7f2f11b70>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fe7f2f12e00>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fe7f2f13460>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fe7f2f210f0>}, {'heading_level': 2, 'id_suffix': 0}]
+WARNING 2024-08-22 14:17:52,493 log 3005889 140419737888640 Not Found: /autodiscover/autodiscover.json
+WARNING 2024-08-22 17:58:04,524 log 3005895 140419737888640 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2024-08-22 18:50:03,878 log 3005895 140419737888640 Not Found: /actuator/gateway/routes
+WARNING 2024-08-22 22:11:59,720 log 3005895 140419737888640 Not Found: /web/css/button_style.css
+WARNING 2024-08-22 23:26:25,566 log 3005895 140419737888640 Not Found: /staging/.env
+WARNING 2024-08-22 23:26:28,084 log 3005895 140419737888640 Not Found: /backend/.env
+WARNING 2024-08-22 23:26:29,334 log 3005895 140419737888640 Not Found: /app/.env
+WARNING 2024-08-22 23:26:30,611 log 3005895 140419737888640 Not Found: /api/.env
+WARNING 2024-08-22 23:26:31,960 log 3005895 140419737888640 Not Found: /app_dev.php/_profiler/phpinfo
+WARNING 2024-08-22 23:26:38,526 log 3005895 140419737888640 Not Found: /app/config/parameters.yml
+WARNING 2024-08-22 23:26:39,907 log 3005894 140419737888640 Not Found: /app_dev.php/_profiler/open
+WARNING 2024-08-22 23:26:43,869 log 3005895 140419737888640 Not Found: /conf/.env
+WARNING 2024-08-22 23:26:45,669 log 3005895 140419737888640 Not Found: /config/aws.yml
+WARNING 2024-08-22 23:26:46,875 log 3005895 140419737888640 Not Found: /debug/default/view.html
+WARNING 2024-08-22 23:26:48,133 log 3005895 140419737888640 Not Found: /debug/default/view
+WARNING 2024-08-22 23:26:49,320 log 3005895 140419737888640 Not Found: /frontend/web/debug/default/view
+WARNING 2024-08-22 23:26:51,822 log 3005895 140419737888640 Not Found: /info/
+WARNING 2024-08-22 23:26:55,681 log 3005895 140419737888640 Not Found: /library/.env
+WARNING 2024-08-22 23:26:59,854 log 3005895 140419737888640 Not Found: /sapi/debug/default/view
+WARNING 2024-08-22 23:27:01,150 log 3005895 140419737888640 Not Found: /sites/all/libraries/mailchimp/.env
+WARNING 2024-08-22 23:27:02,270 log 3005895 140419737888640 Not Found: /tool/view/phpinfo.view.php
+WARNING 2024-08-22 23:27:03,459 log 3005895 140419737888640 Not Found: /web/debug/default/view
+WARNING 2024-08-22 23:27:04,604 log 3005895 140419737888640 Not Found: /wp-content/.env
+WARNING 2024-08-23 01:53:46,662 log 3005894 140419737888640 Not Found: /actuator/health
+ERROR 2024-08-23 02:58:07,162 log 3005894 140419737888640 Internal Server Error: /api/board/update
+ERROR 2024-08-23 02:58:14,168 log 3005894 140419737888640 Internal Server Error: /api/board/update
+ERROR 2024-08-23 02:59:12,486 log 3005895 140419737888640 Internal Server Error: /api/board/update
+ERROR 2024-08-23 03:00:49,515 log 3005895 140419737888640 Internal Server Error: /api/board/update
+ERROR 2024-08-23 03:01:10,973 log 3005895 140419737888640 Internal Server Error: /api/board/update
+ERROR 2024-08-23 03:01:23,110 log 3005893 140419737888640 Internal Server Error: /api/board/update
+ERROR 2024-08-23 03:01:28,469 exception 3005895 140419737888640 Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "/home/apps/my_wiki/./api/views.py", line 58, in _wrapped_func
+    thumbnails = request.FILES.getlist('thumbnail', None)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/request.py", line 447, in FILES
+    self._load_data_and_files()
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/request.py", line 283, in _load_data_and_files
+    self._data, self._files = self._parse()
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/request.py", line 358, in _parse
+    parsed = parser.parse(stream, media_type, self.parser_context)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/rest_framework/parsers.py", line 110, in parse
+    data, files = parser.parse()
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/http/multipartparser.py", line 125, in parse
+    return self._parse()
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/http/multipartparser.py", line 247, in _parse
+    raise RequestDataTooBig(
+django.core.exceptions.RequestDataTooBig: Request body exceeded settings.DATA_UPLOAD_MAX_MEMORY_SIZE.
+WARNING 2024-08-23 03:01:28,509 log 3005895 140419737888640 Bad Request: /api/board/write
