@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Real-time Data</title>
+</head>
+<body>
+    <h1>실시간 데이터 전송</h1>
+    <input id="data-input" type="text" placeholder="메시지를 입력하세요">
+    <button id="send-button">전송</button>
+    <div id="data-log"></div>
+
+    <script>
+        const dataSocket = new WebSocket(
+            'ws://' + window.location.host + '/ws/data/'
+        );
+
+        dataSocket.onmessage = function(e) {
+            const data = JSON.parse(e.data);
+            document.querySelector('#data-log').innerHTML += (data.message + '<br>');
+        };
+
+        document.querySelector('#send-button').onclick = function(e) {
+            const input = document.querySelector('#data-input');
+            dataSocket.send(JSON.stringify({
+                'message': input.value
+            }));
+            input.value = '';
+        };
+    </script>
+</body>
+</html>

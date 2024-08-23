@@ -1,7 +1,7 @@
-# myapp/routing.py
+# myapp/urls.py
 from django.urls import path
-from . import consumers
+from . import views
 
-websocket_urlpatterns = [
-    path('ws/data/', consumers.DataConsumer.as_asgi()),
+urlpatterns = [
+    path('', views.index, name='index'),
 ]
