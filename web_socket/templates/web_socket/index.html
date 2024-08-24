@@ -11,7 +11,7 @@
 
     <script>
         const dataSocket = new WebSocket(
-            'wss://' + window.location.host + '/ws/'
+            'wss://' + window.location.host + '/ws/data/'
         );
 
         dataSocket.onmessage = function(e) {
