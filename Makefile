@@ -23,7 +23,7 @@ npm-run:
 .PHONY: runserver
 runserver:
 	poetry run uwsgi --ini core_uwsgi.ini
-	poetry run daphne --unix /home/apps/my_wiki/daphne.sock core.asgi:application
+	poetry run daphne -p 20004 core.asgi:application
 
 
 .PHONY: nginx
