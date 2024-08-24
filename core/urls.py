@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from . import settings
+from django.urls import path, re_path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,3 +25,8 @@ urlpatterns = [
     path('ws/', include('web_socket.urls')),  # websocket URL
     path('', include('frontend.urls'))
 ]
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+            re_path(r'^__debug__/', include(debug_toolbar.urls)),
+        ]
