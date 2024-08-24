@@ -31,7 +31,7 @@ nginx:
 	/etc/init.d/nginx restart
 
 .PHONY: all
-all: migrations migrate npm-run collect commit nginx runserver
+all: migrations migrate npm-run collect commit runserver
 
 .PHONY: superuser
 superuser:
