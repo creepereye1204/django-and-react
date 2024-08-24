@@ -28,12 +28,12 @@ ALLOWED_HOSTS: list[str] = ['*']
 DATA_UPLOAD_MAX_MEMORY_SIZE = 1024*1024*10 # 10MB
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = ['channels','web_socket','daphne',
     'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles',
     'api.apps.ApiConfig', 'frontend.apps.FrontendConfig', 'rest_framework',
-    'channels','web_socket'
+    
 ]
 # 채널 레이어 설정
 CHANNEL_LAYERS = {
