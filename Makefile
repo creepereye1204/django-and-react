@@ -22,7 +22,7 @@ npm-run:
 
 .PHONY: runserver
 runserver:
-	# poetry run uwsgi --ini core_uwsgi.ini
+	poetry run uwsgi --ini core_uwsgi.ini
 	poetry run uwsgi --ini core_asgi.ini
 
 .PHONY: nginx
