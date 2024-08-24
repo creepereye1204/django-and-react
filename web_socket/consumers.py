@@ -1,8 +1,8 @@
 # myapp/consumers.py
 import json
-from channels.generic.websocket import AsyncWebsocketConsumer
+from channels.generic.websocket import WebsocketConsumer
 
-class DataConsumer(AsyncWebsocketConsumer):
+class DataConsumer(WebsocketConsumer):
     async def connect(self):
         await self.accept()
 
