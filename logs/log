@@ -3273,3 +3273,161 @@ DEBUG 2024-08-24 02:17:02,761 utils 168366 139640016739840 (0.000) SELECT "djang
 DEBUG 2024-08-24 02:17:02,763 utils 168366 139640016739840 (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'api' AND "django_content_type"."model" IN ('board', 'room')); args=('api', 'board', 'room'); alias=default
 DEBUG 2024-08-24 02:17:02,766 utils 168366 139640016739840 (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(8, 9); alias=default
 DEBUG 2024-08-24 02:17:02,767 utils 168366 139640016739840 (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'api'; args=('api',); alias=default
+DEBUG 2024-08-24 02:18:02,697 base 168784 139642163500928 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'api.urls' from '/home/apps/my_wiki/./api/urls.py'> (None:None) 'api/'>], [<URLResolver <module 'web_socket.urls' from '/home/apps/my_wiki/./web_socket/urls.py'> (None:None) 'ws/'>, <URLPattern '' [name='index']>], [<URLResolver <module 'frontend.urls' from '/home/apps/my_wiki/./frontend/urls.py'> (None:None) ''>, <URLPattern '^board/\d+/?$'>], [<URLResolver <module 'frontend.urls' from '/home/apps/my_wiki/./frontend/urls.py'> (None:None) ''>, <URLPattern '^[^/]*$'>]], 'path': 'ws/data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+DEBUG 2024-08-24 02:18:02,720 base 168784 139642163500928 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'api.urls' from '/home/apps/my_wiki/./api/urls.py'> (None:None) 'api/'>], [<URLResolver <module 'web_socket.urls' from '/home/apps/my_wiki/./web_socket/urls.py'> (None:None) 'ws/'>, <URLPattern '' [name='index']>], [<URLResolver <module 'frontend.urls' from '/home/apps/my_wiki/./frontend/urls.py'> (None:None) ''>, <URLPattern '^board/\d+/?$'>], [<URLResolver <module 'frontend.urls' from '/home/apps/my_wiki/./frontend/urls.py'> (None:None) ''>, <URLPattern '^[^/]*$'>]], 'path': 'ws/data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'api.urls' from '/home/apps/my_wiki/./api/urls.py'> (None:None) 'api/'>
+WARNING 2024-08-24 02:18:02,724 log 168784 139642163500928 Not Found: /ws/data
+DEBUG 2024-08-24 02:20:47,474 base 168784 139642163500928 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'api.urls' from '/home/apps/my_wiki/./api/urls.py'> (None:None) 'api/'>], [<URLResolver <module 'web_socket.urls' from '/home/apps/my_wiki/./web_socket/urls.py'> (None:None) 'ws/'>, <URLPattern '' [name='index']>], [<URLResolver <module 'frontend.urls' from '/home/apps/my_wiki/./frontend/urls.py'> (None:None) ''>, <URLPattern '^board/\d+/?$'>], [<URLResolver <module 'frontend.urls' from '/home/apps/my_wiki/./frontend/urls.py'> (None:None) ''>, <URLPattern '^[^/]*$'>]], 'path': 'ws/ws/data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <URLPattern list> (admin:admin) 'admin/'>
+DEBUG 2024-08-24 02:20:47,477 base 168784 139642163500928 Exception while resolving variable 'name' in template 'unknown'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/urls/resolvers.py", line 705, in resolve
+    raise Resolver404({"tried": tried, "path": new_path})
+django.urls.exceptions.Resolver404: {'tried': [[<URLResolver <URLPattern list> (admin:admin) 'admin/'>], [<URLResolver <module 'api.urls' from '/home/apps/my_wiki/./api/urls.py'> (None:None) 'api/'>], [<URLResolver <module 'web_socket.urls' from '/home/apps/my_wiki/./web_socket/urls.py'> (None:None) 'ws/'>, <URLPattern '' [name='index']>], [<URLResolver <module 'frontend.urls' from '/home/apps/my_wiki/./frontend/urls.py'> (None:None) ''>, <URLPattern '^board/\d+/?$'>], [<URLResolver <module 'frontend.urls' from '/home/apps/my_wiki/./frontend/urls.py'> (None:None) ''>, <URLPattern '^[^/]*$'>]], 'path': 'ws/ws/data'}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'URLResolver' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'URLResolver' object has no attribute 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'name'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'api.urls' from '/home/apps/my_wiki/./api/urls.py'> (None:None) 'api/'>
+WARNING 2024-08-24 02:20:47,480 log 168784 139642163500928 Not Found: /ws/ws/data
