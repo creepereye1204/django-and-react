@@ -3584,3 +3584,7 @@ DEBUG 2024-08-24 03:52:02,796 utils 229250 140340280098304 (0.001) SELECT "auth_
 DEBUG 2024-08-24 03:52:02,798 utils 229250 140340280098304 (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'api'; args=('api',); alias=default
 DEBUG 2024-08-24 03:52:25,290 base 229685 139670322980736 Asynchronous handler adapted for middleware debug_toolbar.middleware.DebugToolbarMiddleware.
 DEBUG 2024-08-24 03:52:34,385 utils 229713 139659042023296 (0.032) SELECT "api_board"."id", "api_board"."title", "api_board"."content", "api_board"."create_at", "api_board"."updated_at", "api_board"."thumbnail" FROM "api_board"; args=(); alias=default
+WARNING 2024-08-24 04:20:46,113 log 250642 139939292780416 Not Found: /ws/data/
+WARNING 2024-08-24 04:20:48,853 log 250642 139939292780416 Not Found: /ws/data/
+WARNING 2024-08-24 04:20:50,903 log 250642 139939292780416 Not Found: /ws/data/
+WARNING 2024-08-24 04:20:54,096 log 250642 139939292780416 Not Found: /ws/data/
