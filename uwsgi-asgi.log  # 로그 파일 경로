@@ -68,3 +68,17 @@ uWSGI running as root, you can use --uid/--gid/--chroot options
 *** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
 chdir() to /home/apps/my_wiki/            # 애플리케이션 디렉토리
 chdir(): No such file or directory [core/uwsgi.c line 2597]
+*** Starting uWSGI 2.0.26 (64bit) on [Sat Aug 24 06:20:04 2024] ***
+compiled with version: 11.4.0 on 12 August 2024 05:49:01
+os: Linux-5.4.0-192-generic #212-Ubuntu SMP Fri Jul 5 09:47:39 UTC 2024
+nodename: ubuntu36
+machine: x86_64
+clock source: unix
+detected number of CPU cores: 40
+current working directory: /home/apps/my_wiki
+detected binary path: /root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/bin/uwsgi
+!!! no internal routing support, rebuild with pcre support !!!
+uWSGI running as root, you can use --uid/--gid/--chroot options
+*** WARNING: you are running uWSGI as root !!! (use the --uid flag) *** 
+chdir() to /home/apps/my_wiki/            # 애플리케이션 디렉토리
+chdir(): No such file or directory [core/uwsgi.c line 2597]

@@ -1,6 +1,8 @@
 from django.urls import re_path
-from . import consumers
+from consumers import DataConsumer
 
 websocket_urlpatterns = [
-    re_path(r'^$', consumers.DataConsumer.as_asgi()),  # 빈 경로를 지정
+    path('ws/data/', DataConsumer.as_asgi()),  # WebSocket URL
 ]
+
+
