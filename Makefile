@@ -23,14 +23,15 @@ npm-run:
 .PHONY: runserver
 runserver:
 	poetry run uwsgi --ini core_uwsgi.ini
-	poetry run daphne -p 20004 core.asgi:application
+	poetry run daphne --unix /home/apps/my_wiki/daphne.sock core.asgi:application
+
 
 .PHONY: nginx
 nginx:
 	/etc/init.d/nginx restart
 
 .PHONY: all
-all: migrations migrate npm-run collect commit runserver
+all: migrations migrate npm-run collect commit nginx runserver
 
 .PHONY: superuser
 superuser:

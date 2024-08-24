@@ -1,5 +1,11 @@
 # 도움말
 
+```bash
+항상 nginx 파일 수정하면 재시작 꼮꼭꼮 하기!! 
+안하면 적용안됨!!!!!!!!
+지금까지 https랑 wss 설정도 이것떄문에 고생한거
+
+```
 
 ## uwsgi 키는법
 
@@ -34,3 +40,5 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 # 저장하고 적용
 source /.bashrc
 ```
+
+
