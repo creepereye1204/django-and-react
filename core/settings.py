@@ -22,18 +22,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b0(ztd$lt9phiwg^q3*2t6)ncjekt1uz16+4ph1#s5(m-0*cv@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS: list[str] = ['*']
 DATA_UPLOAD_MAX_MEMORY_SIZE = 1024*1024*10 # 10MB
 # Application definition
 
-INSTALLED_APPS = ['channels','web_socket','daphne',
+INSTALLED_APPS = [
     'django.contrib.admin', 'django.contrib.auth',
     'django.contrib.contenttypes', 'django.contrib.sessions',
     'django.contrib.messages', 'django.contrib.staticfiles',
-    'api.apps.ApiConfig', 'frontend.apps.FrontendConfig', 'rest_framework','debug_toolbar'
-    
+    'api.apps.ApiConfig', 'frontend.apps.FrontendConfig', 'rest_framework',
+    'channels','web_socket'
 ]
 # 채널 레이어 설정
 CHANNEL_LAYERS = {
@@ -52,7 +52,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware'
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -167,4 +166,3 @@ LOGGING = {
         }
     }
 }
-INTERNAL_IPS = ['*']  # 모든 도메인 및 IP를 포함
