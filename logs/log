@@ -3176,3 +3176,7 @@ DEBUG 2024-08-24 02:03:56,964 utils 159202 140124861500928 (0.000) SELECT "djang
 DEBUG 2024-08-24 02:03:56,966 utils 159202 140124861500928 (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE ("django_content_type"."app_label" = 'api' AND "django_content_type"."model" IN ('room', 'board')); args=('api', 'room', 'board'); alias=default
 DEBUG 2024-08-24 02:03:56,968 utils 159202 140124861500928 (0.001) SELECT "auth_permission"."content_type_id", "auth_permission"."codename" FROM "auth_permission" INNER JOIN "django_content_type" ON ("auth_permission"."content_type_id" = "django_content_type"."id") WHERE "auth_permission"."content_type_id" IN (8, 9) ORDER BY "django_content_type"."app_label" ASC, "django_content_type"."model" ASC, "auth_permission"."codename" ASC; args=(8, 9); alias=default
 DEBUG 2024-08-24 02:03:56,970 utils 159202 140124861500928 (0.000) SELECT "django_content_type"."id", "django_content_type"."app_label", "django_content_type"."model" FROM "django_content_type" WHERE "django_content_type"."app_label" = 'api'; args=('api',); alias=default
+WARNING 2024-08-24 02:11:34,669 log 164092 140648298989440 Not Found: /ws/data
+WARNING 2024-08-24 02:11:40,057 log 164092 140648298989440 Not Found: /ws/data
+WARNING 2024-08-24 02:12:41,314 log 164092 140648298989440 Not Found: /ws/data
+WARNING 2024-08-24 02:12:42,189 log 164092 140648298989440 Not Found: /ws/data
