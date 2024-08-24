@@ -1,7 +1,6 @@
-# myapp/routing.py
-from django.urls import path
+from django.urls import re_path
 from . import consumers
 
 websocket_urlpatterns = [
-    path('data', consumers.DataConsumer.as_asgi()),
+    re_path(r'data$', consumers.MyConsumer.as_asgi()),
 ]

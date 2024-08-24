@@ -3431,3 +3431,5 @@ Traceback (most recent call last):
     raise VariableDoesNotExist(
 django.template.base.VariableDoesNotExist: Failed lookup for key [name] in <URLResolver <module 'api.urls' from '/home/apps/my_wiki/./api/urls.py'> (None:None) 'api/'>
 WARNING 2024-08-24 02:20:47,480 log 168784 139642163500928 Not Found: /ws/ws/data
+WARNING 2024-08-24 02:21:55,906 log 171608 140515314849664 Not Found: /ws/data
+WARNING 2024-08-24 02:23:26,587 log 171608 140515314849664 Not Found: /ws/data
