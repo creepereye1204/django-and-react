@@ -17,7 +17,7 @@ const SketchToImage = () => {
 
     ws.onmessage = (event) => {
       const message = event.data;
-      setChat((prevChat) => [...prevChat, message]);
+      console.log(message);
     };
 
     ws.onclose = () => {
