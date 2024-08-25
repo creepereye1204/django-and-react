@@ -16,16 +16,17 @@ image_path = '/home/apps/my_wiki/web_socket/img.png'  # 여기에 실제 이미�
 with open(image_path, 'rb') as image_file:
     image_data = image_file.read()
 # Flask-SocketIO 클라이언트 인스턴스 생성
-sio = socketio.AsyncClient()
+sio = socketio.Client()
 
 class DataConsumer(AsyncWebsocketConsumer):
+    
     async def connect(self):
         await self.accept()  # 클라이언트 연결 수락
-        await sio.connect('http://localhost:20004')  # Flask 서버에 연결
+        sio.connect('http://localhost:20004')  # Flask 서버에 연결
         sio.on_event('datas', self.handle_datas)  # 이벤트 핸들러 등록
 
     async def disconnect(self, close_code):
-        await sio.disconnect()  # Flask 서버 연결 종료
+        sio.disconnect()  # Flask 서버 연결 종료
 
     async def receive(self, text_data):
         data_from_client = json.loads(text_data)  # 클라이언트로부터 받은 데이터 파싱
@@ -35,7 +36,7 @@ class DataConsumer(AsyncWebsocketConsumer):
             'prompt': 'string',
             'negative_prompt': 'string',
         }
-        await sio.emit('generate_image', data_to_flask)  # Flask 서버에 데이터 전송
+        sio.emit('generate_image', data_to_flask)  # Flask 서버에 데이터 전송
 
     async def handle_datas(self, data):
         # Flask 서버로부터 받은 데이터 처리
