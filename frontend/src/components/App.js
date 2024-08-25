@@ -9,7 +9,7 @@ function Navbar({writeMode}) {
       <a href="#" className="logo">My Wiki</a>
       <nav className="navbar">
         <Link to="/">Home</Link>
-        <Link to="/about">About</Link> 
+        <Link to="/models">Models</Link> 
         <Link to="/service">Project</Link>
         <Link to="/board">Blog</Link>
         <Link to="/write">Write</Link>
