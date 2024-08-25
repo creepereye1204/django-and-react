@@ -75,7 +75,7 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
         asyncio.run(self.send_to_client(message))  # 비동기적으로 클라이언트에게 메시지 전송
 
     async def send_to_client(self, message):
-        print('send_to_client')
+        logging.info(f'Received message from Flask server: {message}')s
         await self.send(text_data=json.dumps({
             'message': message  # 받은 메시지를 클라이언트에게 전송
         }))
