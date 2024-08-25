@@ -58,9 +58,9 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
         self.flask_sio.disconnect()  # Flask 서버 연결 종료
         await self.cancel_tasks()  # 연결 종료 시 모든 태스크 취소
 
-    async def receive(self, data_from_react):
+    async def receive(self, text_data):
         # 클라이언트로부터 받은 데이터
-        data_from_django = json.loads(data_from_react)
+        data_from_django = json.loads(text_data)
         data_from_django={
             'style':data_from_django['style'],
             'file': data_from_django['image'],
