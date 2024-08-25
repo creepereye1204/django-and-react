@@ -5,6 +5,7 @@ const SketchToImage = () => {
   const [style, setStyle] = useState('');
   const [prompt, setPrompt] = useState('');
   const [negativePrompt, setNegativePrompt] = useState('');
+
   const [webSocket, setWebSocket] = useState(null);
 
   useEffect(() => {
@@ -42,14 +43,18 @@ const SketchToImage = () => {
       if (image) {
         const response = await fetch(image);
         const blob = await response.blob(); // Blob으로 변환
-        const finalMessage = {
-          ...message,
-          image: blob, // Blob을 메시지에 포함
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          const base64data = reader.result; // Base64로 변환
+          const finalMessage = {
+            ...message,
+            image: base64data,
+          };
+          webSocket.send(JSON.stringify(finalMessage)); // 웹소켓으로 메시지 전송
+          setChat((prevChat) => [...prevChat, `나: ${JSON.stringify(finalMessage)}`]);
+          resetFields();
         };
-
-        webSocket.send(finalMessage.image); // Blob을 웹소켓으로 전송
-        setChat((prevChat) => [...prevChat, `나: ${JSON.stringify(finalMessage)}`]);
-        resetFields();
+        reader.readAsDataURL(blob); // Blob을 Data URL로 변환
       } else {
         webSocket.send(JSON.stringify(message)); // 이미지 없이 메시지 전송
         setChat((prevChat) => [...prevChat, `나: ${JSON.stringify(message)}`]);
