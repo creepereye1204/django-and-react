@@ -55,7 +55,7 @@ const SketchToImage = () => {
         reader.readAsDataURL(blob); // Blob을 Data URL로 변환
       } else {
         webSocket.send(JSON.stringify(message)); // 이미지 없이 메시지 전송
-        setChat((prevChat) => [...prevChat, `나: ${JSON.stringify(message)}`]);
+        
         resetFields();
       }
     } else {
