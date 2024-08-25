@@ -76,7 +76,7 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
 
     async def send_to_client(self, message):
         await self.send(text_data=json.dumps({
-            'message': message  # 받은 메시지를 클라이언트에게 전송
+            'message': 'message'  # 받은 메시지를 클라이언트에게 전송
         }))
          # 현재 태스크를 안전하게 제거
         current_task = asyncio.current_task()
