@@ -15,8 +15,8 @@ const SketchToImage = () => {
     };
 
     ws.onmessage = (event) => {
-      const message = event.data;
-      console.log(message);
+      const message = JSON.parse(event.data); // 수신한 메시지를 파싱
+      console.log(message); // 서버에서 보낸 메시지 출력
     };
 
     ws.onclose = () => {
