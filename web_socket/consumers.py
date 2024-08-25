@@ -23,6 +23,14 @@ from channels.generic.websocket import AsyncWebsocketConsumer
 # Flask-SocketIO 클라이언트 인스턴스 생성
 flask_sio = socketio.Client()
 
+import json
+import asyncio
+from channels.generic.websocket import AsyncWebsocketConsumer
+import socketio
+
+# Flask-SocketIO 클라이언트 인스턴스 생성
+flask_sio = socketio.Client()
+
 class DataConsumer(AsyncWebsocketConsumer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -64,7 +72,8 @@ class DataConsumer(AsyncWebsocketConsumer):
         # 모든 태스크 취소
         for task in self.tasks:
             task.cancel()
-        self.tasks.clear()  # 태스크 리스트 초기화
+        self.tasks.clear()
+
 
 
 
