@@ -7,7 +7,7 @@ from channels.generic.websocket import AsyncWebsocketConsumer
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 import socketio
-
+import base64
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 import socketio
