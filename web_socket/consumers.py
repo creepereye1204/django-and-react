@@ -7,7 +7,7 @@ from channels.generic.websocket import AsyncWebsocketConsumer
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 import socketio
-
+import base64
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 import socketio
@@ -53,24 +53,28 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
             self.flask_sio.on('receive_message', self.handle_receive_message)
         except Exception as e:
             print(f'Error occurred while connecting to Flask server: {e}')
-    
-    async def disconnect(self, close_code):
+     
+    async def disconnect(self, close_code): 
         self.flask_sio.disconnect()  # Flask 서버 연결 종료
         await self.cancel_tasks()  # 연결 종료 시 모든 태스크 취소
 
     async def receive(self, text_data):
         # 클라이언트로부터 받은 데이터
-        data = json.loads(text_data)
-
+        data_from_django = json.loads(text_data)
+        data_from_django={
+            'style':data_from_django['style'],
+            'file': data_from_django['image'],
+            'prompt':data_from_django['prompt'],
+            'negative_prompt': data_from_django['negativePrompt'],
+        }
         # Flask 서버에 데이터 전송
-        self.flask_sio.emit('send_message', data)
+        self.flask_sio.emit('upload_image', data_from_django)
 
     def handle_receive_message(self, message):
-        # Flask 서버로부터 받은 데이터 처리
+   
         asyncio.run(self.send_to_client(message))  # 비동기적으로 클라이언트에게 메시지 전송
 
     async def send_to_client(self, message):
-        # 클라이언트에게 메시지 전송
         await self.send(text_data=json.dumps({
             'message': message  # 받은 메시지를 클라이언트에게 전송
         }))
