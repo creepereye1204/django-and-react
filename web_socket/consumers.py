@@ -48,7 +48,7 @@ class DataConsumer(AsyncWebsocketConsumer):
         # Flask 서버에 데이터 전송
         flask_sio.emit('send_message', data)
 
-    def handle_receive_message(self, message):
+    async def handle_receive_message(self, message):
         # Flask 서버로부터 받은 데이터 처리
         task = asyncio.create_task(self.send_to_client(message))
         self.tasks.append(task)  # 생성된 태스크를 리스트에 추가
@@ -65,7 +65,6 @@ class DataConsumer(AsyncWebsocketConsumer):
         for task in self.tasks:
             task.cancel()
         self.tasks.clear()  # 태스크 리스트 초기화
-
 
 
 
