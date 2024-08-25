@@ -61,9 +61,10 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         # 클라이언트로부터 받은 데이터
         data_from_django = json.loads(text_data)
+        image_data = base64.b64decode(text_data['image'])
         data_from_django={
             'style':data_from_django['style'],
-            'file': data_from_django['image'],
+            'file': image_data,
             'prompt':data_from_django['prompt'],
             'negative_prompt': data_from_django['negativePrompt'],
         }
