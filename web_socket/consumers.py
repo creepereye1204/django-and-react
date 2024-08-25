@@ -24,6 +24,10 @@ from channels.generic.websocket import AsyncWebsocketConsumer
 flask_sio = socketio.Client()
 
 class DataConsumer(AsyncWebsocketConsumer):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.tasks = []  # 태스크를 저장할 리스트
+
     async def connect(self):
         await self.accept()  # 클라이언트 연결 수락
 
@@ -35,6 +39,7 @@ class DataConsumer(AsyncWebsocketConsumer):
 
     async def disconnect(self, close_code):
         flask_sio.disconnect()  # Flask 서버 연결 종료
+        await self.cancel_tasks()  # 연결 종료 시 모든 태스크 취소
 
     async def receive(self, text_data):
         # 클라이언트로부터 받은 데이터
@@ -45,13 +50,21 @@ class DataConsumer(AsyncWebsocketConsumer):
 
     def handle_receive_message(self, message):
         # Flask 서버로부터 받은 데이터 처리
-        asyncio.run(self.send_to_client(message))
+        task = asyncio.create_task(self.send_to_client(message))
+        self.tasks.append(task)  # 생성된 태스크를 리스트에 추가
 
     async def send_to_client(self, message):
         # 클라이언트에게 메시지 전송
         await self.send(text_data=json.dumps({
             'message': message  # 받은 메시지를 클라이언트에게 전송
         }))
+        self.tasks.remove(asyncio.current_task())  # 완료된 태스크 제거
+
+    async def cancel_tasks(self):
+        # 모든 태스크 취소
+        for task in self.tasks:
+            task.cancel()
+        self.tasks.clear()  # 태스크 리스트 초기화
 
 
 
