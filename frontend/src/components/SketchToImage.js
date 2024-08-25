@@ -49,7 +49,7 @@ const SketchToImage = () => {
             image: base64data, // 문자열 타입으로 전송할 데이터
           };
           webSocket.send(JSON.stringify(finalMessage)); // 웹소켓으로 메시지 전송
-          setChat((prevChat) => [...prevChat, `나: ${JSON.stringify(finalMessage)}`]);
+          
           resetFields();
         };
         reader.readAsDataURL(blob); // Blob을 Data URL로 변환
