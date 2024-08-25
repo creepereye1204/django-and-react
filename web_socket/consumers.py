@@ -29,6 +29,11 @@ from channels.generic.websocket import AsyncWebsocketConsumer
 import socketio
 
 # Flask-SocketIO 클라이언트 인스턴스 생성
+import json
+import socketio
+from channels.generic.websocket import AsyncWebsocketConsumer
+
+# Flask-SocketIO 클라이언트 인스턴스 생성
 flask_sio = socketio.Client()
 
 class DataConsumer(AsyncWebsocketConsumer):
@@ -56,10 +61,9 @@ class DataConsumer(AsyncWebsocketConsumer):
         # Flask 서버에 데이터 전송
         flask_sio.emit('send_message', data)
 
-    async def handle_receive_message(self, message):
+    def handle_receive_message(self, message):
         # Flask 서버로부터 받은 데이터 처리
-        task = asyncio.create_task(self.send_to_client(message))
-        self.tasks.append(task)  # 생성된 태스크를 리스트에 추가
+        asyncio.run(self.send_to_client(message))  # 비동기적으로 클라이언트에게 메시지 전송
 
     async def send_to_client(self, message):
         # 클라이언트에게 메시지 전송
@@ -73,6 +77,7 @@ class DataConsumer(AsyncWebsocketConsumer):
         for task in self.tasks:
             task.cancel()
         self.tasks.clear()
+
 
 
 
