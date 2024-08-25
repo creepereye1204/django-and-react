@@ -50,7 +50,7 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
             self.flask_sio.connect('http://localhost:20004')
 
             # Flask 서버와 연결이 완료된 후에 이벤트 핸들러 등록
-            self.flask_sio.on('datas', self.handle_receive_message)
+            self.flask_sio.on('datas', self.handle_receive_message) # 받으려는 이벤트의 이름을 등록해야함!!!!!!
         except Exception as e:
             print(f'Error occurred while connecting to Flask server: {e}')
      

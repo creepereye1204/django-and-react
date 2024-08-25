@@ -6,61 +6,44 @@
   padding: 0;
   font-family: 'Poppins', sans-serif;
 }
- 
+
 .normalBackground {
   overflow: hidden;
   width: 100%;
   height: 100vh;
-  position: relative; /* 자식 요소에 대한 위치 지정 */
-}
-.editBackground {
-  position: fixed; /* 자식 요소에 대한 위치 지정 */
+  position: relative;
 }
 
-.normalVideo {
+.editBackground {
+  position: fixed;
+}
+
+.normalVideo, .editVideo {
   pointer-events: none;
   object-fit: cover;
   width: 100%;
-  height: 100%; /* 비디오를 배경으로 설정 */
-}
-.editVideo{
-  pointer-events: none;
+  height: auto;
 }
 
-.normalHeader {
-  position: absolute; /* 비디오 위에 위치하도록 설정 */
+.normalHeader, .editHeader {
+  position: absolute;
   width: 100%;
   height: auto;
   top: 0;
   display: flex;
   justify-content: space-between;
-  align-items: center; /* 수직 중앙 정렬 */
-  padding: 10px; /* 패딩 조정 */
+  align-items: center;
+  padding: 10px;
   backdrop-filter: blur(10px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.1);
-  z-index: 1; /* 비디오보다 위에 배치 */
-}
-
-.editHeader {
-  position: fixed; /* 비디오 위에 위치하도록 설정 */
-  width: 100%;
-  height: auto;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* 수직 중앙 정렬 */
-  padding: 10px; /* 패딩 조정 */
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  z-index: 1; /* 비디오보다 위에 배치 */
+  z-index: 1;
 }
 
 a {
   color: white;
   text-decoration: none;
-  margin-right: 30px; /* 링크 간격 조정 */
+  margin-right: 30px;
   cursor: pointer;
 }
 
@@ -69,13 +52,44 @@ a {
   cursor: default;
 }
 
-.secret-key{
+.secret-key {
   position: absolute;
   left: 50%;
-  top:0;
-  transform: translate(-50%,0%);
+  top: 0;
+  transform: translate(-50%, 0%);
   width: 100px;
   height: 50px;
   border-radius: .5rem;
-  
+}
+
+/* 반응형 디자인을 위한 미디어 쿼리 */
+@media (max-width: 768px) {
+  * {
+    font-size: 16px;
+  }
+
+  .normalHeader, .editHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  a {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .secret-key {
+    width: 80%;
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  * {
+    font-size: 14px;
+  }
+
+  .secret-key {
+    width: 90%;
+  }
 }
