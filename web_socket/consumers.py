@@ -32,7 +32,7 @@ import socketio
 import json
 import socketio
 from channels.generic.websocket import AsyncWebsocketConsumer
-from socketio import AsyncClient
+
 # Flask-SocketIO 클라이언트 인스턴스 생성
 flask_sio = socketio.Client()
 
@@ -40,19 +40,18 @@ class DataConsumer(AsyncWebsocketConsumer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.tasks = []  # 태스크를 저장할 리스트
-        self.flask_sio = AsyncClient()  # 비동기 클라이언트 인스턴스 생성
 
     async def connect(self):
         await self.accept()  # 클라이언트 연결 수락
 
         # Flask 서버에 연결
-        await self.flask_sio.connect('http://localhost:20004')
+        flask_sio.connect('http://localhost:20004')
 
         # Flask 서버와 연결이 완료된 후에 이벤트 핸들러 등록
-        self.flask_sio.on('receive_message', self.handle_receive_message)
+        flask_sio.on('receive_message', self.handle_receive_message)
 
     async def disconnect(self, close_code):
-        await self.flask_sio.disconnect()  # Flask 서버 연결 종료
+        flask_sio.disconnect()  # Flask 서버 연결 종료
         await self.cancel_tasks()  # 연결 종료 시 모든 태스크 취소
 
     async def receive(self, text_data):
@@ -60,17 +59,21 @@ class DataConsumer(AsyncWebsocketConsumer):
         data = json.loads(text_data)
 
         # Flask 서버에 데이터 전송
-        await self.flask_sio.emit('send_message', data)
+        flask_sio.emit('send_message', data)
 
-    async def handle_receive_message(self, message):
+    def handle_receive_message(self, message):
         # Flask 서버로부터 받은 데이터 처리
-        await self.send_to_client(message)  # 비동기적으로 클라이언트에게 메시지 전송
+        asyncio.run(self.send_to_client(message))  # 비동기적으로 클라이언트에게 메시지 전송
 
     async def send_to_client(self, message):
         # 클라이언트에게 메시지 전송
         await self.send(text_data=json.dumps({
             'message': message  # 받은 메시지를 클라이언트에게 전송
         }))
+         # 현재 태스크를 안전하게 제거
+        current_task = asyncio.current_task()
+        if current_task in self.tasks:
+            self.tasks.remove(current_task)  # 완료된 태스크 제거 # 완료된 태스크 제거
 
     async def cancel_tasks(self):
         # 모든 태스크 취소
