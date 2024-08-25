@@ -21,6 +21,7 @@ sio = socketio.Client()
 class DataConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         await self.accept()  # 클라이언트 연결 수락
+        sio.disconnect()
         sio.connect('http://localhost:20004')  # Flask 서버에 연결
 
     async def disconnect(self, close_code):
