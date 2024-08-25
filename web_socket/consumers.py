@@ -60,7 +60,7 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
 
     async def receive(self, data_from_react):
         # 클라이언트로부터 받은 데이터
-        data_from_django = json.loads(text_data)
+        data_from_django = json.loads(data_from_react)
         data_from_django={
             'style':data_from_django['style'],
             'file': data_from_django['image'],
