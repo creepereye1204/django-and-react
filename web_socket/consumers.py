@@ -53,6 +53,7 @@ class DataConsumer(AsyncWebsocketConsumer):
             self.flask_sio.on('receive_message', self.handle_receive_message)
         except Exception as e:
             print(f'Error occurred while connecting to Flask server: {e}')
+    
     async def disconnect(self, close_code):
         self.flask_sio.disconnect()  # Flask 서버 연결 종료
         await self.cancel_tasks()  # 연결 종료 시 모든 태스크 취소
