@@ -11,7 +11,7 @@ import socketio
 import json
 from channels.generic.websocket import AsyncWebsocketConsumer
 import socketio
-image_path = 'img.png'  # 여기에 실제 이미지 파일 경로를 입력하세요.
+image_path = '/home/apps/my_wiki/web_socket/img.png'  # 여기에 실제 이미지 파일 경로를 입력하세요.
 
 with open(image_path, 'rb') as image_file:
     image_data = image_file.read()
