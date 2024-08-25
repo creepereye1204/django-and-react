@@ -29,7 +29,7 @@ class DataConsumer(AsyncWebsocketConsumer):
     async def receive(self, text_data):
         
         sio.emit('send_message', 'sss')  # Flask 서버에 데이터 전송
-        sio.wait()
+        
     async def handle_datas(self, data):
         # Flask 서버로부터 받은 데이터 처리
         await self.send(text_data=json.dumps({
