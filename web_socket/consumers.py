@@ -21,8 +21,8 @@ sio = socketio.Client()
 class DataConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         await self.accept()  # 클라이언트 연결 수락
-        await sio.connect('http://localhost:20004')  # Flask 서버에 연결
-        await sio.disconnect()
+        sio.connect('http://localhost:20004')  # Flask 서버에 연결
+        sio.emit('send_message', {'data': data})  # Flask 서버에 이미지
 
     async def disconnect(self, close_code):
         await sio.disconnect()  # Flask 서버 연결 종료
