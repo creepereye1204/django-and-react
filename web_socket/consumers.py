@@ -22,15 +22,14 @@ class DataConsumer(AsyncWebsocketConsumer):
     async def connect(self):
         await self.accept()  # 클라이언트 연결 수락
         sio.connect('http://localhost:20004')  # Flask 서버에 연결
-        sio.wait()  # Flask 서버에 이미지
 
     async def disconnect(self, close_code):
-        await sio.disconnect()  # Flask 서버 연결 종료
+        sio.disconnect()  # Flask 서버 연결 종료
 
     async def receive(self, text_data):
         
         sio.emit('send_message', 'sss')  # Flask 서버에 데이터 전송
-
+        sio.wait()
     async def handle_datas(self, data):
         # Flask 서버로부터 받은 데이터 처리
         await self.send(text_data=json.dumps({
