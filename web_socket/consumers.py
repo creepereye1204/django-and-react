@@ -66,7 +66,8 @@ class DataConsumer(AsyncWebsocketConsumer):
         self.flask_sio.emit('send_message', data)
 
     def handle_receive_message(self, message):
-        # Flask 서버로부터 받은 데이터 처리
+        if type(message)==dict:
+            asyncio.run(self.send_to_client({'message':'이거 머야'}))
         asyncio.run(self.send_to_client(message))  # 비동기적으로 클라이언트에게 메시지 전송
 
     async def send_to_client(self, message):
