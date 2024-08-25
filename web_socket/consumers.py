@@ -21,7 +21,7 @@ import socketio
 from channels.generic.websocket import AsyncWebsocketConsumer
 
 # Flask-SocketIO 클라이언트 인스턴스 생성
-lask_sio = socketio.Client()
+flask_sio = socketio.Client()
 
 class DataConsumer(AsyncWebsocketConsumer):
     async def connect(self):
