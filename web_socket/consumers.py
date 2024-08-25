@@ -20,21 +20,6 @@ import json
 import socketio
 from channels.generic.websocket import AsyncWebsocketConsumer
 
-# Flask-SocketIO 클라이언트 인스턴스 생성
-flask_sio = socketio.Client()
-
-import json
-import asyncio
-from channels.generic.websocket import AsyncWebsocketConsumer
-import socketio
-
-# Flask-SocketIO 클라이언트 인스턴스 생성
-import json
-import socketio
-from channels.generic.websocket import AsyncWebsocketConsumer
-
-from channels.generic.websocket import AsyncWebsocketConsumer
-
 class SketchToImageConsumer(AsyncWebsocketConsumer):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -48,6 +33,9 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
 
             # Flask 서버와 연결이 완료된 후에 이벤트 핸들러 등록
             self.flask_sio.on('receive_message', self.handle_receive_message)
+
+            # 이벤트 루프를 대기하여 메시지를 받을 수 있도록 유지
+            await self.flask_sio.wait()
         except Exception as e:
             print(f'Error occurred while connecting to Flask server: {e}')
      
