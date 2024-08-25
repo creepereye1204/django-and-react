@@ -34,25 +34,27 @@ import socketio
 from channels.generic.websocket import AsyncWebsocketConsumer
 
 # Flask-SocketIO 클라이언트 인스턴스 생성
-flask_sio = socketio.Client()
+
 
 class DataConsumer(AsyncWebsocketConsumer):
     def __init__(self, *args, **kwargs):
+        
         super().__init__(*args, **kwargs)
+        self.flask_sio = socketio.Client()
         self.tasks = []  # 태스크를 저장할 리스트
 
     async def connect(self):
         await self.accept()  # 클라이언트 연결 수락
         try:
             # Flask 서버에 연결
-            flask_sio.connect('http://localhost:20004')
+            self.flask_sio.connect('http://localhost:20004')
 
             # Flask 서버와 연결이 완료된 후에 이벤트 핸들러 등록
-            flask_sio.on('receive_message', self.handle_receive_message)
+            self.flask_sio.on('receive_message', self.handle_receive_message)
         except Exception as e:
             print(f'Error occurred while connecting to Flask server: {e}')
     async def disconnect(self, close_code):
-        flask_sio.disconnect()  # Flask 서버 연결 종료
+        self.flask_sio.disconnect()  # Flask 서버 연결 종료
         await self.cancel_tasks()  # 연결 종료 시 모든 태스크 취소
 
     async def receive(self, text_data):
@@ -60,7 +62,7 @@ class DataConsumer(AsyncWebsocketConsumer):
         data = json.loads(text_data)
 
         # Flask 서버에 데이터 전송
-        flask_sio.emit('send_message', data)
+        self.flask_sio.emit('send_message', data)
 
     def handle_receive_message(self, message):
         # Flask 서버로부터 받은 데이터 처리
