@@ -6,7 +6,6 @@ const SketchToImage = () => {
   const [prompt, setPrompt] = useState('');
   const [negativePrompt, setNegativePrompt] = useState('');
   const [webSocket, setWebSocket] = useState(null);
-
   useEffect(() => {
     const ws = new WebSocket('wss://my-wiki.p-e.kr/ws/api/sketch-to-image');
 
@@ -16,7 +15,7 @@ const SketchToImage = () => {
 
     ws.onmessage = (event) => {
       const message = JSON.parse(event.data); // 수신한 메시지를 파싱
-      console.log(message); // 서버에서 보낸 메시지 출력
+      
     };
 
     ws.onclose = () => {
@@ -82,33 +81,37 @@ const SketchToImage = () => {
   };
 
   return (
-    <div className='chat-container'>
+    <div className='client-container'>
       <h1 className='title'>SketchToImage</h1>
-      <input
-        type='text'
-        value={style}
-        onChange={(e) => setStyle(e.target.value)}
-        placeholder='스타일 입력'
-      />
-      <input
-        type='text'
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        placeholder='프롬프트 입력'
-      />
-      <input
-        type='text'
-        value={negativePrompt}
-        onChange={(e) => setNegativePrompt(e.target.value)}
-        placeholder='부정 프롬프트 입력'
-      />
-      <input
-        type='file'
-        accept='image/*'
-        onChange={handleImageChange}
-      />
-      <button onClick={sendImageToServer}>전송</button>
-      {image && <img src={image} alt='선택한 이미지' style={{ width: '100px', height: '100px' }} />}
+      {image && <img src={image} alt='선택한 이미지' className='image' />}
+      <div className='input-container'>
+        <input
+          type='text'
+          value={style}
+          onChange={(e) => setStyle(e.target.value)}
+          placeholder='스타일 입력'
+        />
+        <input
+          type='text'
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder='프롬프트 입력'
+        />
+        <input
+          type='text'
+          value={negativePrompt}
+          onChange={(e) => setNegativePrompt(e.target.value)}
+          placeholder='부정 프롬프트 입력'
+        />
+        <input
+          type='file'
+          accept='image/*'
+          onChange={handleImageChange}
+        />
+        <button onClick={sendImageToServer}>전송</button>
+      </div>
+      
+      
     </div>
   );
 };

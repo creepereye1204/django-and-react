@@ -4,8 +4,8 @@ import 'react-quill/dist/quill.snow.css'; // 스타일 임포트
 import './Board.css'; // CSS 파일 임포트
 import { useParams } from 'react-router-dom'; // useParams 임포트
 import Write from './Write'; // Write 컴포넌트 임포트
-import jsPDF from 'jspdf';
-import html2canvas from 'html2canvas';
+// import jsPDF from 'jspdf';
+// import html2canvas from 'html2canvas';
 
 class Board extends Component {
   constructor(props) {
