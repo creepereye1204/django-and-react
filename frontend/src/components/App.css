@@ -108,11 +108,16 @@ a {
     background: rgba(255, 255, 255, 0.6); /* 배경색 */
     border-radius: 1.0 rem;
     width: 100%; /* 전체 너비 */
-    z-index: 1000; /* 다른 요소 위에 표시 */
+     /* 다른 요소 위에 표시 */
   }
 
   .navbar.active {
     display: flex; /* active 클래스가 있을 때만 보임 */
+  }
+
+  .navbar a{
+    color: cornflowerblue;
+    z-index: 20;
   }
 
   .menu-toggle {
