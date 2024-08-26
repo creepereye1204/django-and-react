@@ -79,3 +79,46 @@ a {
   border-radius: .5rem;
   
 }
+
+/* 기존 코드 유지 */
+
+/* 햄버거 버튼 스타일 */
+.menu-toggle {
+  display: none; /* 기본적으로 숨김 */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background-color: white; /* 버튼 색상 */
+  margin: 3px 0; /* 간격 */
+}
+
+/* 모바일 스타일 */
+@media (max-width: 768px) {
+  .navbar {
+    display: none; /* 기본적으로 숨김 */
+    flex-direction: column; /* 세로로 정렬 */
+    position: absolute; /* 화면에 고정 */
+    top: 60px; /* 헤더 아래에 위치 */
+    left: 0;
+    background: rgba(255, 255, 255, 0.9); /* 배경색 */
+    width: 100%; /* 전체 너비 */
+    z-index: 1000; /* 다른 요소 위에 표시 */
+  }
+
+  .navbar.active {
+    display: flex; /* active 클래스가 있을 때만 보임 */
+  }
+
+  .menu-toggle {
+    display: flex; /* 모바일에서 햄버거 버튼 보이기 */
+  }
+
+  .normalHeader, .editHeader {
+    flex-direction: row; /* 가로 정렬 */
+    justify-content: space-between; /* 양 끝 정렬 */
+  }
+}
