@@ -6,8 +6,9 @@ class Read extends Component {
     return (
       <div>
         
-        <App writeMode={true}/>
+        
         <BoardWrapper/>
+        <App writeMode={true}/>
       </div>
     );
   }
