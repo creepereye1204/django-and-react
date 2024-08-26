@@ -15,13 +15,11 @@ class Board extends Component {
       id: this.props.id, // id 받아오기
       board: {}, // 글 목록을 저장할 상태
     };
-    
   }
-
 
   componentDidMount() {
     const id = this.state.id; // CSRF 토큰을 적절히 설정해야 합니다.
-    fetch(`https://my-wiki.p-e.kr/api/board/read/${id}`, {
+    fetch(`${id}`, {
       method: 'GET',
       headers: {
         'X-CSRFToken': csrfToken, // CSRF 토큰 추가
@@ -45,6 +43,32 @@ class Board extends Component {
     });
   }
 
+  generatePDF = () => {
+    const input = document.getElementById('quill-content'); // QuillJS 내용이 들어있는 요소
+    html2canvas(input).then(canvas => {
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgWidth = 190; // PDF 너비
+      const pageHeight = pdf.internal.pageSize.height;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+      let heightLeft = imgHeight;
+
+      let position = 0;
+
+      pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft >= 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      pdf.save('document.pdf');
+    });
+  };
+
   render() {
     const { title, content, thumbnail } = this.state.board; // 상태에서 title과 content 추출
     const { admin } = this.state; // admin 여부
@@ -64,11 +88,14 @@ class Board extends Component {
               {title}
             </div>
             
-            <ReactQuill
-              modules={{ toolbar: false }}
-              value={content}
-              readOnly={true} // 읽기 전용 모드
-            />
+            <div id="quill-content">
+              <ReactQuill
+                modules={{ toolbar: false }}
+                value={content}
+                readOnly={true} // 읽기 전용 모드
+              />
+            </div>
+            <button onClick={this.generatePDF}>PDF로 저장</button>
           </div>
         )}
       </div>
