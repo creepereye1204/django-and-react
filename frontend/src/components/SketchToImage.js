@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import './SketchToImage.css';
 const SketchToImage = () => {
   const [image, setImage] = useState(null);
   const [style, setStyle] = useState('');
