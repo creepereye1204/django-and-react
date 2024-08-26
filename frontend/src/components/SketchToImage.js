@@ -83,7 +83,7 @@ const SketchToImage = () => {
   return (
     <div className='client-container'>
       <h1 className='title'>SketchToImage</h1>
-      {image && <img src={image} alt='선택한 이미지' className='image' />}
+      <img src={image} alt='선택한 이미지' className='image' />
       <div className='input-container'>
         <input
           type='text'
