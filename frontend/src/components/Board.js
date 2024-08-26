@@ -150,6 +150,7 @@ import './Board.css'; // CSS 파일 임포트
 import { useParams } from 'react-router-dom'; // useParams 임포트
 import Write from './Write'; // Write 컴포넌트 임포트
 import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 class Board extends Component {
   constructor(props) {
@@ -181,20 +182,24 @@ class Board extends Component {
         board: data,
         admin: data.admin
       });
-      // 데이터가 성공적으로 설정된 후 PDF 생성
-      this.generatePDF(data.content); 
     })
     .catch(error => {
       console.error(error);
     });
   }
 
-  generatePDF(content) {
-    const pdf = new jsPDF();
-    pdf.text(content, 10, 10); // PDF에 내용 추가
+  generatePDF = () => {
+    const input = document.getElementById('pdf-content'); // PDF로 변환할 요소
 
-    // PDF 저장
-    pdf.save('document.pdf');
+    html2canvas(input, { scale: 2 }).then((canvas) => {
+      const pdf = new jsPDF();
+      const imgData = canvas.toDataURL('image/png');
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('document.pdf'); // PDF 저장
+    });
   }
 
   render() {
@@ -210,15 +215,18 @@ class Board extends Component {
             id={this.state.id}
           />
         ) : (
-          <div className="editor">
-            <div className="title-input">
-              {title}
+          <div>
+            <div className="editor" id="pdf-content">
+              <div className="title-input">
+                {title}
+              </div>
+              <ReactQuill
+                modules={{ toolbar: false }}
+                value={content}
+                readOnly={true} // 읽기 전용 모드
+              />
             </div>
-            <ReactQuill
-              modules={{ toolbar: false }}
-              value={content}
-              readOnly={true} // 읽기 전용 모드
-            />
+            <button onClick={this.generatePDF}>PDF로 저장</button> {/* PDF 저장 버튼 */}
           </div>
         )}
       </div>
