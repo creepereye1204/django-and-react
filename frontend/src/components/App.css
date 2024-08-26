@@ -27,7 +27,7 @@
 .secret-key{
   position: absolute;
   left: 50%;
-  top:0;
+  top:50px;
   transform: translate(-50%,0%);
   width: 100px;
   height: 50px;

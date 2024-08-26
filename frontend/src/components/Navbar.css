@@ -38,7 +38,7 @@
 
 /* 햄버거 버튼 스타일 */
 .menu-toggle {
-    margin-right: 20px;
+    margin-right: 7%;
     display: none; /* 기본적으로 숨김 */
     flex-direction: column;
     cursor: pointer;
@@ -59,7 +59,7 @@
       position: absolute; /* 화면에 고정 */
       top: 47px; /* 헤더 아래에 위치 */
       left: 0;
-      background: rgba(255, 255, 255, 0.6); /* 배경색 */
+      background: white;/* 배경색 */
       border-radius: 1.0 rem;
       width: 100%; /* 전체 너비 */
        /* 다른 요소 위에 표시 */
@@ -70,8 +70,9 @@
     }
   
     .navbar a{
-      color: cornflowerblue;
-
+      color: aquamarine;
+      font-weight: 500;
+      font-size: large;
     }
   
     .menu-toggle {
