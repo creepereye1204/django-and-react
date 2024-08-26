@@ -180,26 +180,25 @@ class Board extends Component {
       this.setState({ 
         board: data,
         admin: data.admin
-      }, () => {
-        // 데이터가 성공적으로 설정된 후 PDF 생성
-        this.generatePDF(data.content);
       });
+      // 데이터가 성공적으로 설정된 후 PDF 생성
+      this.generatePDF(data.content); 
     })
     .catch(error => {
       console.error(error);
     });
   }
 
-  generatePDF = (content) => {
+  generatePDF(content) {
     const pdf = new jsPDF();
     pdf.text(content, 10, 10); // PDF에 내용 추가
 
     // PDF 저장
     pdf.save('document.pdf');
-  };
+  }
 
   render() {
-    const { title, content, thumbnail } = this.state.board; // 상태에서 title과 content 추출
+    const { title, content } = this.state.board; // 상태에서 title과 content 추출
     const { admin } = this.state; // admin 여부
     
     return (
@@ -208,7 +207,6 @@ class Board extends Component {
           <Write
             initialTitle={title}
             initialContent={content}
-            initialThumbnail={thumbnail}
             id={this.state.id}
           />
         ) : (
