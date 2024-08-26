@@ -38,11 +38,21 @@ class Board extends Component {
       this.setState({ 
         board: data,
         admin: data.admin
-      }); // API에서 받아온 데이터를 상태에 저장
+      }, () => {
+        // 데이터가 성공적으로 설정된 후 PDF 생성
+        this.generatePDF(data.content);
+      });
     })
     .catch(error => {
-      console.error(error); // 에러 처리 로직
+      console.error(error);
     });
+    generatePDF = (content) => {
+      const pdf = new jsPDF();
+      pdf.text(content, 10, 10); // PDF에 내용 추가
+  
+      // PDF 저장
+      pdf.save('document.pdf');
+    };
   }
 
   render() {
