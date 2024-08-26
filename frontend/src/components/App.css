@@ -103,7 +103,7 @@ a {
     display: none; /* 기본적으로 숨김 */
     flex-direction: column; /* 세로로 정렬 */
     position: absolute; /* 화면에 고정 */
-    top: 50px; /* 헤더 아래에 위치 */
+    top: 47px; /* 헤더 아래에 위치 */
     left: 0;
     background: rgba(255, 255, 255, 0.6); /* 배경색 */
     border-radius: 1.0 rem;
