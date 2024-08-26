@@ -1,11 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 
-* {
-  font-size: 18px;
-  margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
-}
+
  
 .normalBackground {
   overflow: hidden;
@@ -27,47 +21,8 @@
   pointer-events: none;
 }
 
-.normalHeader {
-  position: absolute; /* 비디오 위에 위치하도록 설정 */
-  width: 100%;
-  height: auto;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* 수직 중앙 정렬 */
-  padding: 10px; /* 패딩 조정 */
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  z-index: 1; /* 비디오보다 위에 배치 */
-}
 
-.editHeader {
-  position: fixed; /* 비디오 위에 위치하도록 설정 */
-  width: 100%;
-  height: auto;
-  top: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center; /* 수직 중앙 정렬 */
-  padding: 10px; /* 패딩 조정 */
-  backdrop-filter: blur(10px);
-  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  z-index: 1; /* 비디오보다 위에 배치 */
-}
 
-a {
-  color: white;
-  text-decoration: none;
-  margin-right: 30px; /* 링크 간격 조정 */
-  cursor: pointer;
-}
-
-.logo {
-  font-weight: 800;
-  cursor: default;
-}
 
 .secret-key{
   position: absolute;
@@ -78,54 +33,4 @@ a {
   height: 50px;
   border-radius: .5rem;
   
-}
-
-/* 기존 코드 유지 */
-
-/* 햄버거 버튼 스타일 */
-.menu-toggle {
-  margin-right: 20px;
-  display: none; /* 기본적으로 숨김 */
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle div {
-  width: 25px;
-  height: 3px;
-  background-color: white; /* 버튼 색상 */
-  margin: 3px 0; /* 간격 */
-}
-
-/* 모바일 스타일 */
-@media (max-width: 768px) {
-  .navbar {
-    display: none; /* 기본적으로 숨김 */
-    flex-direction: column; /* 세로로 정렬 */
-    position: absolute; /* 화면에 고정 */
-    top: 47px; /* 헤더 아래에 위치 */
-    left: 0;
-    background: rgba(255, 255, 255, 0.6); /* 배경색 */
-    border-radius: 1.0 rem;
-    width: 100%; /* 전체 너비 */
-     /* 다른 요소 위에 표시 */
-  }
-
-  .navbar.active {
-    display: flex; /* active 클래스가 있을 때만 보임 */
-  }
-
-  .navbar a{
-    color: cornflowerblue;
-    z-index: 20;
-  }
-
-  .menu-toggle {
-    display: flex; /* 모바일에서 햄버거 버튼 보이기 */
-  }
-
-  .normalHeader, .editHeader {
-    flex-direction: row; /* 가로 정렬 */
-    justify-content: space-between; /* 양 끝 정렬 */
-  }
 }

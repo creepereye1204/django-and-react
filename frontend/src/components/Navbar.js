@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom"; // Link 컴포넌트 추가
-import "./App.css";
+import "./Navbar.css";
 
 
-function Navbar({ writeMode }) {
+function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // 메뉴 상태 관리
 
   const toggleMenu = () => {
