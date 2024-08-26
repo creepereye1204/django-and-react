@@ -11,7 +11,7 @@ function Navbar() {
   };
 
   return (
-    <header className= "normalHeader">
+    <header className= "header">
       <a href="#" className="logo">My Wiki</a>
       <div className="menu-toggle" onClick={toggleMenu}>
         <div></div>
