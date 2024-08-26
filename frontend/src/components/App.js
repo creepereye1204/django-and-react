@@ -1,33 +1,8 @@
 import React, { Component, useEffect, useState } from "react";
-import { Link } from "react-router-dom"; // Link 컴포넌트 추가
 import "./App.css";
 import NightCity from '../assets/NightCity.mp4';
 
-function Navbar({ writeMode }) {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // 메뉴 상태 관리
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen); // 메뉴 열기/닫기
-  };
-
-  return (
-    <header className={writeMode ? "editHeader" : "normalHeader"}>
-      <a href="#" className="logo">My Wiki</a>
-      <div className="menu-toggle" onClick={toggleMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <nav className={`navbar ${isMenuOpen ? 'active' : ''}`}>
-        <Link to="/">Home</Link>
-        <Link to="/models">Models</Link> 
-        <Link to="/service">Project</Link>
-        <Link to="/board">Blog</Link>
-        <Link to="/write">Write</Link>
-      </nav>
-    </header>
-  );
-}
 
 
 function App({writeMode= false}) {
@@ -87,7 +62,7 @@ function App({writeMode= false}) {
   return (
     <div className={isWriteMode?'editBackground':'normalBackground'}>
       <video className={isWriteMode?'editVideo':'normalVideo'} src={NightCity} autoPlay loop muted />
-      <Navbar writeMode={isWriteMode}/>
+      
       {showInput && ( // showInput이 true일 때만 입력창을 보여줍니다.
         <input
           className="secret-key"
