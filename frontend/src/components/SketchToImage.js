@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './SketchToImage.css';
+import './SketchToImage.css'
 const SketchToImage = () => {
   const [image, setImage] = useState(null);
   const [style, setStyle] = useState('');
@@ -83,7 +83,7 @@ const SketchToImage = () => {
   return (
     <div className='client-container'>
       <h1 className='title'>SketchToImage</h1>
-      <img src={image} alt='선택한 이미지' className='image' />
+      {image ? <img src={image} alt='선택한 이미지' className='image' />:<h1 className='image'>이미지를 골라주세요</h1> }
       <div className='input-container'>
         <input
           type='text'
