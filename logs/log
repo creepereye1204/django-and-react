@@ -3758,3 +3758,28 @@ WARNING 2024-08-26 05:49:10,460 log 947698 140416110008192 Not Found: /api/board
 WARNING 2024-08-26 05:54:56,546 log 951934 140634784675712 Not Found: /api/board/read/
 WARNING 2024-08-26 06:00:41,770 log 955089 140400762566528 Not Found: /api/board/read/
 WARNING 2024-08-26 06:01:16,443 log 955089 140400762566528 Not Found: /api/board/read/
+WARNING 2024-08-26 10:57:42,177 log 1013162 140152460732288 Forbidden (Referer checking failed - no Referer.): /dns-query
+WARNING 2024-08-26 14:48:36,605 log 1013162 140152460732288 Forbidden (Referer checking failed - no Referer.): /hello.world
+WARNING 2024-08-26 14:48:39,420 log 1013162 140152460732288 Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:41,151 log 1013162 140152460732288 Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:42,102 log 1013162 140152460732288 Not Found: /vendor/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:44,552 log 1013162 140152460732288 Not Found: /vendor/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:48,100 log 1013162 140152460732288 Not Found: /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+WARNING 2024-08-26 14:48:49,555 log 1013162 140152460732288 Not Found: /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:52,574 log 1013162 140152460732288 Not Found: /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:53,150 log 1013162 140152460732288 Not Found: /phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:54,094 log 1013162 140152460732288 Not Found: /phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:55,159 log 1013162 140152460732288 Not Found: /phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:57,133 log 1013162 140152460732288 Not Found: /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:48:58,261 log 1013162 140152460732288 Not Found: /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:49:02,081 log 1013162 140152460732288 Not Found: /lib/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:49:05,944 log 1013162 140152460732288 Not Found: /lib/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:49:07,125 log 1013162 140152460732288 Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:49:08,698 log 1013162 140152460732288 Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 14:49:12,110 log 1013162 140152460732288 Not Found: /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-26 15:34:42,983 log 1013162 140152460732288 Forbidden (Referer checking failed - no Referer.): /dns-query
+WARNING 2024-08-26 16:53:53,876 log 1013162 140152460732288 Not Found: /vendor/laravel-filemanager/css/lfm.css
+WARNING 2024-08-26 16:56:34,968 log 1013162 140152460732288 Not Found: /filemanager/dialog.php
+WARNING 2024-08-26 19:23:00,265 log 1013162 140152460732288 Not Found: /.git/config
+WARNING 2024-08-27 00:43:46,885 log 1013162 140152460732288 Not Found: /autodiscover/autodiscover.json
+WARNING 2024-08-27 07:51:54,547 log 1013161 140152460732288 Not Found: /owa/auth/logon.aspx
