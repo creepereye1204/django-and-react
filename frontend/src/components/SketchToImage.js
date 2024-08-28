@@ -6,6 +6,23 @@ const SketchToImage = () => {
   const [prompt, setPrompt] = useState('');
   const [negativePrompt, setNegativePrompt] = useState('');
   const [webSocket, setWebSocket] = useState(null);
+  const styles = [
+    '(스타일 없음)',
+    '시네마틱',
+    '3D 모델',
+    '애니메이션',
+    '디지털 아트',
+    '사진',
+    '픽셀 아트',
+    '판타지 아트',
+    '네온 펑크',
+    '만화',
+    '초현실주의',
+    '인상주의',
+    '큐비즘',
+    '표현주의',
+    '미래주의',
+  ];
   useEffect(() => {
     const ws = new WebSocket('wss://my-wiki.p-e.kr/ws/api/sketch-to-image');
 
@@ -85,12 +102,15 @@ const SketchToImage = () => {
       <h1 className='title'>SketchToImage</h1>
       {image ? <img src={image} alt='선택한 이미지' className='image' />:<h1 className='image'>이미지를 골라주세요</h1> }
       <div className='input-container'>
-        <input
-          type='text'
+        <select
           value={style}
           onChange={(e) => setStyle(e.target.value)}
-          placeholder='스타일 입력'
-        />
+        >
+          <option value='' disabled>스타일 선택</option>
+          {styles.map((s, index) => (
+            <option key={index} value={s}>{s}</option>
+          ))}
+        </select>
         <input
           type='text'
           value={prompt}
