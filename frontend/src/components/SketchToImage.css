@@ -30,3 +30,7 @@
  justify-content: flex-end;
  width: 90%;
 }
+.button{
+    background-color: #4CAF50;
+    border-radius: 10px;
+}

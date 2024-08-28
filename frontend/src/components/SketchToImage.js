@@ -124,7 +124,7 @@ const SketchToImage = () => {
           placeholder='부정 프롬프트 입력'
         />
         
-        <label htmlFor='image-upload'>
+        <label htmlFor='image-upload' className='button'>
           <span>이미지 선택</span>
           <input
           id="image-upload"
