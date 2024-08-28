@@ -32,7 +32,7 @@ const SketchToImage = () => {
 
     ws.onmessage = (event) => {
       const message = JSON.parse(event.data); // 수신한 메시지를 파싱
-      if(message.step)console.log(message.step);
+      console.log(message);
     };
 
     ws.onclose = () => {
