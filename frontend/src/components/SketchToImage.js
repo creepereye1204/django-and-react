@@ -127,6 +127,7 @@ const SketchToImage = () => {
         <label htmlFor='image-upload'>
           <span>이미지 선택</span>
           <input
+          id="image-upload"
           type='file'
           accept='image/*'
           onChange={handleImageChange}
