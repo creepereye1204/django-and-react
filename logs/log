@@ -3783,3 +3783,45 @@ WARNING 2024-08-26 16:56:34,968 log 1013162 140152460732288 Not Found: /filemana
 WARNING 2024-08-26 19:23:00,265 log 1013162 140152460732288 Not Found: /.git/config
 WARNING 2024-08-27 00:43:46,885 log 1013162 140152460732288 Not Found: /autodiscover/autodiscover.json
 WARNING 2024-08-27 07:51:54,547 log 1013161 140152460732288 Not Found: /owa/auth/logon.aspx
+WARNING 2024-08-27 12:51:18,856 log 1013162 140152460732288 Forbidden (Referer checking failed - no Referer.): /dns-query
+WARNING 2024-08-27 13:53:54,932 log 1013162 140152460732288 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2024-08-27 15:06:15,652 log 1013162 140152460732288 Forbidden (Referer checking failed - no Referer.): /hello.world
+WARNING 2024-08-27 15:06:17,159 log 1013162 140152460732288 Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:18,694 log 1013162 140152460732288 Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:20,294 log 1013162 140152460732288 Not Found: /vendor/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:22,108 log 1013162 140152460732288 Not Found: /vendor/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:23,591 log 1013162 140152460732288 Not Found: /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+WARNING 2024-08-27 15:06:25,434 log 1013162 140152460732288 Not Found: /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:28,028 log 1013162 140152460732288 Not Found: /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:29,646 log 1013162 140152460732288 Not Found: /phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:31,339 log 1013162 140152460732288 Not Found: /phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:33,184 log 1013162 140152460732288 Not Found: /phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:34,723 log 1013162 140152460732288 Not Found: /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:36,265 log 1013162 140152460732288 Not Found: /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:37,939 log 1013162 140152460732288 Not Found: /lib/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:39,453 log 1013162 140152460732288 Not Found: /lib/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:41,043 log 1013162 140152460732288 Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:43,005 log 1013162 140152460732288 Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:44,924 log 1013162 140152460732288 Not Found: /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:48,248 log 1013162 140152460732288 Not Found: /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:49,804 log 1013162 140152460732288 Not Found: /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:53,079 log 1013162 140152460732288 Not Found: /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:55,142 log 1013162 140152460732288 Not Found: /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:06:57,577 log 1013162 140152460732288 Not Found: /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:00,526 log 1013162 140152460732288 Not Found: /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:02,696 log 1013162 140152460732288 Not Found: /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:04,755 log 1013162 140152460732288 Not Found: /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:06,451 log 1013162 140152460732288 Not Found: /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:08,054 log 1013162 140152460732288 Not Found: /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:11,932 log 1013162 140152460732288 Not Found: /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:13,582 log 1013162 140152460732288 Not Found: /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:15,559 log 1013162 140152460732288 Not Found: /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:18,555 log 1013162 140152460732288 Not Found: /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:21,028 log 1013162 140152460732288 Not Found: /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:22,920 log 1013162 140152460732288 Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:24,846 log 1013162 140152460732288 Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-27 15:07:28,591 log 1013162 140152460732288 Not Found: /public/index.php
+WARNING 2024-08-27 17:13:07,518 log 1013162 140152460732288 Not Found: /manager/html
+WARNING 2024-08-27 18:09:21,418 log 1013162 140152460732288 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2024-08-27 21:50:00,756 log 1013162 140152460732288 Not Found: /actuator/gateway/routes
+WARNING 2024-08-28 02:34:16,079 log 1013162 140152460732288 Not Found: /_ignition/health-check
