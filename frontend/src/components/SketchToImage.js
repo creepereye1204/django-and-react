@@ -134,7 +134,7 @@ const SketchToImage = () => {
           hidden={true}
         />
         </label>
-        <button onClick={sendImageToServer}>전송</button>
+        <button onClick={sendImageToServer} className='button'>전송</button>
       </div>
       
       
