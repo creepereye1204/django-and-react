@@ -184,6 +184,7 @@ const SketchToImage = () => {
         // latents를 이미지로 변환
         const base64Image = `data:image/jpeg;base64,${message.latents}`;
         setImage(base64Image); // 이미지 업데이트
+        console.log(base64Image); //
       }
     };
 
