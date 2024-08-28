@@ -123,11 +123,16 @@ const SketchToImage = () => {
           onChange={(e) => setNegativePrompt(e.target.value)}
           placeholder='부정 프롬프트 입력'
         />
-        <input
+        
+        <label htmlFor='image-upload'>
+          <span>이미지 선택</span>
+          <input
           type='file'
           accept='image/*'
           onChange={handleImageChange}
+          hidden={true}
         />
+        </label>
         <button onClick={sendImageToServer}>전송</button>
       </div>
       
