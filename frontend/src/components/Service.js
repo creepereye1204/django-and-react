@@ -88,7 +88,7 @@ const Service = () => {
           <div className='server' key={index}>{message}</div> // 홀수 인덱스
         )
       ))}
-      {isClientTurn ? <div className='able'>말하세요!</div> : <div className='load'>로딩중...</div>}
+      
     </div>
   );
 };
