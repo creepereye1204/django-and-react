@@ -98,14 +98,10 @@
 
 class Message{
 
-  constructor(message,turn) {
-    this.message = message;
+  constructor(content,turn) {
+    this.content = content;
     this.turn = turn;
-    this.time = new Date();
-  }
-  // 시간을 포맷하는 메서드
-  getMessage() {
-    return {'time':this.time.toLocaleString(),'message':this.message,'turn':this.turn}; // 로컬 시간 포맷
+    this.time = new Date().toLocaleString();
   }
 }
 
@@ -205,11 +201,11 @@ const Service = () => {
   return (
     <div className='chat-container'>
       <h1 className='title'>심신풀이</h1>
-      {chat.map((message) => (
+      {chat.map((message,index) => (
         message.turn === 'Client' ? (
-          <div className='client' key={index}>{message}</div> // 짝수 인덱스
+          <div className='client' key={index}>{message.content}<small>{message.time}</small></div> // 짝수 인덱스
         ) : (
-          <div className='server' key={index}>{message}</div> // 홀수 인덱스
+          <div className='server' key={index}>{message.content}<small>{message.time}</small></div> // 홀수 인덱스
         )
       ))}
        
