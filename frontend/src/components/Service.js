@@ -110,6 +110,7 @@ import React, { useState, useEffect } from 'react';
 
 const Service = () => {
   const [chat, setChat] = useState([]);
+  const [recognizing, setRecognizing] = useState(false);
   const recognition = new window.webkitSpeechRecognition();
 
   useEffect(() => {
@@ -160,17 +161,36 @@ const Service = () => {
       }
     };
 
+    recognition.onstart = () => {
+      setRecognizing(true);
+      console.log("음성 인식 시작됨");
+    };
+    
     recognition.onerror = (event) => {
-      console.log("음성 인식 오류: ", event.error);
-      recognition.start(); // 오류 발생 시 음성 인식을 다시 시작
+      console.error("음성 인식 오류: ", event.error);
+      if (recognizing) {
+        recognition.stop(); // 오류 발생 시 인식을 멈추고 재시작
+      }
     };
-
+    
+    recognition.onresult = async (event) => {
+      // 결과 처리 로직 추가 가능
+      console.log("인식된 결과: ", event.results);
+      recognition.stop(); // 결과를 받은 후 인식 중지
+    };
+    
     recognition.onend = () => {
+      setRecognizing(false);
       console.log("음성 인식이 종료되었습니다. 다시 시작합니다...");
-      recognition.start(); // 인식이 종료되면 다시 시작
+      // 인식이 종료된 후 일정 시간 대기 후 재시작
+      setTimeout(() => {
+        recognition.start(); // 인식이 종료되면 다시 시작
+      }, 1000); // 1초 대기
     };
-
-    recognition.start(); // 컴포넌트가 마운트되면 음성 인식 시작
+    
+    // 음성 인식 시작
+    recognition.start();
+    
 
     return () => {
       recognition.stop(); // 컴포넌트 언마운트 시 음성 인식 정지
