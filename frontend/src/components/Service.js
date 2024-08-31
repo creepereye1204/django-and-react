@@ -161,7 +161,7 @@ const Service = () => {
     };
 
     recognition.onerror = (event) => {
-      console.error("음성 인식 오류: ", event.error);
+      console.log("음성 인식 오류: ", event.error);
       recognition.start(); // 오류 발생 시 음성 인식을 다시 시작
     };
 
