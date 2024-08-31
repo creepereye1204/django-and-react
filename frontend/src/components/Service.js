@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 
 const Service = () => {
   const [chat, setChat] = useState([]);
-  const [isClientTurn, setIsClientTurn] = useState(true); // 현재 턴을 관리하는 상태
   const recognition = new window.webkitSpeechRecognition();
 
   useEffect(() => {
@@ -14,11 +13,29 @@ const Service = () => {
     recognition.onresult = async (event) => {
       recognition.stop();
       for (let i = event.resultIndex; i < event.results.length; ++i) {
+        var clientChat;
+        var serverChat;
         if (event.results[i].isFinal) {
-          const recognizedText = event.results[i][0].transcript;
-          addMessage(recognizedText);
-          const serverResponse = await sendQuestionToServer(recognizedText);
-          addMessage(serverResponse);
+
+
+          try{
+            clientChat = event.results[i][0].transcript;
+            addMessage(clientChat);
+          }
+          catch (error){
+            alert(error.message);
+            return
+          }
+          
+          try {
+            serverChat = await sendQuestionToServer(clientChat);
+            addMessage(serverChat);
+          }
+          catch (error) {
+            alert(error.message);
+            addMessage('오류발생!');
+          }
+
         }
       }
     };
@@ -42,7 +59,6 @@ const Service = () => {
 
   const addMessage = (message) => {
     setChat((prevChat) => [...prevChat, message]);
-    setIsClientTurn(prev => !prev); // 턴을 전환
   };
 
   const sendQuestionToServer = async (question) => {

@@ -15,6 +15,26 @@ from django.core.files.storage import FileSystemStorage
 from functools import wraps
 from PIL import Image
 import pdfkit
+
+
+import requests
+
+def get_bible(question):
+    url = "http://localhost:5000/chat"
+    data = {
+        "question": question
+    }
+
+    response = requests.post(url, json=data)
+
+    if response.status_code == 200:
+        return reponse.json()
+    else:
+        raise reponse.text
+
+
+
+
 class IntegrityError(Exception):
     pass
 
@@ -207,9 +227,13 @@ def update(request, *args, **kwargs):
     
 
 @api_view(['POST'])
-def service(request, *args, **kwargs):
+def service(request):
     question = request.data.get('question', None)
-    paragraph=db.get(question=question,k=1)['metadatas'][0][0]
+    try:
+        paragraph=get_bible(question)
+    except Exception as e:
+        return Response({'result': str(e)}, status=500)
+    
     text = ollama.chat(model='priest_v3',messages=[
     {
         'role': 'user',
