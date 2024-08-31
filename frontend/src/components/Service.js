@@ -110,7 +110,6 @@ import React, { useState, useEffect } from 'react';
 
 const Service = () => {
   const [chat, setChat] = useState([]);
-  const [recognizing, setRecognizing] = useState(false);
   const recognition = new window.webkitSpeechRecognition();
 
   useEffect(() => {
@@ -141,6 +140,7 @@ const Service = () => {
           addMessage(message);
           
           try {
+            recognition.stop();
             serverChat = await sendQuestionToServer(clientChat);
             if(serverChat.status === 200) {
               serverChat=serverChat.result;
@@ -157,30 +157,24 @@ const Service = () => {
           }
           message = new Message(serverChat, 'Server');
           addMessage(message);
+          recognition.start();
         }
       }
     };
-
-    recognition.onstart = () => {
-      setRecognizing(true);
+    recognition.onresult = (event) => {
+      recognition.stop(); //
+      recognition.start();
     };
-    
     recognition.onerror = (event) => {
       console.log("음성 인식 오류: ", event.error);
-      if (recognizing) {
-        recognition.stop(); // 오류 발생 시 인식을 멈추고 재시작
-        setRecognizing(false);
-      }
-    };
-    recognition.onresult = async (event) => {
-      recognition.stop();
-      setRecognizing(true);
+      recognition.stop(); //
+      recognition.start(); // 오류 발생 시 음성 인식을 다시 시작
     };
 
     recognition.onend = () => {
-      
+      console.log("음성 인식이 종료되었습니다. 다시 시작합니다...");
+      recognition.stop(); //
       recognition.start(); // 인식이 종료되면 다시 시작
-      setRecognizing(true);
     };
 
     recognition.start(); // 컴포넌트가 마운트되면 음성 인식 시작
