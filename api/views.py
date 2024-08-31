@@ -28,9 +28,9 @@ def get_bible(question):
     response = requests.post(url, json=data)
 
     if response.status_code == 200:
-        return reponse.json()
+        return response.json()
     else:
-        raise reponse.text
+        raise response.text
 
 
 
