@@ -154,7 +154,7 @@ const Service = () => {
             alert(error.message);
             
           }
-          message = new Message(error.message, 'Server');
+          message = new Message(serverChat, 'Server');
           addMessage(message);
         }
       }
@@ -175,9 +175,8 @@ const Service = () => {
     return () => {
       recognition.stop(); // 컴포넌트 언마운트 시 음성 인식 정지
     };
-  }, []); 
-  
-  // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 실행
+  }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 실행
+
   const addMessage = (message) => {
     setChat((prevChat) => [...prevChat, message]);
   };
