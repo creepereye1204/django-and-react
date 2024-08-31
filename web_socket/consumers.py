@@ -33,6 +33,22 @@ import json
 import socketio
 from channels.generic.websocket import AsyncWebsocketConsumer
 
+import requests
+
+def get_bible(question):
+    url = "http://localhost:5000/chat"
+    data = {
+        "question": question
+    }
+
+    response = requests.post(url, json=data)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        raise response.text
+
+import ollama
 # # Flask-SocketIO 클라이언트 인스턴스 생성
 # class SketchToImageConsumer(AsyncWebsocketConsumer):
 #     def __init__(self, *args, **kwargs):
@@ -119,6 +135,49 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
         for task in self.tasks:
             task.cancel()
         self.tasks.clear()
+        
+        
+
+
+
+class BibleBot(AsyncWebsocketConsumer):
+    
+
+    async def connect(self):
+        await self.accept()
+        
+     
+    async def disconnect(self, close_code): 
+        await self.cancel_tasks() 
+        
+
+    async def receive(self, text_data):
+        data = json.loads(text_data)
+        question = data.get('question')
+        
+
+        try:
+            
+            paragraph=get_bible(question)
+            text = ollama.chat(model='priest_v3',messages=[
+            {
+                'role': 'user',
+                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
+            },
+            ])
+            result=text['message']['content']
+            await self.send(text_data=json.dumps({
+                'message': result
+            }))
+            
+        except Exception as e:
+            await self.send(text_data=json.dumps({
+                'message': '에러 발생!'
+            }))
+    
+    
+   
+
 
 
 
