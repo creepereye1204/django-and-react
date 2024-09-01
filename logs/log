@@ -3945,3 +3945,51 @@ ERROR 2024-08-31 09:26:07,080 log 1579062 140546726819712 Internal Server Error:
 ERROR 2024-08-31 09:28:16,104 log 1579062 140546726819712 Internal Server Error: /api/service
 WARNING 2024-08-31 11:49:49,760 log 1645716 139816136804224 Method Not Allowed: /api/service
 WARNING 2024-08-31 11:52:26,819 log 1645716 139816136804224 Method Not Allowed: /api/service
+WARNING 2024-08-31 14:38:59,906 log 1660993 140114458916736 Forbidden (Referer checking failed - no Referer.): /hello.world
+WARNING 2024-08-31 14:39:00,504 log 1660991 140114458916736 Not Found: /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:01,386 log 1660991 140114458916736 Not Found: /vendor/phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:02,520 log 1660991 140114458916736 Not Found: /vendor/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:03,735 log 1660991 140114458916736 Not Found: /vendor/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:04,653 log 1660993 140114458916736 Not Found: /vendor/phpunit/phpunit/LICENSE/eval-stdin.php
+WARNING 2024-08-31 14:39:05,749 log 1660991 140114458916736 Not Found: /vendor/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:07,445 log 1660991 140114458916736 Not Found: /phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:08,562 log 1660991 140114458916736 Not Found: /phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:09,764 log 1660991 140114458916736 Not Found: /phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:11,241 log 1660993 140114458916736 Not Found: /phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:12,986 log 1660991 140114458916736 Not Found: /lib/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:14,506 log 1660991 140114458916736 Not Found: /lib/phpunit/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:15,598 log 1660991 140114458916736 Not Found: /lib/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:16,589 log 1660991 140114458916736 Not Found: /lib/phpunit/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:17,809 log 1660991 140114458916736 Not Found: /lib/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:19,815 log 1660990 140114458916736 Not Found: /laravel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:20,803 log 1660990 140114458916736 Not Found: /www/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:22,514 log 1661002 139795193919040 Not Found: /ws/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:24,119 log 1660993 140114458916736 Not Found: /yii/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:24,926 log 1660991 140114458916736 Not Found: /zend/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:25,960 log 1661002 139795193919040 Not Found: /ws/ec/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:26,736 log 1660990 140114458916736 Not Found: /V2/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:27,861 log 1660991 140114458916736 Not Found: /tests/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:29,777 log 1660993 140114458916736 Not Found: /test/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:31,239 log 1660991 140114458916736 Not Found: /testing/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:32,962 log 1660991 140114458916736 Not Found: /api/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:34,786 log 1660993 140114458916736 Not Found: /demo/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:37,164 log 1660991 140114458916736 Not Found: /cms/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:39,005 log 1660991 140114458916736 Not Found: /crm/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:41,631 log 1660991 140114458916736 Not Found: /backup/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:42,808 log 1660993 140114458916736 Not Found: /blog/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:44,295 log 1660991 140114458916736 Not Found: /workspace/drupal/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:46,109 log 1660993 140114458916736 Not Found: /panel/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:48,349 log 1660991 140114458916736 Not Found: /public/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:50,053 log 1660993 140114458916736 Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:51,946 log 1660990 140114458916736 Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
+WARNING 2024-08-31 14:39:54,426 log 1660993 140114458916736 Not Found: /public/index.php
+WARNING 2024-08-31 15:03:09,083 log 1660991 140114458916736 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2024-08-31 16:42:54,383 log 1660992 140114458916736 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2024-08-31 17:48:09,732 log 1660993 140114458916736 Not Found: /api/v1/cav/admin/options
+WARNING 2024-08-31 17:48:53,713 log 1660991 140114458916736 Not Found: /api/v1/cav/admin/options
+WARNING 2024-08-31 19:59:19,636 log 1660991 140114458916736 Forbidden (Referer checking failed - no Referer.): /dns-query
+WARNING 2024-08-31 21:45:13,265 log 1660991 140114458916736 Not Found: /.git/config
+WARNING 2024-08-31 23:57:45,100 log 1660992 140114458916736 Not Found: /.git/config
+WARNING 2024-09-01 00:20:19,128 log 1660992 140114458916736 Not Found: /actuator/gateway/routes
+WARNING 2024-09-01 02:18:48,651 log 1660992 140114458916736 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2024-09-01 02:19:33,848 log 1660992 140114458916736 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
