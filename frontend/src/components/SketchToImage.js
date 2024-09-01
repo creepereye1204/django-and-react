@@ -33,9 +33,9 @@ const SketchToImage = () => {
       console.log('웹소켓 연결됨');
     };
 
-    ws.onmessage = async (event) => {
-      const message = await JSON.parse(event.data); // 수신한 메시지를 파싱
-      alert(message.step);
+    ws.onmessage = (event) => {
+      const message = JSON.parse(event.data); // 수신한 메시지를 파싱
+      console.log(message);
       try {
         if (message.latents) {
           setImage('data:image/jpeg;base64,' + message.latents); // Base64 이미지로 업데이트
