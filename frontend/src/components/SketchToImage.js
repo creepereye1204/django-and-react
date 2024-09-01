@@ -323,12 +323,17 @@ const SketchToImage = () => {
     };
 
     ws.onmessage = (event) => {
-      const image = document.getElementsByClassName('image');
+      
       const message = JSON.parse(event.data); // 수신한 메시지를 파싱
-      if (message.latents) {
-        image.src='data:image/png;base64,' + message.latents; // Base64 이미지로 업데이트
+      try{
+        if (message.latents) {
+          setImage('data:image/png;base64,' + message.latents); // Base64 이미지로 업데이트
+        }
+        console.log(JSON.stringify(message.step));
+      }catch{
+        console.error('Invalid message received:', event.data);
       }
-      text.value=message.step;
+      
 
     };
 
