@@ -36,3 +36,22 @@
     padding: 10px 0px;
     text-align: center;
 }
+.progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 5px;
+    margin-top: 20px;
+  }
+  
+  .progress-bar {
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 5px;
+    transition: width 0.4s ease;
+  }
+  
+  .progress-info {
+    text-align: center;
+    margin-top: 5px;
+  }
+  
