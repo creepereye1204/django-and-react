@@ -327,9 +327,9 @@ const SketchToImage = () => {
       const message = JSON.parse(event.data); // 수신한 메시지를 파싱
       try{
         if (message.latents) {
-          setImage('data:image/png;base64,' + message.latents); // Base64 이미지로 업데이트
+          setImage('data:image/jpeg;base64,' + message.latents); // Base64 이미지로 업데이트
         }
-        console.log(JSON.stringify(message.step));
+        console.log(message.step);
       }catch{
         console.error('Invalid message received:', event.data);
       }
