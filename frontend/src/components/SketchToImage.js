@@ -33,8 +33,8 @@ const SketchToImage = () => {
       console.log('웹소켓 연결됨');
     };
 
-    ws.onmessage = (event) => {
-      const message = JSON.parse(event.data); // 수신한 메시지를 파싱
+    ws.onmessage = async (event) => {
+      const message = await JSON.parse(event.data); // 수신한 메시지를 파싱
       alert(message.step);
       try {
         if (message.latents) {
