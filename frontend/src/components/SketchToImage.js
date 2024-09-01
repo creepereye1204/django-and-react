@@ -35,10 +35,10 @@ const SketchToImage = () => {
 
     ws.onmessage = (event) => {
       const message = JSON.parse(event.data); // 수신한 메시지를 파싱
-      console.log(event.data);
+      console.log(event.data['message'].step);
       try {
         if (message.latents) {
-          setImage('data:image/jpeg;base64,' + message.latents); // Base64 이미지로 업데이트
+          setImage('data:image/png;base64,' + message.latents); // Base64 이미지로 업데이트
         }
         // 서버 메시지 업데이트
         setServerMessage(`현재 단계: ${message.step}`);
