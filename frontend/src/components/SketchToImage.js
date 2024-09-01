@@ -198,7 +198,7 @@ const SketchToImage = () => {
           setImage('data:image/png;base64,' + message.latents);
           setProgress(100); // 완료 시 진행률 100%
         } else if (message.step && message.totalSteps) {
-          const newProgress = (message.step / message.totalSteps) * 100;
+          const newProgress = (message.step / 25) * 100;
           setProgress(newProgress);
           setRemainingTime(`${message.timestep}초 남음`); // 남은 시간 업데이트
         }
@@ -292,7 +292,13 @@ const SketchToImage = () => {
           onChange={(e) => setNegativePrompt(e.target.value)}
           placeholder='부정 프롬프트 입력'
         />
-        
+        <div className='progress-container'>
+          <div className='progress-bar' style={{ width: `${progress}%` }} />
+          <div className='progress-info'>{remainingTime}</div>
+          <div className='server-message'>
+            {serverMessage} 초 남음
+          </div>
+        </div>
         <label htmlFor='image-upload' className='button'>
           <span id='text'>이미지 선택</span>
           <input
@@ -306,14 +312,9 @@ const SketchToImage = () => {
         <button onClick={sendImageToServer} className='button'>전송</button>
       </div>
       {/* 서버 메시지 표시 */}
-      <div className='server-message'>
-        {serverMessage}
-      </div>
+      
       {/* 진행률 바 추가 */}
-      <div className='progress-container'>
-        <div className='progress-bar' style={{ width: `${progress}%` }} />
-        <div className='progress-info'>{remainingTime}</div>
-      </div>
+      
     </div>
   );
 };

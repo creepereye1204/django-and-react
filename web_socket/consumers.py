@@ -94,7 +94,7 @@ class SketchToImageConsumer(AsyncWebsocketConsumer):
         await self.accept()  # 클라이언트 연결 수락
         try:
             # Flask 서버에 연결
-            self.flask_sio.connect('http://localhost:20004')
+            self.flask_sio.connect('http://localhost:5001')
 
             # Flask 서버와 연결이 완료된 후에 이벤트 핸들러 등록
             self.flask_sio.on('datas', self.handle_receive_message) # 받으려는 이벤트의 이름을 등록해야함!!!!!!
