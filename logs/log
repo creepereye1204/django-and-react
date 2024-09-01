@@ -3993,3 +3993,6 @@ WARNING 2024-08-31 23:57:45,100 log 1660992 140114458916736 Not Found: /.git/con
 WARNING 2024-09-01 00:20:19,128 log 1660992 140114458916736 Not Found: /actuator/gateway/routes
 WARNING 2024-09-01 02:18:48,651 log 1660992 140114458916736 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
 WARNING 2024-09-01 02:19:33,848 log 1660992 140114458916736 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2024-09-01 05:55:30,365 log 1781424 140133158684544 Not Found: /.git/config
+WARNING 2024-09-01 06:36:41,628 log 1781424 140133158684544 Not Found: /actuator/health
+WARNING 2024-09-01 06:46:02,259 log 1781423 140133158684544 Not Found: /epa/scripts/win/nsepa_setup.exe

@@ -323,10 +323,13 @@ const SketchToImage = () => {
     };
 
     ws.onmessage = (event) => {
+      const text = document.getElementById('text');
       const message = JSON.parse(event.data); // 수신한 메시지를 파싱
       if (message.latents) {
-        setImage(`data:image/jpeg;base64,${message.latents}`); // Base64 이미지로 업데이트
+        setImage('data:image/png;base64,' + message.latents); // Base64 이미지로 업데이트
       }
+      text.value=message.step;
+
     };
 
     ws.onclose = () => {
@@ -419,7 +422,7 @@ const SketchToImage = () => {
         />
         
         <label htmlFor='image-upload' className='button'>
-          <span>이미지 선택</span>
+          <span id='text'>이미지 선택</span>
           <input
             id="image-upload"
             type='file'
