@@ -3,6 +3,7 @@ from rest_framework import generics
 from django.http import HttpResponse
 from .models import Room, Board
 from .serializers import RoomSerializer,BoardSerializer,BoardListSerializer
+from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
 import psutil
@@ -18,6 +19,18 @@ import pdfkit
 
 
 import requests
+
+
+
+
+
+
+class BoardListPagination(PageNumberPagination):
+    page_size = 20  # 한 페이지당 항목 수
+    page_size_query_param = 'page_size'  # 클라이언트가 페이지 크기를 지정할 수 있는 쿼리 매개변수
+    max_page_size = 20  # 최대 페이지 크기
+
+
 
 def get_bible(question):
     url = "http://localhost:5000/chat"
@@ -177,9 +190,25 @@ def read(request, board_pk, *args, **kwargs):
 @api_view(['GET'])
 def read_list(request, *args, **kwargs):
     try:
+        paginator = BoardListPagination()
         boards=Board.objects.all()
-        serializer = BoardListSerializer(boards, many=True)
-        return Response(serializer.data, status=200)
+        page_number =request.query_param('page_number',1)
+        paginated_boards =paginator.paginate_queryset(boards,request)
+        page_length = paginator.page.paginator.num_pages
+        current_page =int(page_number)
+        
+        start_page=max(1,current_page-2)
+        end_page=min(current_page+2,page_length)
+        
+        serializer = BoardListSerializer(paginated_boards, many=True)
+        
+        
+        
+        return Response({'board_list':serializer.data,
+                         'start_page':start_page,
+                         'end_page':end_page
+                         }, status=200)
+        
     except Exception as e:
         return Response({'error': e.message}, status=500)
     
