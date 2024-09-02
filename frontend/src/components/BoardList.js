@@ -236,7 +236,7 @@ class BoardList extends Component {
   }
 
   handlePageChange(page) {
-    this.fetchData(page); // 페이지 변경 시 데이터 재요청
+    this.getPage(page); // 페이지 변경 시 데이터 재요청
   }
 
   render() {
