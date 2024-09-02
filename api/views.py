@@ -207,7 +207,7 @@ def read_list(request, *args, **kwargs):
         return Response({'board_list':serializer.data,
                          'start_page':start_page,
                          'end_page':end_page
-                         }, status=200)
+                         }, status=200) 
         
     except Exception as e:
         return Response({'error': e.message}, status=500)
