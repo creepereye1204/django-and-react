@@ -26,9 +26,9 @@ import requests
 
 
 class BoardListPagination(PageNumberPagination):
-    page_size = 20  # 한 페이지당 항목 수
+    page_size = 10  # 한 페이지당 항목 수
     page_size_query_param = 'page_size'  # 클라이언트가 페이지 크기를 지정할 수 있는 쿼리 매개변수
-    max_page_size = 20  # 최대 페이지 크기
+    max_page_size = 10  # 최대 페이지 크기
 
 
 
