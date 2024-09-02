@@ -35,11 +35,11 @@ class BoardList extends Component {
     const { boards, loading, error } = this.state;
 
     if (loading) {
-      return <div>Loading...</div>; // 로딩 중인 경우
+      return <div className="loader"></div>; // 로딩 스피너
     }
 
     if (error) {
-      return <div>Error: {error}</div>; // 에러가 발생한 경우
+      return <div className="error">Error: {error}</div>; // 에러 메시지
     }
 
     // 기본 이미지 URL
