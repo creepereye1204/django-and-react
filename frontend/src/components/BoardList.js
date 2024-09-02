@@ -24,7 +24,7 @@ class BoardList extends Component {
         return response.json();
       })
       .then(data => {
-        this.setState({ boards: data.board_list, loading: false }); // 상태 업데이트
+        this.setState({ boards: data.results, loading: false }); // 상태 업데이트
       })
       .catch(error => {
         this.setState({ loading: false, error: error.message }); // 에러 처리

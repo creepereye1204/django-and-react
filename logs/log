@@ -4168,3 +4168,8 @@ Traceback (most recent call last):
   File "/home/apps/my_wiki/./api/views.py", line 213, in read_list
     return Response({'error': e.message}, status=500)
 AttributeError: 'AttributeError' object has no attribute 'message'
+WARNING 2024-09-02 02:19:57,923 log 2103031 140192928552832 Not Found: /board/
+WARNING 2024-09-02 02:20:00,607 log 2103032 140192928552832 Not Found: /board/
+WARNING 2024-09-02 02:21:00,423 log 2103032 140192928552832 Not Found: /board/
+WARNING 2024-09-02 02:22:00,320 log 2103032 140192928552832 Not Found: /board/
+WARNING 2024-09-02 02:23:09,857 log 2103031 140192928552832 Not Found: /api/read_list/
