@@ -191,23 +191,25 @@ def read(request, board_pk, *args, **kwargs):
 def read_list(request, *args, **kwargs):
     try:
         paginator = BoardListPagination()
-        boards=Board.objects.all()
-        page_number =request.query_param('page_number',1)
-        paginated_boards =paginator.paginate_queryset(boards,request)
+        boards = Board.objects.all()
+        page_number = request.query_params.get('page_number', 1)  # 수정
+        current_page = int(page_number)  # 예외 처리가 필요할 수 있음
+        paginated_boards = paginator.paginate_queryset(boards, request)
         page_length = paginator.page.paginator.num_pages
-        current_page =int(page_number)
         
-        start_page=max(1,current_page-2)
-        end_page=min(current_page+2,page_length)
+        start_page = max(1, current_page - 2)
+        end_page = min(current_page + 2, page_length)
         
         serializer = BoardListSerializer(paginated_boards, many=True)
         
-        
-        
-        return Response({'board_list':serializer.data,
-                         'start_page':start_page,
-                         'end_page':end_page
-                         }, status=200) 
+        return Response({
+            'board_list': serializer.data,
+            'start_page': start_page,
+            'end_page': end_page
+        }, status=200)
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)  # 예외 메시지 변환
+
         
     except Exception as e:
         return Response({'error': e.message}, status=500)
