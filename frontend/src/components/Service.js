@@ -473,7 +473,7 @@ const Service = () => {
   const sendMessage = (messageContent) => {
     if (webSocket && webSocket.readyState === WebSocket.OPEN) {
       const clientMessage = new ChatMessage(messageContent, true);
-      const serverMessage = new ChatMessage(messageContent, false);
+      const serverMessage = new ChatMessage('', false);
       
       if (messageContent) {
         try {
