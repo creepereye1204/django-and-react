@@ -32,7 +32,7 @@ import socketio
 import json
 import socketio
 from channels.generic.websocket import AsyncWebsocketConsumer
-
+import asyncio
 import requests
 
 def get_bible(question):
@@ -81,6 +81,17 @@ import ollama
 
 #     async def send_to_client(self, message):
 #         await self.send(text_data=json.dumps({'message': message}))
+
+
+async def receive_stream(question,paragraph):
+    return await asyncio.to_thread(ollama.chat(model='priest_v3',stream=True,messages=[
+            {
+                'role': 'user',
+                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
+            },
+            ])
+
+
 
 class SketchToImageConsumer(AsyncWebsocketConsumer):
     def __init__(self, *args, **kwargs):
@@ -158,13 +169,10 @@ class BibleBot(AsyncWebsocketConsumer):
         try:
             
             paragraph=get_bible(question)
-            stream = ollama.chat(model='priest_v3',stream=True,messages=[
-            {
-                'role': 'user',
-                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
-            },
-            ])
-            async for text in stream:
+            
+            stream = await receive_stream(question,paragraph)
+            
+            for text in stream:
                 await self.send(text_data=json.dumps({
                     'message': text['message']['content']
                 }))
