@@ -169,7 +169,7 @@ class BibleBot(AsyncWebsocketConsumer):
                 'role': 'user',
                 'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
             },
-            ]
+            ])
             
             
             await self.send(text_data=json.dumps({
