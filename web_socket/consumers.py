@@ -83,13 +83,7 @@ import ollama
 #         await self.send(text_data=json.dumps({'message': message}))
 
 
-async def receive_stream(question,paragraph):
-    return await asyncio.to_thread(ollama.chat(model='priest_v3',stream=True,messages=[
-            {
-                'role': 'user',
-                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
-            },
-            ])
+
 
 
 
@@ -170,12 +164,17 @@ class BibleBot(AsyncWebsocketConsumer):
             
             paragraph=get_bible(question)
             
-            stream = await receive_stream(question,paragraph)
+            text=ollama.chat(model='priest_v3',messages=[
+            {
+                'role': 'user',
+                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
+            },
+            ]
             
-            for text in stream:
-                await self.send(text_data=json.dumps({
-                    'message': text['message']['content']
-                }))
+            
+            await self.send(text_data=json.dumps({
+                'message': text['message']['content']
+            }))
                 
             
         except Exception as e:
