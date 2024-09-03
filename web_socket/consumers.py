@@ -152,29 +152,27 @@ class BibleBot(AsyncWebsocketConsumer):
 
     async def receive(self, text_data):
         data = json.loads(text_data)
-        question = data.get('question')
-        await self.send(text_data=json.dumps({
-                'message': question
-            }))
+        question = data.get('message')
+        
 
-        # try:
+        try:
             
-        #     paragraph=get_bible(question)
-        #     text = ollama.chat(model='priest_v3',messages=[
-        #     {
-        #         'role': 'user',
-        #         'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
-        #     },
-        #     ])
-        #     result=text['message']['content']
-        #     await self.send(text_data=json.dumps({
-        #         'message': result
-        #     }))
+            paragraph=get_bible(question)
+            text = ollama.chat(model='priest_v3',messages=[
+            {
+                'role': 'user',
+                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
+            },
+            ])
+            result=text['message']['content']
+            await self.send(text_data=json.dumps({
+                'message': result
+            }))
             
-        # except Exception as e:
-        #     await self.send(text_data=json.dumps({
-        #         'message': '에러 발생!'
-        #     }))
+        except Exception as e:
+            await self.send(text_data=json.dumps({
+                'message': '에러 발생!'
+            }))
     
     
    
