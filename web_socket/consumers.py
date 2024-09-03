@@ -82,7 +82,18 @@ import ollama
 #     async def send_to_client(self, message):
 #         await self.send(text_data=json.dumps({'message': message}))
 
+def get_bible(question):
+    url = "http://localhost:5000/chat"
+    data = {
+        "question": question
+    }
 
+    response = requests.post(url, json=data)
+
+    if response.status_code == 200:
+        return response.json()
+    else:
+        raise response.text
 class SketchToImageConsumer(AsyncWebsocketConsumer):
     def __init__(self, *args, **kwargs):
         
@@ -159,15 +170,15 @@ class BibleBot(AsyncWebsocketConsumer):
         try:
             
             paragraph=get_bible(question)
-            # text = ollama.chat(model='priest_v3',messages=[
-            # {
-            #     'role': 'user',
-            #     'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
-            # },
-            # ])
-            # result=text['message']['content']
+            text = ollama.chat(model='priest_v3',messages=[
+            {
+                'role': 'user',
+                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
+            },
+            ])
+            result=text['message']['content']
             await self.send(text_data=json.dumps({
-                'message': paragraph
+                'message': result
             }))
             
         except Exception as e:
