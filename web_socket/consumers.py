@@ -81,7 +81,7 @@ import ollama
 
 #     async def send_to_client(self, message):
 #         await self.send(text_data=json.dumps({'message': message}))
-
+import requests
 def get_bible(question):
     url = "http://localhost:5000/chat"
     data = {
