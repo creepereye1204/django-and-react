@@ -176,7 +176,7 @@ class BibleBot(AsyncWebsocketConsumer):
                 'message': text['message']['content']
             }))
                 
-            
+             
         except Exception as e:
                 await self.send(text_data=json.dumps({
                 'message': f'에러 발생: {str(e)}'
