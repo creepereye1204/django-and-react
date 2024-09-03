@@ -159,15 +159,15 @@ class BibleBot(AsyncWebsocketConsumer):
         try:
             
             paragraph=get_bible(question)
-            text = ollama.chat(model='priest_v3',messages=[
-            {
-                'role': 'user',
-                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
-            },
-            ])
-            result=text['message']['content']
+            # text = ollama.chat(model='priest_v3',messages=[
+            # {
+            #     'role': 'user',
+            #     'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
+            # },
+            # ])
+            # result=text['message']['content']
             await self.send(text_data=json.dumps({
-                'message': result
+                'message': paragraph
             }))
             
         except Exception as e:
