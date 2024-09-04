@@ -156,7 +156,6 @@ class BibleBot(AsyncWebsocketConsumer):
         
 
     async def receive(self, text_data):
-        import time
         data = json.loads(text_data)
         question = data.get('message')
         
@@ -175,7 +174,6 @@ class BibleBot(AsyncWebsocketConsumer):
                 await self.send(text_data=json.dumps({
                     'message': text['message']['content']
                 }))
-                await time.sleep(0.1)
                 
                 
                 
