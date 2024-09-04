@@ -639,7 +639,6 @@ const Service = () => {
   const [chatMessages, setChatMessages] = useState([]); // 채팅 메시지 상태
   const [webSocket, setWebSocket] = useState(null); // 웹소켓 상태
   const [inputValue, setInputValue] = useState(''); // 입력값 상태
-  const [inputDisabled, setInputDisabled] = useState(true); // 입력 비활성화 상태
   const [buttonDisabled, setButtonDisabled] = useState(false); // 버튼 비활성화 상태
 
   useEffect(() => {
@@ -648,7 +647,7 @@ const Service = () => {
     ws.onopen = () => {
       setWebSocket(ws);
       console.log('웹소켓 연결됨');
-      setInputDisabled(false); // 연결되면 입력 가능
+      setButtonDisabled(false); // 연결되면 입력 가능
     };
 
     ws.onmessage = (event) => {
@@ -657,7 +656,7 @@ const Service = () => {
         setButtonDisabled(false); // null일 경우 버튼 활성화
         return; // null일 경우 함수 종료
       }
-      const text = incomingMessage.message; // 메시지 내용
+      const text = incomingMessage.message || ''; // 메시지 내용
 
       setChatMessages((prevMessages) => {
         const updatedMessages = [...prevMessages];
@@ -665,6 +664,7 @@ const Service = () => {
 
         // 최신 메시지가 존재하고 서버 턴일 경우 메시지 추가
         if (latestMessageIndex >= 0 && !updatedMessages[latestMessageIndex].isClientTurn) {
+          
           updatedMessages[latestMessageIndex].content += text;
         } else {
           updatedMessages.push(new ChatMessage(text, false)); // 새로운 서버 메시지 추가
@@ -677,7 +677,7 @@ const Service = () => {
     ws.onclose = () => {
       console.log('웹소켓 연결 종료');
       setWebSocket(null);
-      setInputDisabled(true); // 연결 종료 시 입력 비활성화
+      setButtonDisabled(true); // 연결 종료 시 입력 비활성화
     };
 
     return () => {
@@ -724,7 +724,7 @@ const Service = () => {
         value={inputValue} // 입력값 상태
         onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
       />
-      <button onClick={() => sendMessage(inputValue)} disabled={buttonDisabled}>전송</button> {/* 전송 버튼 */}
+      <button onClick={() => sendMessage(inputValue)} disabled={!buttonDisabled}>전송</button> {/* 전송 버튼 */}
     </div>
   );
 };
