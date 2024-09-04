@@ -167,7 +167,7 @@ class BibleBot(AsyncWebsocketConsumer):
             stream=ollama.chat(model='priest_v3',stream=True,messages=[
             {
                 'role': 'user',
-                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
+                'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답) (자연스럽게)",
             },
             ])
             
