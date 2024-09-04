@@ -652,11 +652,10 @@ const Service = () => {
 
     ws.onmessage = (event) => {
       const incomingMessage = JSON.parse(event.data); // 수신 메시지 파싱
-      if (incomingMessage === null) {
+      if (incomingMessage.message === null) {
         setButtonAbled(true); // null일 경우 버튼 활성화
         return; // null일 경우 함수 종료
       }
-      const text = incomingMessage.message || ''; // 메시지 내용
 
       setChatMessages((prevMessages) => {
         const updatedMessages = [...prevMessages];
