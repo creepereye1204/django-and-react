@@ -156,6 +156,7 @@ class BibleBot(AsyncWebsocketConsumer):
         
 
     async def receive(self, text_data):
+        import time
         data = json.loads(text_data)
         question = data.get('message')
         
@@ -164,17 +165,17 @@ class BibleBot(AsyncWebsocketConsumer):
             
             paragraph=get_bible(question)
             
-            text=ollama.chat(model='priest_v3',messages=[
+            stream=ollama.chat(model='priest_v3',stream=True,messages=[
             {
                 'role': 'user',
                 'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
             },
             ])
-            
-            
-            await self.send(text_data=json.dumps({
-                'message': text['message']['content']
-            }))
+            for text in stream:
+                await self.send(text_data=json.dumps({
+                    'message': text['message']['content']
+                }))
+                
                 
              
         except Exception as e:
