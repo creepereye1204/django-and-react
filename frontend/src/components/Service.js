@@ -534,7 +534,7 @@ const Service = () => {
   const [chatMessages, setChatMessages] = useState([]); // 채팅 메시지 상태
   const [webSocket, setWebSocket] = useState(null); // 웹소켓 상태
   const [inputValue, setInputValue] = useState(''); // 입력값 상태
-  const [isInputDisabled, setInputDisabled] = useState(true); // 입력 비활성화 상태
+  const [inputDisabled, setInputDisabled] = useState(true); // 입력 비활성화 상태
 
   useEffect(() => {
     const ws = new WebSocket('wss://my-wiki.p-e.kr/ws/api/bible-bot');
@@ -550,10 +550,10 @@ const Service = () => {
       if (incomingMessage === null) {
         setInputDisabled(true);
         return; // null일 경우 함수 종료
-      }else{
-        const text = incomingMessage.message; // 메시지 내용
+      }
+      const text = incomingMessage.message; // 메시지 내용
 
-        setChatMessages((prevMessages) => {
+      setChatMessages((prevMessages) => {
         const updatedMessages = [...prevMessages];
         const latestMessageIndex = updatedMessages.length - 1;
 
@@ -566,8 +566,6 @@ const Service = () => {
 
         return updatedMessages;
       });
-      }
-      
     };
 
     ws.onclose = () => {
@@ -585,6 +583,7 @@ const Service = () => {
   const sendMessage = (messageContent) => {
     if (webSocket && webSocket.readyState === WebSocket.OPEN) {
       if (messageContent) {
+        setInputDisabled(false);
         const clientMessage = new ChatMessage(messageContent, true);
         setChatMessages((prevMessages) => [...prevMessages, clientMessage]);
 
@@ -619,7 +618,7 @@ const Service = () => {
         value={inputValue} // 입력값 상태
         onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
       />
-      <button onClick={() => sendMessage(inputValue)} disabled={isInputDisabled}>전송</button> {/* 전송 버튼 */}
+      <button onClick={() => sendMessage(inputValue)} disabled={inputDisabled}>전송</button> {/* 전송 버튼 */}
     </div>
   );
 };
