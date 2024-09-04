@@ -656,6 +656,7 @@ const Service = () => {
         setButtonAbled(true); // null일 경우 버튼 활성화
         return; // null일 경우 함수 종료
       }
+      const text = incomingMessage.message || ''; // 메시지 내용
 
       setChatMessages((prevMessages) => {
         const updatedMessages = [...prevMessages];
@@ -721,7 +722,7 @@ const Service = () => {
         value={inputValue} // 입력값 상태
         onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
       />
-      {buttonAbled?<button onClick={() => sendMessage(inputValue)}>전송</button>: null}
+      <button onClick={() => sendMessage(inputValue)} disabled={!buttonAbled}>전송</button>
     </div>
   );
 };
