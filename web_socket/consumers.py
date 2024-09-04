@@ -161,7 +161,7 @@ class BibleBot(AsyncWebsocketConsumer):
         
 
         try:
-            message_buffer = ''
+            
             paragraph=get_bible(question)
             
             stream=ollama.chat(model='priest_v3',stream=True,messages=[
@@ -170,16 +170,14 @@ class BibleBot(AsyncWebsocketConsumer):
                 'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
             },
             ])
-            
-            
             for text in stream:
-                message_buffer+=text['message']['content']
-                if len(message_buffer)>10:
-                    await self.send(text_data=json.dumps({
-                        'message': message_buffer
-                    }))
-                    message_buffer=''
                 
+                await self.send(text_data=json.dumps({
+                    'message': text['message']['content']
+                }))
+            await self.send(text_data=json.dumps({
+                    'message': None
+                }))
                 
                 
              
