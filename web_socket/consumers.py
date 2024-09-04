@@ -170,10 +170,14 @@ class BibleBot(AsyncWebsocketConsumer):
                 'content': f"상황:'{question}',성경구절:'{paragraph}' , (한글로 대답)",
             },
             ])
-            for text in stream:
-                await self.send(text_data=json.dumps({
-                    'message': text['message']['content']
+            
+            await self.send(text_data=json.dumps({
+                    'message': next(stream)['message']['content'],
                 }))
+            # for text in stream:
+            #     await self.send(text_data=json.dumps({
+            #         'message': text['message']['content']
+            #     }))
                 
                 
                 

@@ -4459,3 +4459,4 @@ WARNING 2024-09-03 23:03:05,382 log 2431078 140076333582208 Not Found: /public/v
 WARNING 2024-09-03 23:03:05,759 log 2431078 140076333582208 Not Found: /apps/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
 WARNING 2024-09-03 23:03:06,170 log 2431078 140076333582208 Not Found: /app/vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php
 WARNING 2024-09-03 23:03:07,590 log 2431078 140076333582208 Not Found: /public/index.php
+WARNING 2024-09-04 01:14:04,566 log 2480801 139924589533056 Not Found: /_profiler/phpinfo
