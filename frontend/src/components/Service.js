@@ -428,7 +428,6 @@ const Service = () => {
   const [chatMessages, setChatMessages] = useState([]); // 채팅 메시지 상태
   const [webSocket, setWebSocket] = useState(null); // 웹소켓 상태
   const [inputValue, setInputValue] = useState(''); // 입력값 상태
-  const [isInputDisabled,setInputDisabled]=useState(true);
 
   useEffect(() => {
     const ws = new WebSocket('wss://my-wiki.p-e.kr/ws/api/bible-bot');
@@ -442,17 +441,18 @@ const Service = () => {
       setChatMessages((prevMessages) => {
           const incomingMessage = JSON.parse(event.data); // 수신 메시지 파싱
           const text = incomingMessage.message; // 메시지 내용
-          if(incomingMessage===null)
-            setInputDisabled(true);
-
+          
           const updatedMessages = [...prevMessages];
           const latestMessageIndex = updatedMessages.length - 1; // 최신 메시지 인덱스
           
           // 최신 메시지가 존재하고 서버 턴일 경우 메시지 추가
           if (latestMessageIndex >= 0 && !updatedMessages[latestMessageIndex].isClientTurn) {
+              if (updatedMessages[latestMessageIndex].content) {
                   updatedMessages[latestMessageIndex].content += text;
+              } else {
+                  updatedMessages[latestMessageIndex].content = text; // 메시지가 없을 경우 새로 추가
+              }
           }
-          
 
           return updatedMessages;
       });
@@ -478,7 +478,6 @@ const Service = () => {
       if (messageContent) {
         try {
           setInputValue('');
-          setInputDisabled(false);
           setChatMessages((prevMessages) => [...prevMessages, clientMessage]);
           setChatMessages((prevMessages) => [...prevMessages, serverMessage]);
           webSocket.send(JSON.stringify({ message: messageContent })); // 메시지 객체 전송
@@ -512,7 +511,7 @@ const Service = () => {
         value={inputValue} // 입력값 상태
         onChange={(e) => setInputValue(e.target.value)} // 입력값 업데이트
       />
-      <button onClick={() => sendMessage(inputValue)} disabled={isInputDisabled}>전송</button> {/* 전송 버튼 */}
+      <button onClick={() => sendMessage(inputValue)} >전송</button> {/* 전송 버튼 */}
     </div>
 )
 
