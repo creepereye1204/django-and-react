@@ -175,6 +175,7 @@ class BibleBot(AsyncWebsocketConsumer):
                 await self.send(text_data=json.dumps({
                     'message': text['message']['content']
                 }))
+                await time.sleep(0.1)
                 
                 
                 
