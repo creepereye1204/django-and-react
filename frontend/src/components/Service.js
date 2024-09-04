@@ -550,10 +550,10 @@ const Service = () => {
       if (incomingMessage === null) {
         setInputDisabled(true);
         return; // null일 경우 함수 종료
-      }
-      const text = incomingMessage.message; // 메시지 내용
+      }else{
+        const text = incomingMessage.message; // 메시지 내용
 
-      setChatMessages((prevMessages) => {
+        setChatMessages((prevMessages) => {
         const updatedMessages = [...prevMessages];
         const latestMessageIndex = updatedMessages.length - 1;
 
@@ -566,6 +566,8 @@ const Service = () => {
 
         return updatedMessages;
       });
+      }
+      
     };
 
     ws.onclose = () => {
