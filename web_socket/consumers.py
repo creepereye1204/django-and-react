@@ -172,11 +172,10 @@ class BibleBot(AsyncWebsocketConsumer):
             ])
             
             
-            
-            for _ in stream:
+            for text in stream:
                 
                 await self.send(text_data=json.dumps({
-                    'message': next(stream)['message']['content']
+                    'message': text['message']['content']
                 }))
                 
                 
