@@ -676,7 +676,7 @@ const Service = () => {
     ws.onclose = () => {
       console.log('웹소켓 연결 종료');
       setWebSocket(null);
-      setButtonDisabled(true); // 연결 종료 시 입력 비활성화
+      setButtonAbled(true); // 연결 종료 시 입력 비활성화
     };
 
     return () => {
