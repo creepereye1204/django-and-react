@@ -1,13 +1,12 @@
 from django.urls import path
 
-from .views import RoomView ,write, dashboard,read_list,read ,login,update,service# add views.py
+from .views import write, dashboard,read_list,read ,login,update,service# add views.py
 
 
 
     
 
 urlpatterns = [
-    path('home', RoomView.as_view()),  # /api/
     path('login', login),
     path('service', service),  # /api/dashboard
     path('board/', read_list),  # /api/dashboard

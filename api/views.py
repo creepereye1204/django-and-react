@@ -1,24 +1,29 @@
+# Django 및 REST Framework 관련 임포트
 from django.shortcuts import render
+from django.http import HttpResponse, JsonResponse
 from rest_framework import generics
-from django.http import HttpResponse
-from .models import Room, Board
-from .serializers import RoomSerializer,BoardSerializer,BoardListSerializer
-from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-import psutil
-import ollama
-from django.http import JsonResponse
+from rest_framework.pagination import PageNumberPagination
+
+# 모델 및 직렬화기 임포트
+from .models import Board
+from .serializers import BoardSerializer, BoardListSerializer
+
+# 뷰 관련 임포트
+from django.views import View
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from django.views import View
 from django.core.files.storage import FileSystemStorage
-from functools import wraps
+
+# 외부 라이브러리 임포트
+import psutil
+import ollama
+import requests
 from PIL import Image
 import pdfkit
+from functools import wraps
 
-
-import requests
 
 
 
@@ -135,12 +140,7 @@ class Bible():
 # db=Bible()
 
 
-class RoomView(generics.ListAPIView):
-    queryset = Room.objects.all()
-    serializer_class = RoomSerializer
 
-    def post(self, request, *args, **kwargs):
-        pass
 
 
 
@@ -228,7 +228,7 @@ def update(request, *args, **kwargs):
         title = request.data.get('title')
         content = request.data.get('content')
         thumbnail = request.data.get('thumbnail',None)
-        
+        default_thumbnail = request.data.get('default_thumbnail',False)
         board = Board.objects.get(pk=id)
         
         board.title = title
@@ -236,14 +236,15 @@ def update(request, *args, **kwargs):
         
         
         
-        
-        if thumbnail:
-            board.thumbnail = thumbnail
-        else:
+        if default_thumbnail:
             board.thumbnail='defaultThumbnail.png'
-        
+        elif thumbnail:
+            board.thumbnail = thumbnail
         board.save()
-        return Response({'ok': '작성 성공'}, status=200)
+            
+        
+        
+        return Response({'ok': '수정 성공'}, status=200)
     except Exception as e:
         return Response({'error': str(e)}, status=500)
     

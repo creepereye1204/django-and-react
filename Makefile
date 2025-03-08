@@ -23,9 +23,9 @@ npm-run:
 .PHONY: runserver
 runserver:
 	poetry run uwsgi --ini core_uwsgi.ini
-	supervisorctl stop daphne
-	supervisorctl reload
-	supervisorctl update
+	# supervisorctl stop daphne
+	# sudo supervisorctl reload
+	# supervisorctl update
 	# poetry run daphne -u /home/apps/my_wiki/daphne.sock core.asgi:application
  
 .PHONY: nginx
@@ -33,7 +33,7 @@ nginx:
 	/etc/init.d/nginx restart
 
 .PHONY: all
-all: migrations migrate npm-run collect commit nginx runserver
+all: migrations migrate npm-run collect runserver nginx 
 
 .PHONY: superuser
 superuser:

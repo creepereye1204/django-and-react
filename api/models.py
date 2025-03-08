@@ -8,7 +8,7 @@ def generate_unique_code():
     length = 6
 
     while True:
-        code = ''.join(random.choices(string.ascii_uppercase, k=length))
+        code = "".join(random.choices(string.ascii_uppercase, k=length))
         if Room.objects.filter(code=code).count() == 0:
             break
 
@@ -26,12 +26,12 @@ class Room(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
 
-
 class Board(models.Model):
     title = models.CharField(max_length=100)
     content = models.TextField()
     create_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    thumbnail = models.ImageField(upload_to='images/',default='defaultThumbnail.png')  # 이미지 필드
+    thumbnail = models.ImageField(upload_to="images/", default="defaultThumbnail.png")
+
     def __str__(self):
         return f'[{self.pk}] - {self.title} - {self.create_at.strftime("%Y-%m-%d %H:%M:%S")}'
