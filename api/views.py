@@ -239,6 +239,7 @@ def update(request, *args, **kwargs):
         if default_thumbnail:
             board.thumbnail='defaultThumbnail.png'
         elif thumbnail:
+            raise Exception
             board.thumbnail = thumbnail
         board.save()
             
