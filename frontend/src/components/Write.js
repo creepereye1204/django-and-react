@@ -36,7 +36,7 @@ const Write = ({
   const [content, setContent] = useState(initialContent);
   const [title, setTitle] = useState(initialTitle);
   const [thumbnail, setThumbnail] = useState(initialThumbnail);
-  const [defaultThumbnail, setDefaultThumbnail] = useState(false);
+  const [defaultThumbnail, setDefaultThumbnail] = useState(-1);
 
   const handleChange = (value) => {
     setContent(value);
@@ -55,7 +55,7 @@ const Write = ({
     document.getElementById("file-input").value = ""; // 파일 입력 초기화
   };
   const handleNoThumnailButtonClick = () => {
-    setDefaultThumbnail(!defaultThumbnail);
+    setDefaultThumbnail(-defaultThumbnail);
   };
   async function write() {
     const formData = new FormData();
