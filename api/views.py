@@ -19,11 +19,17 @@ from django.core.files.storage import FileSystemStorage
 # 외부 라이브러리 임포트
 import psutil
 import ollama
+import logging
 import requests
 from PIL import Image
 import pdfkit
 from functools import wraps
 
+logger = logging.getLogger('django')
+def test_logging():
+    logger.debug('디버그 메시지')
+    logger.info('정보 메시지')
+    logger.warning('경고 메시지')
 
 class BoardListPagination(PageNumberPagination):
     page_size = 10  # 한 페이지당 항목 수
@@ -166,7 +172,11 @@ def write(request, *args, **kwargs):
 @api_view(['GET'])
 def read(request, board_pk, *args, **kwargs):
     try:
-        # 특정 번호(pk)의 게시물 가져오기
+        
+
+            
+
+        test_logging()
         board = Board.objects.get(pk=board_pk)
         serializer = BoardSerializer(board)  # 단일 객체에 대한 시리얼라이저 사용
         response_data = serializer.data
@@ -196,17 +206,17 @@ def read_list(request, *args, **kwargs):
         return Response({'error': e.message}, status=500)
 
 
-@api_view(['POST'])
-def login(request, *args, **kwargs):
-    request_secret_key = request.data.get('passwd', None)
-    if request_secret_key == 'smalllab':
+# @api_view(['POST'])
+# def login(request, *args, **kwargs):
+#     request_secret_key = request.data.get('passwd', None)
+#     if request_secret_key == 'smalllab':
 
-        request.session['is_admin'] = True
+#         request.session['is_admin'] = True
 
-        return Response({'ok': True}, status=200)
-    else:
-        request.session['is_admin'] = False
-        return Response({'ok': False}, status=400)
+#         return Response({'ok': True}, status=200)
+#     else:
+#         request.session['is_admin'] = False
+#         return Response({'ok': False}, status=400)
 
 
 @api_view(['POST'])
@@ -251,3 +261,22 @@ def service(request):
     ])
     result = text['message']['content']
     return Response({'result': result}, status=200)
+
+@api_view(['DELETE'])
+def delete_board(request):
+    try:
+        board_id=request.data.get('board_id','no_id')
+        if board_id.isdigit():
+            pass
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)
+    
+@api_view(['POST'])
+def login(request):
+    try:
+        user_id=request.data.get('user_id','no_id')
+        if user_id=='test':
+            request.session['user_id'] = user_id
+            return Response({'ok': True}, status=200)
+    except Exception as e:
+        return Response({'error': str(e)}, status=500)

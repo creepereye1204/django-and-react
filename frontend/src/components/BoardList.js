@@ -1,8 +1,6 @@
-
 // import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 // import "./BoardList.css";
-
 
 // class BoardList extends Component {
 //   constructor(props) {
@@ -44,15 +42,14 @@
 
 //     // 기본 이미지 URL
 
-
 //     return (
 //       <div className="board-container">
 //         {boards.map(board => (
 //           <card className="card" key={board.id}> {/* key 속성을 추가하여 경고 방지 */}
-//             <img 
-//               src={board.thumbnail} 
-//               alt={board.title} 
-              
+//             <img
+//               src={board.thumbnail}
+//               alt={board.title}
+
 //             />
 //             <Link to={`/board/${board.id}`}>
 //               <div className="title">
@@ -156,9 +153,9 @@
 //       <div className="board-container">
 //         {boards.map(board => (
 //           <div className="card" key={board.id}>
-//             <img 
-//               src={board.thumbnail} 
-//               alt={board.title} 
+//             <img
+//               src={board.thumbnail}
+//               alt={board.title}
 //             />
 //             <Link to={`/board/${board.id}`}>
 //               <div className="title">
@@ -189,7 +186,7 @@ class BoardList extends Component {
       boards: [],
       loading: true,
       error: null,
-      totalCount: 0, // 총 데이터 수 
+      totalCount: 0, // 총 데이터 수
       currentPage: 1, // 현재 페이지
     };
   }
@@ -199,14 +196,16 @@ class BoardList extends Component {
   }
 
   getPage(page) {
-    fetch(`https://my-wiki.p-e.kr/api/board/?page=${page}&page_size=${this.state.pageSize}`)
-      .then(response => {
+    fetch(
+      `https://my-wiki.p-e.kr/api/board/?page=${page}&page_size=${this.state.pageSize}`
+    )
+      .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
         return response.json();
       })
-      .then(data => {
+      .then((data) => {
         this.setState({
           boards: data.results,
           loading: false,
@@ -214,7 +213,7 @@ class BoardList extends Component {
           currentPage: page, // 현재 페이지 설정
         });
       })
-      .catch(error => {
+      .catch((error) => {
         this.setState({ loading: false, error: error.message });
       });
   }
@@ -226,7 +225,11 @@ class BoardList extends Component {
 
     for (let i = 1; i <= totalPages; i++) {
       buttons.push(
-        <button key={i} onClick={() => this.handlePageChange(i)} disabled={currentPage === i}>
+        <button
+          key={i}
+          onClick={() => this.handlePageChange(i)}
+          disabled={currentPage === i}
+        >
           {i}
         </button>
       );
@@ -252,16 +255,11 @@ class BoardList extends Component {
 
     return (
       <div className="board-container">
-        {boards.map(board => (
+        {boards.map((board) => (
           <div className="card" key={board.id}>
-            <img 
-              src={board.thumbnail} 
-              alt={board.title} 
-            />
+            <img src={board.thumbnail} alt={board.title} />
             <Link to={`/board/${board.id}`}>
-              <div className="title">
-                {board.title}
-              </div>
+              <div className="title">{board.title}</div>
             </Link>
           </div>
         ))}
