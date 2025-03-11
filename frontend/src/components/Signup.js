@@ -16,13 +16,13 @@ const Style = styled.div`
   }
 `;
 
-class Login extends Component {
+class Signup extends Component {
   handleSubmit = (event) => {
     event.preventDefault(); // 기본 폼 제출 동작 방지
     const formData = new FormData(event.target); // 폼 데이터를 가져옴
 
     // ti
-    fetch("/api/login", {
+    fetch("/api/signup", {
       // API 호출
       method: "POST",
       headers: {
@@ -44,8 +44,8 @@ class Login extends Component {
           method="post"
           enctype="multipart/form-data"
         >
-          <h2>Login Form</h2>
-          <p>Please enter your credentials to login.</p>
+          <h2>Register Form</h2>
+          <p>Please enter your credentials to Register.</p>
           <label>
             Username:
             <input type="text" name="user_id" />
@@ -61,4 +61,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default Signup;

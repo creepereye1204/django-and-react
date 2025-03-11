@@ -15005,3 +15005,714 @@ WARNING 2025-03-10 12:55:43,667 log 435264 140069343348608 Not Found: /wp1/wp-in
 WARNING 2025-03-10 12:55:43,982 log 435264 140069343348608 Not Found: /test/wp-includes/wlwmanifest.xml
 WARNING 2025-03-10 12:55:44,229 log 435264 140069343348608 Not Found: /site/wp-includes/wlwmanifest.xml
 WARNING 2025-03-10 12:55:44,547 log 435264 140069343348608 Not Found: /cms/wp-includes/wlwmanifest.xml
+WARNING 2025-03-10 13:21:56,057 log 435264 140069343348608 Not Found: /owa/auth/x.js
+WARNING 2025-03-10 15:50:07,996 log 435264 140069343348608 Not Found: /.git/config
+WARNING 2025-03-10 15:50:08,002 log 435265 140069343348608 Not Found: /.git/config
+WARNING 2025-03-10 18:34:24,314 log 435264 140069343348608 Not Found: /RDWeb/Pages/
+WARNING 2025-03-10 18:34:24,894 log 435264 140069343348608 Not Found: /+CSCOE+/logon.html
+WARNING 2025-03-10 19:25:00,640 log 435263 140069343348608 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2025-03-10 21:22:26,729 log 435264 140069343348608 Not Found: /public/static/admin/lib/webuploader/0.1.5/server/fileupload.php
+WARNING 2025-03-10 22:01:11,611 log 435264 140069343348608 Not Found: /.git/config
+WARNING 2025-03-11 00:00:23,033 log 435264 140069343348608 Not Found: /public/static/lib/webuploader/0.1.5/server/fileupload.php
+WARNING 2025-03-11 00:44:01,668 log 529165 140498897770368 Not Found: /api/login
+WARNING 2025-03-11 00:44:12,180 log 529163 140498897770368 Not Found: /api/login
+DEBUG 2025-03-11 00:45:45,172 base 531199 140438443931520 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7fb9f72e9f60>
+DEBUG 2025-03-11 00:45:45,179 base 531199 140438443931520 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: '8LUHe6ecrlWbG7tTYnSbjp7vuhXyj3PHHCzA7yonM05mn3Ijq38GnCKJ8nfSdRAE'>, 'request': <WSGIRequest: GET '/admin/api/user/add/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, 2024-08-22 11:18:32.806544+00:00, 2024-08-22 11:18:32.806362+00:00, 2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, 2024-08-22 07:39:14.301338+00:00, 2024-08-22 07:39:08.288427+00:00, 2024-08-22 07:38:54.591714+00:00, '...(remaining elements truncated)...']>, 'title': 'Add user', 'subtitle': None, 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fb9f72e33a0>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8670>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8cd0>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fb9f72e9f60>}, {'heading_level': 2, 'id_suffix': 0}]
+DEBUG 2025-03-11 00:45:57,200 base 531199 140438443931520 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7fb9f7164070>
+DEBUG 2025-03-11 00:45:57,204 base 531199 140438443931520 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'qjZzbZ7M7RyWbmh3DQCNBrgA81epZsdfZaEs4rhXswH7Siwt5wSiFETOM7wJTgYc'>, 'request': <WSGIRequest: POST '/admin/api/user/add/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: POST '/admin/api/user/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, 2024-08-22 11:18:32.806544+00:00, 2024-08-22 11:18:32.806362+00:00, 2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, 2024-08-22 07:39:14.301338+00:00, 2024-08-22 07:39:08.288427+00:00, 2024-08-22 07:38:54.591714+00:00, '...(remaining elements truncated)...']>, 'title': 'Add user', 'subtitle': None, 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [['This field is required.']], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fb9f72e33a0>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8670>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8cd0>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fb9f7164070>}, {'heading_level': 2, 'id_suffix': 0}]
+DEBUG 2025-03-11 00:46:14,231 base 531199 140438443931520 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7fb9f7164d30>
+DEBUG 2025-03-11 00:46:14,236 base 531199 140438443931520 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'eDfTY5DJxW9EjUiEQwlDfqnyJeRGn9ibNuUMRxNUSBiP0Qx4icB8jD0Mnk90hX38'>, 'request': <WSGIRequest: GET '/admin/api/user/add/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/add/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, 2024-08-22 11:18:32.806544+00:00, 2024-08-22 11:18:32.806362+00:00, 2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, 2024-08-22 07:39:14.301338+00:00, 2024-08-22 07:39:08.288427+00:00, '...(remaining elements truncated)...']>, 'title': 'Add user', 'subtitle': None, 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': None, 'original': None, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': True, 'change': False, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fb9f72e33a0>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8670>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8cd0>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fb9f7164d30>}, {'heading_level': 2, 'id_suffix': 0}]
+WARNING 2025-03-11 00:46:28,821 log 531197 140438443931520 Forbidden: /api/login
+DEBUG 2025-03-11 00:47:06,754 base 531199 140438443931520 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7fb9f719bfd0>
+DEBUG 2025-03-11 00:47:06,758 base 531199 140438443931520 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'NpCJ5J42EH4t9vV59re0n1nUxAnP15SemghCYbedZmdEQravB7uvre08bGF9VTDb'>, 'request': <WSGIRequest: GET '/admin/api/user/test/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/test/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, 2024-08-22 11:18:32.806544+00:00, 2024-08-22 11:18:32.806362+00:00, 2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, 2024-08-22 07:39:14.301338+00:00, 2024-08-22 07:39:08.288427+00:00, '...(remaining elements truncated)...']>, 'title': 'Change user', 'subtitle': 'User object (test)', 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': 'test', 'original': <User: User object (test)>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fb9f72e33a0>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8670>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8cd0>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fb9f719bfd0>}, {'heading_level': 2, 'id_suffix': 0}]
+DEBUG 2025-03-11 00:47:15,648 base 531199 140438443931520 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7fb9f71a34c0>
+DEBUG 2025-03-11 00:47:15,652 base 531199 140438443931520 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'PByHB6WJMZauUV3dkLwJxH2OJqLCacrbosdAuy6U7EjFBRiDMrMeBUF2nw3W40c8'>, 'request': <WSGIRequest: GET '/admin/api/user/test/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/test/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, 2024-08-22 11:18:32.806544+00:00, 2024-08-22 11:18:32.806362+00:00, 2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, 2024-08-22 07:39:14.301338+00:00, '...(remaining elements truncated)...']>, 'title': 'Change user', 'subtitle': 'User object (test)', 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': 'test', 'original': <User: User object (test)>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fb9f72e33a0>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8670>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8cd0>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fb9f71a34c0>}, {'heading_level': 2, 'id_suffix': 0}]
+WARNING 2025-03-11 00:47:21,549 log 531199 140438443931520 Forbidden: /api/login
+WARNING 2025-03-11 00:50:58,229 log 531199 140438443931520 Not Found: /api/login
+WARNING 2025-03-11 00:51:07,647 log 531198 140438443931520 Forbidden: /api/login
+DEBUG 2025-03-11 00:51:41,089 base 531199 140438443931520 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7fb9f71b7100>
+DEBUG 2025-03-11 00:51:41,093 base 531199 140438443931520 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Is1ARKHfuKvuF5YcO3u3ekxLSWWyOAFhOKHwxsAVT0W4QoBwHkzxxG12Opp2GfEn'>, 'request': <WSGIRequest: GET '/admin/api/user/test/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/test/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, 2024-08-22 11:18:32.806544+00:00, 2024-08-22 11:18:32.806362+00:00, 2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, 2024-08-22 07:39:14.301338+00:00, '...(remaining elements truncated)...']>, 'title': 'Change user', 'subtitle': 'User object (test)', 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': 'test', 'original': <User: User object (test)>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fb9f72e33a0>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8670>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fb9f72e8cd0>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fb9f71b7100>}, {'heading_level': 2, 'id_suffix': 0}]
+WARNING 2025-03-11 00:51:58,186 log 531199 140438443931520 Bad Request: /api/login
+WARNING 2025-03-11 00:52:13,530 log 531199 140438443931520 Bad Request: /api/login
+DEBUG 2025-03-11 00:55:22,406 schema 536687 140295193751040 ALTER TABLE "api_user" ALTER COLUMN "email" DROP NOT NULL; (params None)
+DEBUG 2025-03-11 00:55:22,410 schema 536687 140295193751040 ALTER TABLE "api_user" ALTER COLUMN "password" TYPE varchar(64); (params None)
+DEBUG 2025-03-11 00:55:22,414 schema 536687 140295193751040 ALTER TABLE "api_user" ALTER COLUMN "user_id" TYPE varchar(64); (params None)
+WARNING 2025-03-11 01:47:04,570 log 537019 139880728496000 Bad Request: /api/login
+WARNING 2025-03-11 02:26:12,793 log 537020 139880728496000 Not Found: /.ssh/id_ecdsa
+WARNING 2025-03-11 02:26:12,801 log 537020 139880728496000 Not Found: /.ssh/id_ed25519
+WARNING 2025-03-11 02:26:12,872 log 537020 139880728496000 Not Found: /.svn/wc.db
+WARNING 2025-03-11 02:26:12,946 log 537019 139880728496000 Not Found: /.git/HEAD
+WARNING 2025-03-11 02:26:12,951 log 537020 139880728496000 Not Found: /wp-admin/setup-config.php
+WARNING 2025-03-11 02:26:12,954 log 537020 139880728496000 Not Found: /.ssh/id_rsa
+WARNING 2025-03-11 02:26:12,954 log 537021 139880728496000 Not Found: /_vti_pvt/service.pwd
+WARNING 2025-03-11 02:26:12,957 log 537020 139880728496000 Not Found: /.aws/credentials
+WARNING 2025-03-11 02:26:12,959 log 537021 139880728496000 Not Found: /.vscode/sftp.json
+WARNING 2025-03-11 02:26:12,963 log 537019 139880728496000 Not Found: /api/.env
+WARNING 2025-03-11 02:26:14,140 log 537018 139880728496000 Not Found: /etc/ssl/private/server.key
+WARNING 2025-03-11 02:26:14,151 log 537015 139880728496000 Not Found: /db/schema.rb
+WARNING 2025-03-11 02:26:14,193 log 537014 139880728496000 Not Found: /config/production.json
+WARNING 2025-03-11 04:08:24,376 log 537020 139880728496000 Not Found: /owa/auth/logon.aspx
+WARNING 2025-03-11 04:22:55,663 log 537020 139880728496000 Not Found: /remote/login
+WARNING 2025-03-11 05:21:48,490 log 537020 139880728496000 Not Found: /.git/config
+WARNING 2025-03-11 05:26:41,266 log 587100 140578389297024 Not Found: /api/register
+WARNING 2025-03-11 05:28:21,389 log 588355 140204094240640 Not Found: /api/login
+WARNING 2025-03-11 05:28:27,892 log 588355 140204094240640 Not Found: /api/login
+DEBUG 2025-03-11 05:28:42,066 base 588356 140204094240640 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7f8366dd05b0>
+DEBUG 2025-03-11 05:28:42,071 base 588356 140204094240640 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'ArLPJ58xVCU1ZbIGkdHXFxwfydeKEbCIa4H5LuelmJ3uZ53MowPWD3YTBJo2ZB6H'>, 'request': <WSGIRequest: GET '/admin/api/user/test/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/test/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 00:51:44.521238+00:00, 2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, 2024-08-22 11:18:32.806544+00:00, 2024-08-22 11:18:32.806362+00:00, 2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, '...(remaining elements truncated)...']>, 'title': 'Change user', 'subtitle': 'User object (test)', 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': 'test', 'original': <User: User object (test)>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7f8366c053c0>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f8366c06650>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f8366c06cb0>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7f8366dd05b0>}, {'heading_level': 2, 'id_suffix': 0}]
+WARNING 2025-03-11 05:29:59,004 log 588356 140204094240640 Not Found: /autodiscover/autodiscover.json
+WARNING 2025-03-11 05:31:24,906 log 590279 140362619111296 Not Found: /api/login
+DEBUG 2025-03-11 06:01:10,721 views 590279 140362619111296 디버그 메시지
+INFO 2025-03-11 06:01:10,721 views 590279 140362619111296 정보 메시지
+WARNING 2025-03-11 06:01:10,722 views 590279 140362619111296 경고 메시지
+WARNING 2025-03-11 06:01:16,134 log 590279 140362619111296 Bad Request: /api/login
+DEBUG 2025-03-11 06:01:18,542 views 590279 140362619111296 디버그 메시지
+INFO 2025-03-11 06:01:18,542 views 590279 140362619111296 정보 메시지
+WARNING 2025-03-11 06:01:18,542 views 590279 140362619111296 경고 메시지
+DEBUG 2025-03-11 06:02:13,859 base 590279 140362619111296 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7fa84f99a530>
+DEBUG 2025-03-11 06:02:13,865 base 590279 140362619111296 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'aICwRgBqrKjKUsH97osWeJ8xcf8z6t3VKlyMTFHeSRsdUm2fbHAVcfAbfLiRrTxU'>, 'request': <WSGIRequest: GET '/admin/api/user/d624ffab6a2a289cbfca24bc081ec1612b9074e534100e7c96de5afffcb19b4d/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/d624ffab6a2a289cbfca24bc081ec1612b9074e534100e7c96de5afffcb19b4d/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 00:51:44.521238+00:00, 2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, 2024-08-22 11:18:32.806544+00:00, 2024-08-22 11:18:32.806362+00:00, 2024-08-22 07:39:14.301723+00:00, 2024-08-22 07:39:14.301618+00:00, 2024-08-22 07:39:14.301513+00:00, '...(remaining elements truncated)...']>, 'title': 'Change user', 'subtitle': 'User object (d624ffab6a2a289cbfca24bc081ec1612b9074e534100e7c96de5afffcb19b4d)', 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': 'd624ffab6a2a289cbfca24bc081ec1612b9074e534100e7c96de5afffcb19b4d', 'original': <User: User object (d624ffab6a2a289cbfca24bc081ec1612b9074e534100e7c96de5afffcb19b4d)>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fa84f998790>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fa84f999a20>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fa84f99a080>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fa84f99a530>}, {'heading_level': 2, 'id_suffix': 0}]
+WARNING 2025-03-11 06:03:32,487 log 590279 140362619111296 Forbidden (Referer checking failed - no Referer.): /sdk
+WARNING 2025-03-11 06:03:34,388 log 590279 140362619111296 Not Found: /Odin/http/call1741673011
+WARNING 2025-03-11 06:03:35,309 log 590279 140362619111296 Not Found: /evox/about
+WARNING 2025-03-11 06:03:38,211 log 590279 140362619111296 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2025-03-11 07:21:41,365 log 590278 140362619111296 Not Found: /wp-admin/setup-config.php
+WARNING 2025-03-11 07:21:41,690 log 590279 140362619111296 Not Found: /wordpress/wp-admin/setup-config.php
+WARNING 2025-03-11 11:10:04,883 log 590279 140362619111296 Forbidden: /api/signup
+WARNING 2025-03-11 11:10:36,221 log 590278 140362619111296 Forbidden: /api/signup
+WARNING 2025-03-11 11:10:50,521 log 590278 140362619111296 Not Found: /api/login
+DEBUG 2025-03-11 11:11:08,294 base 590278 140362619111296 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7fa84fd79c30>
+DEBUG 2025-03-11 11:11:08,299 base 590278 140362619111296 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: '8TOjnPLscxPT7H0b91aXXa7sgPOzza4Y2XANR2XLm19TBREfVHzrF9BVajHR5FPF'>, 'request': <WSGIRequest: GET '/admin/api/user/c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 11:09:45.259934+00:00, 2025-03-11 11:09:45.259850+00:00, 2025-03-11 11:09:45.259765+00:00, 2025-03-11 11:09:45.259678+00:00, 2025-03-11 11:09:45.259559+00:00, 2025-03-11 00:51:44.521238+00:00, 2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, '...(remaining elements truncated)...']>, 'title': 'Change user', 'subtitle': 'User object (c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427)', 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': 'c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427', 'original': <User: User object (c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427)>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7fa84fd72b30>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fa84fd73dc0>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7fa84fd78460>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7fa84fd79c30>}, {'heading_level': 2, 'id_suffix': 0}]
+DEBUG 2025-03-11 11:12:01,570 schema 669230 140362256133632 ALTER TABLE "api_board" ADD COLUMN "board_id" varchar(64) DEFAULT 'c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427' NOT NULL; (params None)
+DEBUG 2025-03-11 11:12:01,579 schema 669230 140362256133632 ALTER TABLE "api_board" ALTER COLUMN "board_id" DROP DEFAULT; (params None)
+WARNING 2025-03-11 11:12:28,473 log 669550 139797902555008 Forbidden: /api/signup
+WARNING 2025-03-11 11:12:33,008 log 669552 139797902555008 Forbidden: /api/login
+DEBUG 2025-03-11 11:13:09,995 base 669547 139797902555008 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7f24d3e8beb0>
+DEBUG 2025-03-11 11:13:10,000 base 669547 139797902555008 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'FX5hxChqNN9ApsTqzM7XqABsWPmOcZL7OXAlErRfppkmXvRGbOATo0PHadHcdsXc'>, 'request': <WSGIRequest: GET '/admin/api/board/115/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/board/115/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 11:09:45.259934+00:00, 2025-03-11 11:09:45.259850+00:00, 2025-03-11 11:09:45.259765+00:00, 2025-03-11 11:09:45.259678+00:00, 2025-03-11 11:09:45.259559+00:00, 2025-03-11 00:51:44.521238+00:00, 2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, '...(remaining elements truncated)...']>, 'title': 'Change board', 'subtitle': '[115] - sad - 2025-03-08 12:18:19', 'adminform': <AdminForm: form=BoardForm fieldsets=[(None, {'fields': ['board_id', 'title', 'content', 'thumbnail']})]>, 'object_id': '115', 'original': <Board: [115] - sad - 2025-03-08 12:18:19>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Board>, 'content_type_id': 9, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7f24d3e48580>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f24d3e49930>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f24d3e49ff0>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7f24d3e8beb0>}, {'heading_level': 2, 'id_suffix': 0}]
+DEBUG 2025-03-11 11:13:38,752 schema 670605 140448607215104 ALTER TABLE "api_board" RENAME COLUMN "board_id" TO "user_id"; (params None)
+DEBUG 2025-03-11 11:14:00,456 base 670942 140031084623744 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7f5b1ea941c0>
+DEBUG 2025-03-11 11:14:00,460 base 670942 140031084623744 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: '5WFvOzM7UVblpWQ7i6B9zS9sGzFcnkggeWazVomWwxm7XZOnU845xinHUX0AoNsl'>, 'request': <WSGIRequest: GET '/admin/api/user/c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/user/c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 11:09:45.259934+00:00, 2025-03-11 11:09:45.259850+00:00, 2025-03-11 11:09:45.259765+00:00, 2025-03-11 11:09:45.259678+00:00, 2025-03-11 11:09:45.259559+00:00, 2025-03-11 00:51:44.521238+00:00, 2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, '...(remaining elements truncated)...']>, 'title': 'Change user', 'subtitle': 'User object (c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427)', 'adminform': <AdminForm: form=UserForm fieldsets=[(None, {'fields': ['user_id', 'password', 'email', 'is_banned']})]>, 'object_id': 'c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427', 'original': <User: User object (c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427)>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': False, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for User>, 'content_type_id': 14, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7f5b1ea484f0>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f5b1ea498a0>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f5b1ea49f60>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7f5b1ea941c0>}, {'heading_level': 2, 'id_suffix': 0}]
+DEBUG 2025-03-11 11:14:04,930 base 670941 140031084623744 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7f5b1e90e380>
+DEBUG 2025-03-11 11:14:04,935 base 670941 140031084623744 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'mhkpgdy3Ay0CaxlkVDHsVE27NhEufd31vhPtn28ScaboIAjAxFaoT4gm1FZSgGf6'>, 'request': <WSGIRequest: GET '/admin/api/board/115/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/board/115/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 11:09:45.259934+00:00, 2025-03-11 11:09:45.259850+00:00, 2025-03-11 11:09:45.259765+00:00, 2025-03-11 11:09:45.259678+00:00, 2025-03-11 11:09:45.259559+00:00, 2025-03-11 00:51:44.521238+00:00, 2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, '...(remaining elements truncated)...']>, 'title': 'Change board', 'subtitle': '[115] - sad - 2025-03-08 12:18:19', 'adminform': <AdminForm: form=BoardForm fieldsets=[(None, {'fields': ['user_id', 'title', 'content', 'thumbnail']})]>, 'object_id': '115', 'original': <Board: [115] - sad - 2025-03-08 12:18:19>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Board>, 'content_type_id': 9, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7f5b1eae6830>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f5b1eae7ac0>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f5b1e920160>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7f5b1e90e380>}, {'heading_level': 2, 'id_suffix': 0}]
