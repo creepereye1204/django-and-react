@@ -177,9 +177,9 @@ def write(request, *args, **kwargs):
 
 
 @api_view(["GET"])
-def read(request, board_pk, *args, **kwargs):
+def read(request, board_id, *args, **kwargs):
     try:
-        board = Board.objects.get(pk=board_pk)
+        board = Board.objects.get(board_id=board_id)
         serializer = BoardSerializer(board)  # 단일 객체에 대한 시리얼라이저 사용
         response_data = serializer.data
         response_data["author"] = request.session.get(
@@ -225,12 +225,12 @@ def read_list(request, *args, **kwargs):
 def update(request, *args, **kwargs):
 
     try:
-        id = request.data.get("id")
+        board_id = request.data.get("board_id")
         title = request.data.get("title")
         content = request.data.get("content")
         thumbnail = request.data.get("thumbnail", None)
         default_thumbnail = request.data.get("default_thumbnail", -1)
-        board = Board.objects.get(pk=id)
+        board = Board.objects.get(board_id=board_id)
 
         board.title = title
         board.content = content

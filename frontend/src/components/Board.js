@@ -10,15 +10,15 @@ class Board extends Component {
     super(props);
     this.state = {
       admin: false, // 로그인 여부
-      id: this.props.id, // id 받아오기
+      board_id: this.props.board_id, // id 받아오기
       board: {}, // 글 목록을 저장할 상태
       isEditing: false, // 수정 모드 여부
     };
   }
 
   componentDidMount() {
-    const id = this.state.id;
-    fetch(`/api/board/read/${id}`, {
+    const board_id = this.state.board_id;
+    fetch(`/api/board/read/${board_id}`, {
       method: "GET",
       headers: {
         "X-CSRFToken": csrfToken, // CSRF 토큰 추가
@@ -57,7 +57,7 @@ class Board extends Component {
               initialTitle={title}
               initialContent={content}
               initialThumbnail={thumbnail}
-              id={this.state.id}
+              board_id={this.state.board_id}
               onCancel={this.toggleEdit} // 수정 모드 종료 핸들러
             />
           ) : (
@@ -89,8 +89,8 @@ class Board extends Component {
 }
 
 const BoardWrapper = (props) => {
-  const { id } = useParams(); // URL에서 id 가져오기
-  return <Board {...props} id={id} />;
+  const { board_id } = useParams(); // URL에서 id 가져오기
+  return <Board {...props} board_id={board_id} />;
 };
 
 export default BoardWrapper; // withRouter로 감싸기

@@ -10,7 +10,7 @@ class User(models.Model):
 
 
 class Board(models.Model):
-    id = models.AutoField(primary_key=True)  # 기본키를 id로 설정
+    board_id = models.AutoField(primary_key=True)  # 기본키를 id로 설정
     user_id = models.CharField(max_length=64,default='c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427')
     title = models.CharField(max_length=100)
     content = models.TextField()
@@ -19,7 +19,7 @@ class Board(models.Model):
     thumbnail = models.ImageField(upload_to="images/", default="defaultThumbnail.png")
 
     def __str__(self):
-        return f'[{self.id}] - {self.title} - {self.create_at.strftime("%Y-%m-%d %H:%M:%S")}'
+        return f'[{self.board_id}] - {self.title} - {self.create_at.strftime("%Y-%m-%d %H:%M:%S")}'
 
 
 # class Comment(models.Model):

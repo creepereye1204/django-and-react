@@ -196,9 +196,7 @@ class BoardList extends Component {
   }
 
   getPage(page) {
-    fetch(
-      `https://my-wiki.p-e.kr/api/board/?page=${page}&page_size=${this.state.pageSize}`
-    )
+    fetch(`/api/board/?page=${page}&page_size=${this.state.pageSize}`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Network response was not ok");
@@ -256,16 +254,14 @@ class BoardList extends Component {
     return (
       <div className="board-container">
         {boards.map((board) => (
-          <div className="card" key={board.id}>
+          <div className="card" key={board.board_id}>
             <img src={board.thumbnail} alt={board.title} />
-            <Link to={`/board/${board.id}`}>
+            <Link to={`/board/${board.board_id}`}>
               <div className="title">{board.title}</div>
             </Link>
           </div>
         ))}
-        <div className="pagination">
-          {this.renderPaginationButtons()} {/* 페이지네이션 버튼 표시 */}
-        </div>
+        <div className="pagination">{this.renderPaginationButtons()}</div>
       </div>
     );
   }

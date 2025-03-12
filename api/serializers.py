@@ -7,9 +7,9 @@ from .models import Board
 class BoardSerializer(serializers.ModelSerializer):
     class Meta:
         model = Board
-        fields = ('id', 'thumbnail','title', 'content')
+        fields = ('board_id', 'thumbnail','title', 'content')
 
 class BoardListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Board
-        fields = ('id', 'thumbnail','title')
+        fields = ('board_id', 'thumbnail','title')
