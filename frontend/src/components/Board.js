@@ -68,8 +68,7 @@ class Board extends Component {
                 value={content}
                 readOnly={true} // 읽기 전용 모드
               />
-              <button onClick={this.toggleEdit}>수정하기</button>{" "}
-              {/* 수정하기 버튼 */}
+              <button onClick={this.toggleEdit}>수정하기</button>
             </div>
           )
         ) : (

@@ -6,13 +6,12 @@ class WriteBoard extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
-        <App writeMode={true}/>
-        <Write/>
+        <Navbar />
+        <App boardMode={true} />
+        <Write />
       </div>
     );
   }
 }
 
 export default WriteBoard;
-

@@ -7,20 +7,15 @@ class Update extends Component {
   render() {
     return (
       <div>
-      <Navbar/>
-      <App/>
-      <div className="update">
-        <img src={update}></img>
-        <h1>Page being updated</h1>
-        
-        
-      </div>
-      
-      
+        <Navbar />
+        <App />
+        <div className="update">
+          <img src={update}></img>
+          <h1>Page being updated</h1>
+        </div>
       </div>
     );
   }
 }
 
 export default Update;
-

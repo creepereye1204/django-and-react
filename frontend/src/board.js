@@ -6,13 +6,12 @@ class Board extends Component {
   render() {
     return (
       <div>
-        <Navbar/>
-        <App/>
-        <BoardList/>
+        <Navbar />
+        <App />
+        <BoardList />
       </div>
     );
   }
 }
 
 export default Board;
-

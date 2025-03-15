@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactQuill, { Quill } from "react-quill";
-import "react-quill/dist/quill.snow.css"; // 스타일 임포트
-import "./Write.css"; // CSS 파일 임포트
+import "react-quill/dist/quill.snow.css";
+import "./Write.css";
 import ImageResize from "quill-image-resize";
 import { useNavigate } from "react-router-dom";
 
@@ -26,17 +26,24 @@ const toolbarOptions = [
 const ImageResizeOptions = { parchment: Quill.import("parchment") };
 
 const Write = ({
-  initialTitle = "",
-  initialContent = "",
-  initialThumbnail = "",
-  id = null,
+  initialTitle,
+  initialContent,
+  initialThumbnail,
+  board_id,
+  onCancel,
 }) => {
   const navigate = useNavigate();
 
-  const [content, setContent] = useState(initialContent);
-  const [title, setTitle] = useState(initialTitle);
-  const [thumbnail, setThumbnail] = useState(initialThumbnail);
+  const [content, setContent] = useState(initialContent || "");
+  const [title, setTitle] = useState(initialTitle || "");
+  const [thumbnail, setThumbnail] = useState(initialThumbnail || null);
   const [defaultThumbnail, setDefaultThumbnail] = useState(-1);
+
+  useEffect(() => {
+    setContent(initialContent || "");
+    setTitle(initialTitle || "");
+    setThumbnail(initialThumbnail || null);
+  }, [initialContent, initialTitle, initialThumbnail]);
 
   const handleChange = (value) => {
     setContent(value);
@@ -47,45 +54,48 @@ const Write = ({
   };
 
   const handleButtonClick = () => {
-    document.getElementById("file-input").click(); // 숨겨진 파일 입력 클릭
+    document.getElementById("file-input").click();
   };
 
   const handleRemoveFile = () => {
-    setThumbnail(""); // 선택한 파일 제거
-    document.getElementById("file-input").value = ""; // 파일 입력 초기화
+    setThumbnail(null);
+    document.getElementById("file-input").value = "";
   };
-  const handleNoThumnailButtonClick = () => {
+
+  const handleNoThumbnailButtonClick = () => {
     setDefaultThumbnail(-defaultThumbnail);
   };
+
   async function write() {
     const formData = new FormData();
 
-    if (thumbnail instanceof File && thumbnail.type.startsWith("image/"))
+    if (thumbnail instanceof File && thumbnail.type.startsWith("image/")) {
       formData.append("thumbnail", thumbnail);
+    }
     formData.append("default_thumbnail", defaultThumbnail);
     formData.append("title", title);
     formData.append("content", content);
-    formData.append("id", id); // id 값이 있으면 update, 없으면 write
-    const url = id
+    formData.append("board_id", board_id); // board_id 추가
+    const url = board_id
       ? "https://my-wiki.p-e.kr/api/board/update"
       : "https://my-wiki.p-e.kr/api/board/write";
     const results = await fetch(url, {
-      method: "POST", // POST 메서드 사용
+      method: "POST",
       headers: {
         "X-CSRFToken": csrfToken,
       },
-      body: formData, // 제목과 본문을 JSON 형태로 전송
+      body: formData,
     });
 
     if (results.ok) {
       console.log("저장 성공");
       alert("저장 성공!");
-      if (!id) navigate(-1);
-      // 이전 페이지로 이동
+      navigate(-1);
     } else {
-      alert(results.error, " 저장 실패");
+      alert("저장 실패");
     }
   }
+
   async function handleSave() {
     if (title && content) await write();
     else {
@@ -95,6 +105,7 @@ const Write = ({
       alert(`${empty.join(", ")}을(를) 입력하세요.`);
     }
   }
+
   return (
     <div className="editor">
       <div className="input">
@@ -106,6 +117,7 @@ const Write = ({
           onChange={(e) => setTitle(e.target.value)}
         />
         <button onClick={handleSave}>저장하기</button>
+        <button onClick={onCancel}>취소하기</button> {/* 취소 버튼 추가 */}
       </div>
       <ReactQuill
         value={content}
@@ -120,7 +132,7 @@ const Write = ({
           id="file-input"
           type="file"
           accept="image/*"
-          style={{ display: "none" }} // 파일 입력 숨기기
+          style={{ display: "none" }}
           onChange={handleFileSelect}
         />
         <button className="thumbnail-button" onClick={handleButtonClick}>
@@ -133,7 +145,7 @@ const Write = ({
         )}
         <button
           className="thumbnail-button"
-          onClick={handleNoThumnailButtonClick}
+          onClick={handleNoThumbnailButtonClick}
         >
           썸네일 사용 안함
         </button>

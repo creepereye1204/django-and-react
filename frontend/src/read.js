@@ -7,12 +7,11 @@ class Read extends Component {
     return (
       <div>
         <Navbar />
-        <App writeMode={true}/>
-        <BoardWrapper/>
+        <App boardMode={true} />
+        <BoardWrapper />
       </div>
     );
   }
 }
 
 export default Read;
-

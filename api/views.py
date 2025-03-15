@@ -58,8 +58,7 @@ class IntegrityError(Exception):
 
 
 def check_integrity(thumbnails):
-    allowed_mime_types = ["image/jpeg",
-                          "image/png", "image/gif"]  # 허용할 MIME 타입
+    allowed_mime_types = ["image/jpeg", "image/png", "image/gif"]  # 허용할 MIME 타입
     allowed_extensions = [".jpg", ".jpeg", ".png", ".gif"]  # 허용할 파일 확장자
     max_size = 5 * 1024 * 1024  # 5MB
 
@@ -121,11 +120,9 @@ class Bible:
             model_name="Huffon/sentence-klue-roberta-base"
         )
         try:
-            self.collection = client.create_collection(
-                name=table, embedding_function=em)
+            self.collection = client.create_collection(name=table, embedding_function=em)
         except UniqueConstraintError:
-            self.collection = client.get_collection(
-                name=table, embedding_function=em)
+            self.collection = client.get_collection(name=table, embedding_function=em)
 
     def get(self, question: str, k: int) -> list[str]:
 
@@ -167,8 +164,7 @@ def write(request, *args, **kwargs):
         content = request.data.get("content")
         thumbnail = request.data.get("thumbnail", None)
         if thumbnail:
-            Board.objects.create(
-                title=title, content=content, thumbnail=thumbnail)
+            Board.objects.create(title=title, content=content, thumbnail=thumbnail)
         else:
             Board.objects.create(title=title, content=content)
         return Response({"ok": "작성 성공"}, status=200)
@@ -182,8 +178,11 @@ def read(request, board_id, *args, **kwargs):
         board = Board.objects.get(board_id=board_id)
         serializer = BoardSerializer(board)  # 단일 객체에 대한 시리얼라이저 사용
         response_data = serializer.data
-        response_data["author"] = request.session.get(
-            "user_id", None) 
+        user_id = request.session.get("user_id", None)
+
+        if user_id == board.user_id:
+            response_data["author"] = request.session.get("user_id", user_id)
+
         return Response(response_data, status=200)
     except Board.DoesNotExist:
         return Response({"error": "Board not found"}, status=404)  # 게시물이 없는 경우
@@ -226,6 +225,10 @@ def update(request, *args, **kwargs):
 
     try:
         board_id = request.data.get("board_id")
+
+        if Board.objects.get(board_id=board_id).user_id != request.session["user_id"]:
+            raise Exception("본인 아님")
+
         title = request.data.get("title")
         content = request.data.get("content")
         thumbnail = request.data.get("thumbnail", None)
@@ -324,8 +327,7 @@ def signup(request):
 
                 else:
                     password = convert_to_sha256(password)
-                    user = User(user_id=user_id,
-                                password=password, email=email)
+                    user = User(user_id=user_id, password=password, email=email)
                     user.save()
                     request.session["user_id"] = user_id
                     return Response({"ok": True}, status=200)

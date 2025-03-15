@@ -15747,3 +15747,267 @@ WARNING 2025-03-12 11:42:44,593 log 677263 139759888668544 Forbidden (Referer ch
 WARNING 2025-03-12 11:42:50,532 log 677266 139759888668544 Forbidden (Referer checking failed - no Referer.): /
 WARNING 2025-03-12 11:42:55,545 log 677266 139759888668544 Forbidden (Referer checking failed - no Referer.): /
 WARNING 2025-03-12 11:55:04,583 log 677266 139759888668544 Not Found: /owa/auth/logon.aspx
+WARNING 2025-03-12 14:02:52,198 log 677266 139759888668544 Not Found: /api/sonicos/tfa
+WARNING 2025-03-12 14:02:52,214 log 677266 139759888668544 Not Found: /api/sonicos/auth
+WARNING 2025-03-12 15:58:28,411 log 677266 139759888668544 Not Found: /wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:28,710 log 677266 139759888668544 Not Found: /blog/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:28,809 log 677266 139759888668544 Not Found: /web/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:28,909 log 677266 139759888668544 Not Found: /wordpress/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,011 log 677264 139759888668544 Not Found: /website/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,110 log 677266 139759888668544 Not Found: /wp/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,213 log 677266 139759888668544 Not Found: /news/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,310 log 677266 139759888668544 Not Found: /2018/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,410 log 677266 139759888668544 Not Found: /2019/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,509 log 677266 139759888668544 Not Found: /shop/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,609 log 677266 139759888668544 Not Found: /wp1/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,709 log 677266 139759888668544 Not Found: /test/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:29,903 log 677266 139759888668544 Not Found: /wp2/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:30,004 log 677266 139759888668544 Not Found: /site/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:30,103 log 677266 139759888668544 Not Found: /cms/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 15:58:30,202 log 677266 139759888668544 Not Found: /sito/wp-includes/wlwmanifest.xml
+WARNING 2025-03-12 16:18:36,730 log 677266 139759888668544 Not Found: /helpdesk/WebObjects/Helpdesk.woa
+WARNING 2025-03-12 16:39:15,909 log 677266 139759888668544 Not Found: /.pi/.env
+WARNING 2025-03-12 16:39:16,150 log 677266 139759888668544 Not Found: /.sendgrid/config
+WARNING 2025-03-12 16:39:16,397 log 677266 139759888668544 Not Found: /.sendgrid/credentials
+WARNING 2025-03-12 16:39:16,640 log 677264 139759888668544 Not Found: /_profiler/phpinfo
+WARNING 2025-03-12 16:40:07,725 log 677266 139759888668544 Not Found: /ansible/roles/aws/vars/main.yml
+WARNING 2025-03-12 16:40:07,966 log 677266 139759888668544 Not Found: /api/.env
+WARNING 2025-03-12 16:40:08,205 log 677266 139759888668544 Not Found: /api_keys/sendgrid_keys.json
+WARNING 2025-03-12 16:40:08,696 log 677264 139759888668544 Not Found: /aws/credentials.staging.ini
+WARNING 2025-03-12 16:40:08,939 log 677266 139759888668544 Not Found: /backup/sendgrid.json
+WARNING 2025-03-12 16:40:09,180 log 677266 139759888668544 Not Found: /backup/sendgrid_config
+WARNING 2025-03-12 16:40:09,424 log 677266 139759888668544 Not Found: /backup/sendgrid_keys
+WARNING 2025-03-12 16:40:09,663 log 677264 139759888668544 Not Found: /backup/sendgrid_keys.json
+WARNING 2025-03-12 16:40:09,910 log 677266 139759888668544 Not Found: /config/env/sendgrid.env
+WARNING 2025-03-12 16:40:10,149 log 677266 139759888668544 Not Found: /config/env/sendgrid_keys.env
+WARNING 2025-03-12 16:40:10,391 log 677266 139759888668544 Not Found: /config/packages/sendgrid.yaml
+WARNING 2025-03-12 16:40:10,638 log 677264 139759888668544 Not Found: /config/private/sendgrid_keys.json
+WARNING 2025-03-12 16:40:10,882 log 677266 139759888668544 Not Found: /config/secrets/dev/sendgrid_keys.json
+WARNING 2025-03-12 16:40:11,136 log 677266 139759888668544 Not Found: /config/secrets/prod/sendgrid_keys.json
+WARNING 2025-03-12 16:40:11,393 log 677266 139759888668544 Not Found: /config/sendgrid.js
+WARNING 2025-03-12 16:40:11,632 log 677264 139759888668544 Not Found: /config/sendgrid.json
+WARNING 2025-03-12 16:40:11,871 log 677266 139759888668544 Not Found: /config/sendgrid.php
+WARNING 2025-03-12 16:40:12,132 log 677266 139759888668544 Not Found: /config/sendgrid.py
+WARNING 2025-03-12 16:40:12,373 log 677266 139759888668544 Not Found: /config/sendgrid_config.json
+WARNING 2025-03-12 16:40:12,618 log 677264 139759888668544 Not Found: /config/sendgrid_keys.json
+WARNING 2025-03-12 16:40:12,858 log 677266 139759888668544 Not Found: /config/settings/sendgrid_config.json
+WARNING 2025-03-12 16:40:13,097 log 677266 139759888668544 Not Found: /config/settings/sendgrid_keys.json
+WARNING 2025-03-12 16:40:13,583 log 677264 139759888668544 Not Found: /instance/sendgrid_keys.py
+WARNING 2025-03-12 16:40:13,826 log 677266 139759888668544 Not Found: /keys/sendgrid_keys.json
+WARNING 2025-03-12 16:40:14,067 log 677264 139759888668544 Not Found: /modules/contrib/sendgrid_mail/sendgrid_mail.module
+WARNING 2025-03-12 16:40:14,310 log 677266 139759888668544 Not Found: /modules/contrib/sendgrid_mail/sendgrid_mail.services.yml
+WARNING 2025-03-12 16:40:14,553 log 677264 139759888668544 Not Found: /modules/contrib/sendgrid_mail/sendgrid_mail.settings.php
+WARNING 2025-03-12 16:40:14,806 log 677266 139759888668544 Not Found: /modules/contrib/sendgrid_mail/translations/sendgrid_mail.fr.po
+WARNING 2025-03-12 16:40:15,562 log 677264 139759888668544 Not Found: /private/sendgrid.json
+WARNING 2025-03-12 16:40:15,810 log 677266 139759888668544 Not Found: /private/sendgrid_config
+WARNING 2025-03-12 16:40:16,049 log 677266 139759888668544 Not Found: /private/sendgrid_keys
+WARNING 2025-03-12 16:40:16,288 log 677266 139759888668544 Not Found: /private/sendgrid_keys.json
+WARNING 2025-03-12 16:40:16,530 log 677266 139759888668544 Not Found: /secrets/sendgrid.json
+WARNING 2025-03-12 16:40:16,778 log 677266 139759888668544 Not Found: /secrets/sendgrid_config
+WARNING 2025-03-12 16:40:17,021 log 677266 139759888668544 Not Found: /secrets/sendgrid_keys
+WARNING 2025-03-12 16:40:17,260 log 677266 139759888668544 Not Found: /secrets/sendgrid_keys.json
+WARNING 2025-03-12 16:40:18,004 log 677266 139759888668544 Not Found: /sendgrid_email/.env
+WARNING 2025-03-12 16:40:19,497 log 677266 139759888668544 Not Found: /settings/sendgrid_config
+WARNING 2025-03-12 16:40:19,736 log 677266 139759888668544 Not Found: /settings/sendgrid_keys
+WARNING 2025-03-12 16:40:19,979 log 677266 139759888668544 Not Found: /storage/sendgrid.json
+WARNING 2025-03-12 16:40:20,463 log 677266 139759888668544 Not Found: /wp-admin/sendgrid_keys.json
+WARNING 2025-03-12 16:40:20,703 log 677264 139759888668544 Not Found: /wp-content/backup/sendgrid_keys.json
+WARNING 2025-03-12 16:40:20,943 log 677266 139759888668544 Not Found: /wp-content/plugins/sendgrid_keys.json
+WARNING 2025-03-12 16:40:21,192 log 677266 139759888668544 Not Found: /wp-content/plugins/wp-mail-smtp/sendgrid_keys.json
+WARNING 2025-03-12 16:40:21,441 log 677266 139759888668544 Not Found: /wp-content/sendgrid_keys.json
+WARNING 2025-03-12 16:40:21,683 log 677264 139759888668544 Not Found: /wp-content/themes/sendgrid_keys.json
+WARNING 2025-03-12 16:40:21,922 log 677266 139759888668544 Not Found: /wp-content/uploads/sendgrid_keys.json
+WARNING 2025-03-12 16:40:22,174 log 677266 139759888668544 Not Found: /wp-content/uploads/wp-mail-smtp/sendgrid_keys.json
+WARNING 2025-03-12 16:40:22,416 log 677266 139759888668544 Not Found: /wp-includes/sendgrid_keys.json
+WARNING 2025-03-12 18:23:34,368 log 677266 139759888668544 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-12 20:58:58,653 log 677263 139759888668544 Not Found: /_vti_pvt/service.pwd
+WARNING 2025-03-12 20:58:58,655 log 677264 139759888668544 Not Found: /.ssh/id_rsa
+WARNING 2025-03-12 20:58:58,656 log 677265 139759888668544 Not Found: /etc/ssl/private/server.key
+WARNING 2025-03-12 20:58:58,663 log 677263 139759888668544 Not Found: /.aws/credentials
+WARNING 2025-03-12 20:58:58,664 log 677266 139759888668544 Not Found: /config/production.json
+WARNING 2025-03-12 20:58:58,664 log 677264 139759888668544 Not Found: /.ssh/id_ecdsa
+WARNING 2025-03-12 20:58:58,947 log 677266 139759888668544 Not Found: /.ssh/id_ed25519
+WARNING 2025-03-12 20:58:58,954 log 677263 139759888668544 Not Found: /db/schema.rb
+WARNING 2025-03-12 20:58:58,956 log 677266 139759888668544 Not Found: /wp-admin/setup-config.php
+WARNING 2025-03-12 20:58:58,957 log 677264 139759888668544 Not Found: /.svn/wc.db
+WARNING 2025-03-12 20:58:58,965 log 677266 139759888668544 Not Found: /.git/HEAD
+WARNING 2025-03-12 20:58:59,932 log 677258 139759888668544 Not Found: /.vscode/sftp.json
+WARNING 2025-03-12 20:58:59,991 log 677260 139759888668544 Not Found: /api/.env
+WARNING 2025-03-12 23:05:17,771 log 677266 139759888668544 Not Found: /private/.git/config
+WARNING 2025-03-13 01:00:52,398 log 677266 139759888668544 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-13 01:01:13,143 log 677266 139759888668544 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-13 01:01:34,975 log 677266 139759888668544 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-13 01:01:52,923 log 677266 139759888668544 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-13 01:02:11,934 log 677266 139759888668544 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-13 01:02:33,431 log 677266 139759888668544 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-13 02:02:19,042 log 677266 139759888668544 Not Found: /owa/auth/x.js
+WARNING 2025-03-13 02:59:04,090 log 677264 139759888668544 Not Found: /api/board/read/undefined
+WARNING 2025-03-13 02:59:40,663 log 677266 139759888668544 Not Found: /api/board/read/undefined
+WARNING 2025-03-13 03:00:16,603 log 677266 139759888668544 Not Found: /api/board/read/undefined
+DEBUG 2025-03-13 03:02:21,788 base 677266 139759888668544 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7f1bfa2972e0>
+DEBUG 2025-03-13 03:02:21,793 base 677266 139759888668544 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'Y7z3Tsf0D9FGBAEVx3VtWQmq9RkfJePNrQLtgw1NNimO7trE9pUSEdloEg3nINxm'>, 'request': <WSGIRequest: GET '/admin/api/board/115/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/board/115/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 11:09:45.259934+00:00, 2025-03-11 11:09:45.259850+00:00, 2025-03-11 11:09:45.259765+00:00, 2025-03-11 11:09:45.259678+00:00, 2025-03-11 11:09:45.259559+00:00, 2025-03-11 00:51:44.521238+00:00, 2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, '...(remaining elements truncated)...']>, 'title': 'Change board', 'subtitle': '[115] - sad - 2025-03-08 12:18:19', 'adminform': <AdminForm: form=BoardForm fieldsets=[(None, {'fields': ['user_id', 'title', 'content', 'thumbnail']})]>, 'object_id': '115', 'original': <Board: [115] - sad - 2025-03-08 12:18:19>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Board>, 'content_type_id': 9, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7f1bfa295420>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f1bfa2964a0>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f1bfa296b00>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7f1bfa2972e0>}, {'heading_level': 2, 'id_suffix': 0}]
+DEBUG 2025-03-13 03:03:08,265 base 677266 139759888668544 Exception while resolving variable 'formset' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+TypeError: 'Fieldset' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 893, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'Fieldset' object has no attribute 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'formset'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [formset] in <django.contrib.admin.helpers.Fieldset object at 0x7f1bfa109930>
+DEBUG 2025-03-13 03:03:08,270 base 677266 139759888668544 Exception while resolving variable 'id_prefix' in template 'admin/change_form.html'.
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 883, in _resolve_lookup
+    current = current[bit]
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/context.py", line 85, in __getitem__
+    raise KeyError(key)
+KeyError: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 889, in _resolve_lookup
+    if isinstance(current, BaseContext) and getattr(
+AttributeError: type object 'RequestContext' has no attribute 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 899, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'id_prefix'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/root/.cache/pypoetry/virtualenvs/my-wiki-n6iennJt-py3.10/lib/python3.10/site-packages/django/template/base.py", line 906, in _resolve_lookup
+    raise VariableDoesNotExist(
+django.template.base.VariableDoesNotExist: Failed lookup for key [id_prefix] in [{'True': True, 'False': False, 'None': None}, {'csrf_token': <SimpleLazyObject: 'm8kKUYV7nW5huHVpa3FCGTSx7R7mWmzZPRwah2HUx5Mp0AI8MpE1ogRvCgQuVVhy'>, 'request': <WSGIRequest: GET '/admin/api/board/115/change/'>, 'user': <SimpleLazyObject: <User: smalllab>>, 'perms': PermWrapper(<SimpleLazyObject: <User: smalllab>>), 'messages': <FallbackStorage: request=<WSGIRequest: GET '/admin/api/board/115/change/'>>, 'DEFAULT_MESSAGE_LEVELS': {'DEBUG': 10, 'INFO': 20, 'SUCCESS': 25, 'WARNING': 30, 'ERROR': 40}}, {}, {'site_title': 'Django site admin', 'site_header': 'Django administration', 'site_url': '/', 'has_permission': True, 'available_apps': [{'name': 'Api', 'app_label': 'api', 'app_url': '/admin/api/', 'has_module_perms': True, 'models': [{'model': <class 'api.models.Board'>, 'name': 'Boards', 'object_name': 'Board', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/board/', 'add_url': '/admin/api/board/add/', 'view_only': False}, {'model': <class 'api.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/api/user/', 'add_url': '/admin/api/user/add/', 'view_only': False}]}, {'name': 'Authentication and Authorization', 'app_label': 'auth', 'app_url': '/admin/auth/', 'has_module_perms': True, 'models': [{'model': <class 'django.contrib.auth.models.Group'>, 'name': 'Groups', 'object_name': 'Group', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/group/', 'add_url': '/admin/auth/group/add/', 'view_only': False}, {'model': <class 'django.contrib.auth.models.User'>, 'name': 'Users', 'object_name': 'User', 'perms': {'add': True, 'change': True, 'delete': True, 'view': True}, 'admin_url': '/admin/auth/user/', 'add_url': '/admin/auth/user/add/', 'view_only': False}]}], 'is_popup': False, 'is_nav_sidebar_enabled': True, 'log_entries': <QuerySet [2025-03-11 11:09:45.259934+00:00, 2025-03-11 11:09:45.259850+00:00, 2025-03-11 11:09:45.259765+00:00, 2025-03-11 11:09:45.259678+00:00, 2025-03-11 11:09:45.259559+00:00, 2025-03-11 00:51:44.521238+00:00, 2025-03-11 00:47:13.687949+00:00, 2025-03-11 00:46:10.300939+00:00, 2024-08-22 11:18:32.807787+00:00, 2024-08-22 11:18:32.807687+00:00, 2024-08-22 11:18:32.807587+00:00, 2024-08-22 11:18:32.807486+00:00, 2024-08-22 11:18:32.807372+00:00, 2024-08-22 11:18:32.807272+00:00, 2024-08-22 11:18:32.807171+00:00, 2024-08-22 11:18:32.807071+00:00, 2024-08-22 11:18:32.806969+00:00, 2024-08-22 11:18:32.806866+00:00, 2024-08-22 11:18:32.806751+00:00, 2024-08-22 11:18:32.806649+00:00, '...(remaining elements truncated)...']>, 'title': 'Change board', 'subtitle': '[115] - sad - 2025-03-08 12:18:19', 'adminform': <AdminForm: form=BoardForm fieldsets=[(None, {'fields': ['user_id', 'title', 'content', 'thumbnail']})]>, 'object_id': '115', 'original': <Board: [115] - sad - 2025-03-08 12:18:19>, 'to_field': None, 'media': Media(css={}, js=['admin/js/vendor/jquery/jquery.min.js', 'admin/js/jquery.init.js', 'admin/js/core.js', 'admin/js/admin/RelatedObjectLookups.js', 'admin/js/actions.js', 'admin/js/urlify.js', 'admin/js/prepopulate.js', 'admin/js/vendor/xregexp/xregexp.min.js']), 'inline_admin_formsets': [], 'errors': [], 'preserved_filters': '', 'add': False, 'change': True, 'has_view_permission': True, 'has_add_permission': True, 'has_change_permission': True, 'has_delete_permission': True, 'has_editable_inline_admin_formsets': False, 'has_file_field': True, 'has_absolute_url': False, 'absolute_url': None, 'form_url': '', 'opts': <Options for Board>, 'content_type_id': 9, 'save_as': False, 'save_on_top': False, 'to_field_var': '_to_field', 'is_popup_var': '_popup', 'app_label': 'api', 'LANGUAGE_CODE': 'en-us', 'LANGUAGE_BIDI': False}, {'block': <Block Node: content. Contents: [<TextNode: '<div id="content-main">\n'>, <Block Node: object-tools. Contents: [<TextNode: '\n'>, <IfNode>, <TextNode: '\n'>]>, <TextNode: '\n<form '>, <IfNode>, <IfNode>, <TextNode: 'method="post" id="'>, <Variable Node: opts.model_name>, <TextNode: '_form" novalidate>'>, <django.template.defaulttags.CsrfTokenNode object at 0x7f1bfa295420>, <Block Node: form_top. Contents: []>, <TextNode: '\n<div>\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n'>, <IfNode>, <TextNode: '\n\n'>, <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_field_sets. Contents: []>, <TextNode: '\n\n'>, <Block Node: inline_field_sets. Contents: [<TextNode: '\n'>, <ForNode: for inline_admin_formset in inline_admin_formsets, tail_len: 3>, <TextNode: '\n'>]>, <TextNode: '\n\n'>, <Block Node: after_related_objects. Contents: []>, <TextNode: '\n\n'>, <Block Node: submit_buttons_bottom. Contents: [<django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f1bfa2964a0>]>, <TextNode: '\n\n'>, <Block Node: admin_change_form_document_ready. Contents: [<TextNode: '\n    <script id="django-a'>, StaticNode(varname=None, path=<FilterExpression "'admin/js/change_form.js'">), <TextNode: '"\n            '>, <IfNode>, <TextNode: '\n            async>\n    <'>]>, <TextNode: '\n\n'>, <TextNode: '\n'>, <django.contrib.admin.templatetags.base.InclusionAdminNode object at 0x7f1bfa296b00>, <TextNode: '\n\n</div>\n</form></div>\n'>]>}, {'block': <Block Node: field_sets. Contents: [<TextNode: '\n'>, <ForNode: for fieldset in adminform, tail_len: 3>, <TextNode: '\n'>]>}, {'forloop': {'parentloop': {}, 'counter0': 0, 'counter': 1, 'revcounter': 1, 'revcounter0': 0, 'first': True, 'last': True}, 'fieldset': <django.contrib.admin.helpers.Fieldset object at 0x7f1bfa109930>}, {'heading_level': 2, 'id_suffix': 0}]
+WARNING 2025-03-13 03:11:55,755 log 677266 139759888668544 Not Found: /api/board/read/undefined
+WARNING 2025-03-13 03:12:52,196 log 743594 139661666006912 Not Found: /api/board/read/undefined
+WARNING 2025-03-13 05:05:50,879 log 743593 139661666006912 Not Found: /images/emoji/twitter-emoji-spritesheet-64.2d0a6b9b.png
+WARNING 2025-03-13 05:30:00,301 log 743594 139661666006912 Not Found: /wp-includes/ID3/license.txt
+WARNING 2025-03-13 05:30:00,573 log 743594 139661666006912 Not Found: /feed/
+WARNING 2025-03-13 05:30:01,108 log 743594 139661666006912 Not Found: /blog/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:01,370 log 743594 139661666006912 Not Found: /web/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:01,641 log 743594 139661666006912 Not Found: /wordpress/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:01,903 log 743594 139661666006912 Not Found: /wp/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:02,168 log 743594 139661666006912 Not Found: /2020/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:02,439 log 743594 139661666006912 Not Found: /2019/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:02,732 log 743594 139661666006912 Not Found: /2021/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:03,049 log 743594 139661666006912 Not Found: /shop/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:03,340 log 743594 139661666006912 Not Found: /wp1/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:03,656 log 743594 139661666006912 Not Found: /test/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:03,973 log 743594 139661666006912 Not Found: /site/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 05:30:04,287 log 743593 139661666006912 Not Found: /cms/wp-includes/wlwmanifest.xml
+WARNING 2025-03-13 07:52:25,451 log 743593 139661666006912 Not Found: /autodiscover/autodiscover.json
+WARNING 2025-03-13 09:30:56,844 log 743593 139661666006912 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2025-03-13 09:30:57,013 log 743594 139661666006912 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2025-03-13 11:21:19,020 log 743593 139661666006912 Not Found: /autodiscover/autodiscover.json
+WARNING 2025-03-13 13:10:13,995 log 743593 139661666006912 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-13 13:10:28,059 log 743593 139661666006912 Not Found: /ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js
+WARNING 2025-03-13 14:30:14,192 log 743593 139661666006912 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2025-03-13 15:11:22,704 log 743593 139661666006912 Not Found: /helpdesk/WebObjects/Helpdesk.woa
+WARNING 2025-03-14 00:36:54,209 log 743593 139661666006912 Not Found: /owa/auth/logon.aspx
+WARNING 2025-03-14 00:42:55,484 log 743593 139661666006912 Not Found: /.git/config
+ERROR 2025-03-14 03:40:01,445 log 794718 139730718414720 Internal Server Error: /api/board/read/56
+ERROR 2025-03-14 03:40:14,022 log 794723 139730718414720 Internal Server Error: /api/board/read/56
+DEBUG 2025-03-14 03:40:59,699 views 797112 140192289810304 test board
+DEBUG 2025-03-14 03:43:14,353 views 797940 140033202329472 [56] - IpScan And PortScan - 2024-08-23 03:04:40
+DEBUG 2025-03-14 03:45:10,631 views 799409 140700456650624 c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427
+DEBUG 2025-03-14 03:51:54,740 views 799411 140700456650624 c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427
+ERROR 2025-03-14 03:51:54,742 log 799411 140700456650624 Internal Server Error: /api/board/read/24
+DEBUG 2025-03-14 03:53:56,870 views 804844 139697927464832 c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427
+DEBUG 2025-03-14 03:54:19,803 views 804844 139697927464832 c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427
+WARNING 2025-03-14 03:59:53,343 log 807838 140521503483776 Bad Request: /api/board/write
+WARNING 2025-03-14 07:09:14,293 log 807839 140521503483776 Not Found: /openapi/v2
+WARNING 2025-03-14 12:43:07,603 log 807839 140521503483776 Not Found: /app_dev.php/_profiler/phpinfo
+WARNING 2025-03-14 12:43:07,968 log 807839 140521503483776 Not Found: /config/constants.js/index.php/phpinfo
+WARNING 2025-03-14 12:43:09,084 log 807839 140521503483776 Not Found: /config/config.js
+WARNING 2025-03-14 12:43:10,482 log 807839 140521503483776 Not Found: /environment.ts/src/config.js
+WARNING 2025-03-14 12:43:11,811 log 807839 140521503483776 Not Found: /_profiler/phpinfo
+WARNING 2025-03-14 12:43:13,649 log 807839 140521503483776 Not Found: /config/.env
+WARNING 2025-03-14 12:43:14,648 log 807839 140521503483776 Not Found: /api/shared/config/config.env
+WARNING 2025-03-14 12:43:14,977 log 807839 140521503483776 Not Found: /api/.env
+WARNING 2025-03-14 12:43:15,436 log 807839 140521503483776 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2025-03-14 14:41:41,802 log 807839 140521503483776 Not Found: /wp-admin/setup-config.php
+WARNING 2025-03-14 14:41:42,217 log 807839 140521503483776 Not Found: /wp-admin/install.php
+WARNING 2025-03-14 17:04:51,583 log 807839 140521503483776 Not Found: /.git/config
+WARNING 2025-03-14 17:12:33,018 log 807839 140521503483776 Not Found: /.git/config
+WARNING 2025-03-14 17:30:36,870 log 807839 140521503483776 Not Found: /actuator/health
+WARNING 2025-03-14 18:32:50,118 log 807839 140521503483776 Not Found: /.git/config
+WARNING 2025-03-14 20:51:04,738 log 807839 140521503483776 Forbidden (Referer checking failed - no Referer.): /
+WARNING 2025-03-14 21:58:34,899 log 807839 140521503483776 Not Found: /.git/config
+WARNING 2025-03-15 01:47:43,236 log 807839 140521503483776 Not Found: /owa/auth/logon.aspx
+WARNING 2025-03-15 02:16:19,852 log 807839 140521503483776 Not Found: /.git/index
+WARNING 2025-03-15 02:53:07,916 log 807839 140521503483776 Not Found: /.git/config
+WARNING 2025-03-15 03:22:38,983 log 807839 140521503483776 Not Found: /.git/index
