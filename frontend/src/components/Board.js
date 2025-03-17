@@ -18,7 +18,7 @@ class Board extends Component {
 
   componentDidMount() {
     const board_id = this.state.board_id;
-    fetch(`/api/board/read/${board_id}`, {
+    fetch(`/api/board/${board_id}`, {
       method: "GET",
       headers: {
         "X-CSRFToken": csrfToken, // CSRF 토큰 추가

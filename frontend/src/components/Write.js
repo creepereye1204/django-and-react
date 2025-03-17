@@ -76,9 +76,7 @@ const Write = ({
     formData.append("title", title);
     formData.append("content", content);
     formData.append("board_id", board_id); // board_id 추가
-    const url = board_id
-      ? "https://my-wiki.p-e.kr/api/board/update"
-      : "https://my-wiki.p-e.kr/api/board/write";
+    const url = board_id ? "/api/board/update" : "/api/board/write";
     const results = await fetch(url, {
       method: "POST",
       headers: {
