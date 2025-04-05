@@ -179,10 +179,10 @@ def read(request, board_id, *args, **kwargs):
         serializer = BoardSerializer(board)  # 단일 객체에 대한 시리얼라이저 사용
         response_data = serializer.data
         user_id = request.session.get("user_id", None)
-        
-        if user_id == board.user_id.user_id:
+
+        if user_id == board.user_id:
             response_data["author"] = request.session.get("user_id", user_id)
-        logger.info(f'user_id : {user_id} user_id : {board.user_id.user_id}')
+
         return Response(response_data, status=200)
     except Board.DoesNotExist:
         return Response({"error": "Board not found"}, status=404)  # 게시물이 없는 경우

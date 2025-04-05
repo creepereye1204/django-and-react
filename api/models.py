@@ -1,25 +1,26 @@
 from django.db import models
 
+
 class User(models.Model):
     user_id = models.CharField(primary_key=True, max_length=64)  # 기본키를 id로 설정
     password = models.CharField(max_length=64)
-    created_at = models.DateTimeField(auto_now_add=True)  # 'create_at' -> 'created_at'
+    email = models.EmailField(null=True, blank=True)
+    join_at = models.DateTimeField(auto_now_add=True)
     is_banned = models.BooleanField(default=False)
-    
-    def __str__(self):
-        return f'[{self.user_id}] - {self.created_at.strftime("%Y-%m-%d %H:%M:%S")}'
 
 
 class Board(models.Model):
     board_id = models.AutoField(primary_key=True)  # 기본키를 id로 설정
-    user_id = models.ForeignKey(User, on_delete=models.CASCADE)  # User 모델을 참조해야 함
+    user_id = models.CharField(max_length=64,default='c154447a12edeb3ef2978cfa799389ab089bec95f87e7d0ebfc136d865cf6427')
     title = models.CharField(max_length=100)
     content = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)  # 'create_at' -> 'created_at'
+    create_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     thumbnail = models.ImageField(upload_to="images/", default="defaultThumbnail.png")
 
     def __str__(self):
-        return f'[{self.board_id}] - {self.title} - {self.created_at.strftime("%Y-%m-%d %H:%M:%S")}'
+        return f'[{self.board_id}] - {self.title} - {self.create_at.strftime("%Y-%m-%d %H:%M:%S")}'
+
 
 
 class Comment(models.Model):
