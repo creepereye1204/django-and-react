@@ -180,8 +180,7 @@ def read(request, board_id, *args, **kwargs):
         response_data = serializer.data
         user_id = request.session.get("user_id", None)
 
-        if user_id == board.user_id:
-            response_data["author"] = request.session.get("user_id", user_id)
+        response_data["author"] = request.session.get("user_id", user_id)
 
         return Response(response_data, status=200)
     except Board.DoesNotExist:
