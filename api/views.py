@@ -331,7 +331,7 @@ def signup(request):
                     request.session["user_id"] = user_id
                     return Response({"ok": True}, status=200)
 
-            except:
+            except exception as e:
                 return Response({"error": str(e)}, status=500)
 
         return Response({"error": "Missing user_id or password"}, status=400)
