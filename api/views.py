@@ -159,14 +159,19 @@ def dashboard(request):
 @api_view(["POST"])
 @check_data
 def write(request, *args, **kwargs):
+    user_id = request.session.get("user_id", None)
+    if user_id is None:
+        return Response({"error": "로그인 필요"}, status=401)
     try:
+        logger.debug(f"user_id: {user_id}")
+        user = User.objects.get(user_id=user_id)
         title = request.data.get("title")
         content = request.data.get("content")
         thumbnail = request.data.get("thumbnail", None)
         if thumbnail:
-            Board.objects.create(title=title, content=content, thumbnail=thumbnail)
+            Board.objects.create(user_id=user, title=title, content=content, thumbnail=thumbnail)
         else:
-            Board.objects.create(title=title, content=content)
+            Board.objects.create(user_id=user, title=title, content=content)
         return Response({"ok": "작성 성공"}, status=200)
     except Exception as e:
         return Response({"error": str(e)}, status=500)
@@ -224,8 +229,9 @@ def update(request, *args, **kwargs):
 
     try:
         board_id = request.data.get("board_id")
-
-        if Board.objects.get(board_id=board_id).user_id != request.session["user_id"]:
+        logger.debug(f"board_id: {Board.objects.get(board_id=board_id).user_id}")
+        logger.debug(f"user_id: {request.session['user_id']}")
+        if Board.objects.get(board_id=board_id).user_id.user_id != request.session["user_id"]:
             raise Exception("본인 아님")
 
         title = request.data.get("title")
